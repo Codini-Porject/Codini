@@ -6,6 +6,8 @@ const cors = require("cors");
 const { authenticateUser } = require("./server/middelwares/auth.js");
 const authRoute = require("./server/routes/authRoute.js");
 const languagesRouter = require("./server/routes/languages.js");
+const coursesRouter = require("./server/routes/courses.js");
+const videosRouter = require("./server/routes/videos.js");
 
 app.use(express.json());
 
@@ -16,6 +18,8 @@ app.use(express.static(__dirname + "/../client/dist"));
 app.use("/auth", authRoute);
 
 app.use("/languages", languagesRouter);
+app.use("/courses", coursesRouter);
+app.use("/videos", videosRouter);
 
 //all routes below this middelware are secure
 // app.use(authenticateUser);
