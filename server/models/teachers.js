@@ -23,6 +23,10 @@ const Teacher = sequelize.define(
       allowNull: false,
       unique: true,
     },
+    password: {
+      type: DataTypes.STRING(500),
+      allowNull: false,
+    },
     image: {
       type: DataTypes.TEXT,
       allowNull: false,
