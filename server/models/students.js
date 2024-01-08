@@ -19,16 +19,20 @@ const Student = sequelize.define(
       allowNull: false,
       unique: true,
     },
+    password: {
+      type: DataTypes.STRING(500),
+      allowNull: false,
+    },
     image: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    phase: {
-      type: DataTypes.STRING(45),
+    Phrases: {
+      type: DataTypes.ENUM("Bootstrap", "Junior", "Senior"),
       allowNull: false,
     },
     level: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },

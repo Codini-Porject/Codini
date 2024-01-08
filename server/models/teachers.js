@@ -10,10 +10,6 @@ const Teacher = sequelize.define(
       autoIncrement: true,
       allowNull: false,
     },
-    teacherscol: {
-      type: DataTypes.STRING(45),
-      allowNull: true,
-    },
     name: {
       type: DataTypes.STRING(45),
       allowNull: false,
@@ -22,6 +18,10 @@ const Teacher = sequelize.define(
       type: DataTypes.STRING(45),
       allowNull: false,
       unique: true,
+    },
+    password: {
+      type: DataTypes.STRING(500),
+      allowNull: false,
     },
     image: {
       type: DataTypes.TEXT,
