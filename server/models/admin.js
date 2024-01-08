@@ -22,10 +22,6 @@ const Admin = sequelize.define(
       type: DataTypes.STRING(45),
       allowNull: false,
     },
-    admincol: {
-      type: DataTypes.STRING(45),
-      allowNull: true,
-    },
     reclamation_idreclamation: {
       type: DataTypes.INTEGER,
       allowNull: false,
