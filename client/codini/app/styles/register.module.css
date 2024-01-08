@@ -1,0 +1,209 @@
+.loremIpsumIs,
+.loremIpsumIs1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff),
+    linear-gradient(#fff, #fff), linear-gradient(#fff, #fff),
+    linear-gradient(#fff, #fff), #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 431.46px;
+  height: 56px;
+}
+.loremIpsumIs1 {
+  top: 61px;
+  font-size: 25px;
+  width: 298.55px;
+  height: 38px;
+}
+.groupChild,
+.loremIpsumIsSimplyParent,
+.registerInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 431.46px;
+  height: 99px;
+}
+.groupChild,
+.registerInner {
+  top: 709px;
+  left: 109.44px;
+}
+.groupChild {
+  top: 0;
+  left: 0;
+  border-radius: 33px;
+  background-color: rgba(73, 187, 189, 0.6);
+  width: 329px;
+  height: 59px;
+}
+.login1 {
+  position: absolute;
+  top: 18px;
+  left: 72px;
+  font-weight: 500;
+}
+.groupItem {
+  position: absolute;
+  top: 10px;
+  left: 171px;
+  border-radius: 33px;
+  width: 146px;
+  height: 40px;
+  object-fit: cover;
+}
+.register1 {
+  position: absolute;
+  top: 18px;
+  left: 211px;
+  font-weight: 500;
+}
+.rectangleParent {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 329px;
+  height: 59px;
+}
+.groupContainer,
+.welcomeToLorem {
+  position: absolute;
+  top: 0;
+  left: 86px;
+  color: #000;
+}
+.groupContainer {
+  left: 53px;
+  width: 329px;
+  height: 107px;
+  color: #fff;
+}
+.groupInner {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  border-radius: 40px;
+  background-color: #fff;
+  border: 1px solid #49bbbd;
+  box-sizing: border-box;
+  width: 435px;
+  height: 54px;
+}
+.enterYourUser,
+.userName {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.enterYourUser {
+  top: 51px;
+  left: 31px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #acacac;
+}
+.rectangleGroup {
+  position: absolute;
+  top: 360px;
+  left: 0;
+  width: 435px;
+  height: 90px;
+}
+.invisible1Icon,
+.rectangleContainer,
+.rectangleParent1 {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  width: 435px;
+  height: 90px;
+}
+.invisible1Icon,
+.rectangleParent1 {
+  top: 0;
+}
+.invisible1Icon {
+  top: 54px;
+  left: 389px;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.groupDiv {
+  position: absolute;
+  top: 480px;
+  left: 0;
+  width: 435px;
+  height: 90px;
+}
+.groupChild2,
+.loremIpsumIs2 {
+  position: absolute;
+  left: 0;
+  height: 49px;
+}
+.loremIpsumIs2 {
+  top: 159px;
+  color: #5b5b5b;
+  display: inline-block;
+  width: 454px;
+}
+.groupChild2 {
+  top: 0;
+  border-radius: 36px;
+  background-color: #49bbbd;
+  width: 232px;
+}
+.register2 {
+  position: absolute;
+  top: 13px;
+  left: 94px;
+}
+.rectangleParent2 {
+  position: absolute;
+  top: 625px;
+  left: 203px;
+  width: 232px;
+  height: 49px;
+  color: #fff;
+}
+.groupParent {
+  position: absolute;
+  top: 113px;
+  left: 889px;
+  width: 454px;
+  height: 674px;
+  font-size: 16px;
+}
+.lovelyTeenageGirlWithCurlyIcon {
+  position: absolute;
+  top: -3px;
+  left: 109px;
+  width: 544px;
+  height: 892px;
+  object-fit: cover;
+}
+.register {
+  position: absolute;
+  top: 62px;
+  left: 0;
+  background-color: #fffefc;
+  width: 1440px;
+  height: 900px;
+  overflow: hidden;
+}
+.login {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 37px;
+  color: #000;
+  font-family: Poppins;
+}
