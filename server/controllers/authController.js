@@ -75,7 +75,6 @@ const createUser = async (req, res) => {
       });
       res.status(201).json(newStudent);
     } else {
-      // Handle the case where an invalid role is provided
       res.status(400).json({ error: "Invalid role specified" });
     }
   } catch (error) {
