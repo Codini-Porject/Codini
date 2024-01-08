@@ -1,0 +1,780 @@
+.imageBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px 10px 0 0;
+  background-color: #f2f2f2;
+  width: 474px;
+  height: 474px;
+}
+.sectionImgIcon {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  border-radius: 10px;
+  width: 434px;
+  height: 471px;
+  object-fit: cover;
+}
+.features {
+  position: relative;
+  font-size: 24px;
+  line-height: 100%;
+}
+.atWeekenduxThe,
+.weAreAlways {
+  display: inline-block;
+  width: 572px;
+}
+.weAreAlways {
+  position: relative;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 500;
+  color: #141414;
+}
+.atWeekenduxThe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 26px;
+}
+.youWillFind {
+  margin: 0;
+}
+.youWillFindContainer {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  line-height: 26px;
+  display: inline-block;
+  width: 572px;
+}
+.sectionContent {
+  position: relative;
+  width: 572px;
+  height: 254px;
+  color: #1e1e1e;
+}
+.contactUs {
+  position: relative;
+  font-weight: 500;
+}
+.materialSymbolsarrowForwardIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.button {
+  border-radius: 100px;
+  background-color: #22b286;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  gap: 10px;
+  text-align: center;
+  color: #fff;
+}
+.sectionData {
+  position: absolute;
+  top: 0;
+  left: 588px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.featuresSection {
+  position: relative;
+  width: 1160px;
+  height: 622px;
+}
+.ourBenefits {
+  position: absolute;
+  top: calc(50% - 392px);
+  left: calc(50% - 73px);
+  font-size: 24px;
+  line-height: 100%;
+  text-align: center;
+}
+.byJoiningWeekens,
+.installOurTopRated {
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+}
+.byJoiningWeekens {
+  top: 54px;
+  left: 196px;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 600;
+  color: #141414;
+  width: 804px;
+}
+.installOurTopRated {
+  top: 200px;
+  left: 294px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #1e1e1e;
+  width: 572px;
+}
+.groupChild {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  border-radius: 50%;
+  background-color: #22b286;
+  width: 54px;
+  height: 54px;
+  opacity: 0.1;
+}
+.div {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  font-weight: 500;
+}
+.ellipseParent {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 54px;
+  height: 57px;
+}
+.cardNumber {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: right;
+}
+.standardization {
+  position: relative;
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 500;
+  color: #141414;
+}
+.readMore {
+  font-weight: 500;
+  color: #22b286;
+}
+.whenWorkingInContainer {
+  position: relative;
+  font-size: 16px;
+  line-height: 26px;
+  display: inline-block;
+  width: 336px;
+  color: #1e1e1e;
+}
+.benefitCard,
+.featureCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.featureCardContent {
+  gap: 20px;
+}
+.benefitCard {
+  position: absolute;
+  top: 292px;
+  left: 0;
+  border-radius: 10px;
+  background-color: #f7fdf9;
+  height: 236px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.groupItem {
+  position: absolute;
+  top: 3px;
+  left: 57px;
+  border-radius: 50%;
+  background-color: #22b286;
+  width: 54px;
+  height: 54px;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+  opacity: 0.1;
+}
+.ellipseGroup {
+  position: absolute;
+  top: -1px;
+  left: -3px;
+  width: 57px;
+  height: 57px;
+}
+.weekend {
+  text-transform: capitalize;
+}
+.readMore1 {
+  font-weight: 500;
+  font-family: Inter;
+  color: #22b286;
+}
+.benefitCard1 {
+  position: absolute;
+  top: 548px;
+  left: 0;
+  border-radius: 10px;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  height: 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+.groupInner {
+  position: absolute;
+  top: 3px;
+  left: 55px;
+  border-radius: 50%;
+  background-color: #22b286;
+  width: 54px;
+  height: 54px;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+  opacity: 0.1;
+}
+.ellipseContainer {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 55px;
+  height: 57px;
+}
+.benefitCard2 {
+  position: absolute;
+  top: 292px;
+  left: 392px;
+  border-radius: 10px;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  height: 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+.ellipseDiv {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: #22b286;
+  width: 54px;
+  height: 54px;
+  opacity: 0.1;
+}
+.groupDiv {
+  position: absolute;
+  top: -1px;
+  left: -2px;
+  width: 56px;
+  height: 57px;
+}
+.benefitCard3,
+.benefitCard4 {
+  position: absolute;
+  top: 548px;
+  left: 392px;
+  border-radius: 10px;
+  background-color: #f7fdf9;
+  height: 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.benefitCard4 {
+  top: 292px;
+  left: 784px;
+}
+.groupChild2 {
+  position: absolute;
+  top: 3px;
+  left: 56px;
+  border-radius: 50%;
+  background-color: #22b286;
+  width: 54px;
+  height: 54px;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+  opacity: 0.1;
+}
+.benefitCard5 {
+  position: absolute;
+  top: 548px;
+  left: 784px;
+  border-radius: 10px;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  height: 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+.benefitsSection {
+  position: relative;
+  width: 1160px;
+  height: 784px;
+  font-size: 34px;
+}
+.aboutUsInner,
+.featuresSectionParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.featuresSectionParent {
+  justify-content: center;
+  gap: 90px;
+}
+.aboutUsInner {
+  position: absolute;
+  top: 781px;
+  left: 151px;
+  height: 2119px;
+  justify-content: flex-start;
+}
+.frameChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 900px;
+}
+.image2Icon {
+  position: relative;
+  width: 79.83px;
+  height: 72px;
+  object-fit: cover;
+}
+.label {
+  position: relative;
+  line-height: 20px;
+  font-weight: 500;
+  display: none;
+}
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  z-index: 0;
+}
+.searchIcon,
+.text,
+.text1 {
+  position: relative;
+}
+.text {
+  flex: 1;
+  line-height: 24px;
+  z-index: 1;
+}
+.text1 {
+  line-height: 20px;
+  font-weight: 600;
+}
+.button1,
+.buttonBase {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.buttonBase {
+  background-color: #f2fffb;
+  overflow: hidden;
+  justify-content: center;
+  padding: 8px 16px;
+  gap: 8px;
+}
+.button1 {
+  margin: 0 !important;
+  position: absolute;
+  top: calc(50% - 18px);
+  left: 238px;
+  justify-content: flex-end;
+  z-index: 2;
+  font-size: 14px;
+  color: #20b486;
+}
+.content,
+.input,
+.inputWithLabel {
+  display: flex;
+  justify-content: flex-start;
+}
+.content {
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  gap: 8px;
+}
+.input,
+.inputWithLabel {
+  align-self: stretch;
+}
+.input {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  border: 1px solid #d0d5dd;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: #667085;
+}
+.inputWithLabel {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.inputFieldBase {
+  width: 367px;
+}
+.image2Parent,
+.inputField,
+.inputFieldBase {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.image2Parent {
+  flex-direction: row;
+  align-items: center;
+  gap: 55px;
+}
+.aboutUs1,
+.home {
+  position: relative;
+  line-height: 24px;
+  font-weight: 500;
+}
+.aboutUs1 {
+  font-weight: 600;
+  color: #1a906b;
+}
+.frameGroup,
+.homeParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.homeParent {
+  gap: 20px;
+  font-size: 16px;
+  color: #101828;
+}
+.frameGroup {
+  gap: 30px;
+}
+.signIn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 24px;
+  font-weight: 500;
+}
+.menu {
+  position: relative;
+  width: 52px;
+  height: 24px;
+}
+.button2,
+.buttonBase1 {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+}
+.buttonBase1 {
+  background-color: #20b486;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 0 0 4px #f4ebff;
+  border: 1px solid #20b486;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+}
+.button2 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #fff;
+}
+.frameParent,
+.menuParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.menuParent {
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 16px;
+  color: #101828;
+}
+.frameParent {
+  position: absolute;
+  top: 28px;
+  left: 120px;
+  justify-content: flex-start;
+  gap: 50px;
+}
+.rectangleGroup,
+.rectangleParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 100px;
+}
+.rectangleParent {
+  font-size: 14px;
+  color: #344054;
+}
+.aboutUsSectionChild {
+  position: absolute;
+  top: 20px;
+  left: 686px;
+  border-radius: 10px 10px 0 0;
+  background-color: #f2f2f2;
+  width: 474px;
+  height: 474px;
+}
+.aboutUsSectionInner,
+.aboutUsSectionItem {
+  position: absolute;
+  top: 268px;
+  left: 646px;
+  border-radius: 10px;
+  width: 376px;
+  height: 246px;
+  object-fit: cover;
+}
+.aboutUsSectionInner {
+  top: 0;
+  left: 824px;
+}
+.aboutUs2 {
+  position: relative;
+  font-size: 64px;
+  line-height: 100%;
+}
+.providingTheBest {
+  color: #141414;
+}
+.weekendUxProvidingContainer {
+  position: relative;
+  font-size: 40px;
+  line-height: 58px;
+  text-transform: capitalize;
+  font-weight: 600;
+  text-align: left;
+  display: inline-block;
+  width: 572px;
+  color: #ff9b26;
+}
+.sectionContent1 {
+  position: relative;
+  width: 572px;
+  height: 182px;
+  text-align: left;
+  color: #1e1e1e;
+}
+.button3 {
+  border-radius: 100px;
+  background-color: #22b286;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  gap: 10px;
+  color: #fff;
+}
+.sectionData1 {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.aboutUsSection {
+  position: absolute;
+  top: 177px;
+  left: 120px;
+  width: 1200px;
+  height: 552px;
+  text-align: center;
+  color: #1a906b;
+}
+.footerChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #252641;
+  width: 1920px;
+  height: 513px;
+}
+.classTechnologiesInc,
+.subscribeToGet {
+  position: absolute;
+  top: 440px;
+  left: 781px;
+  letter-spacing: 0.04em;
+}
+.subscribeToGet {
+  top: 172px;
+  left: 740px;
+  font-size: 26px;
+  font-weight: 500;
+}
+.groupChild3,
+.lineDiv {
+  position: absolute;
+  top: 7.5px;
+  left: 112.5px;
+  border-right: 1px solid #626381;
+  box-sizing: border-box;
+  width: 1px;
+  height: 18px;
+}
+.groupChild3 {
+  left: 313.5px;
+}
+.careers,
+.privacyPolicy,
+.termsConditions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.04em;
+}
+.privacyPolicy,
+.termsConditions {
+  left: 133px;
+}
+.termsConditions {
+  left: 334px;
+}
+.groupChild4,
+.lineParent {
+  position: absolute;
+  top: 387px;
+  left: 678px;
+  width: 564px;
+  height: 33px;
+}
+.groupChild4 {
+  top: 0;
+  left: 0;
+  border-radius: 80px;
+  border: 1px solid #83839a;
+  box-sizing: border-box;
+  width: 400px;
+  height: 60px;
+}
+.yourEmail {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  letter-spacing: 0.04em;
+}
+.groupChild5,
+.groupChild6 {
+  position: absolute;
+  border-radius: 60px;
+}
+.groupChild5 {
+  top: 30px;
+  left: 12px;
+  background-color: #545ae8;
+  filter: blur(54px);
+  width: 151px;
+  height: 29px;
+  opacity: 0.5;
+}
+.groupChild6 {
+  top: 0;
+  left: 0;
+  background-color: #49bbbd;
+  width: 179px;
+  height: 60px;
+}
+.subscribe {
+  position: absolute;
+  top: 14px;
+  left: 34px;
+  font-weight: 500;
+}
+.rectangleParent1 {
+  position: absolute;
+  top: 0;
+  left: 420px;
+  width: 179px;
+  height: 60px;
+  text-align: left;
+  font-size: 22px;
+  color: #fff;
+}
+.footer,
+.rectangleContainer {
+  position: absolute;
+  top: 231px;
+  left: 661px;
+  width: 599px;
+  height: 60px;
+  font-size: 20px;
+  color: #83839a;
+}
+.footer {
+  top: 2445px;
+  left: -317px;
+  width: 1920px;
+  height: 513px;
+  text-align: center;
+  font-size: 22px;
+  color: #b2b3cf;
+  font-family: Poppins;
+}
+.aboutUs {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 2958px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #22b286;
+  font-family: Inter;
+}

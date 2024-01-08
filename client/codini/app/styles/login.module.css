@@ -1,0 +1,204 @@
+.groupChild,
+.groupItem {
+  position: absolute;
+  border-radius: 33px;
+}
+.groupChild {
+  top: 0;
+  left: 0;
+  background-color: rgba(73, 187, 189, 0.6);
+  width: 329px;
+  height: 59px;
+}
+.groupItem {
+  top: 10px;
+  left: 13px;
+  width: 146px;
+  height: 40px;
+  object-fit: cover;
+}
+.login1 {
+  position: absolute;
+  top: 18px;
+  left: 64px;
+  font-weight: 500;
+}
+.rectangleParent,
+.register {
+  position: absolute;
+  top: 18px;
+  left: 204px;
+}
+.rectangleParent {
+  top: 48px;
+  left: 0;
+  width: 329px;
+  height: 59px;
+}
+.welcomeToLorem {
+  position: absolute;
+  top: 0;
+  left: 86px;
+  color: #000;
+}
+.groupContainer,
+.groupInner {
+  position: absolute;
+  top: 0;
+  left: 53px;
+  width: 329px;
+  height: 107px;
+}
+.groupInner {
+  top: 36px;
+  left: 0;
+  border-radius: 40px;
+  background-color: #fff;
+  border: 1px solid #49bbbd;
+  box-sizing: border-box;
+  width: 435px;
+  height: 54px;
+}
+.enterYourUser,
+.userName {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.enterYourUser {
+  top: 51px;
+  left: 31px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #acacac;
+}
+.invisible1Icon,
+.rectangleContainer,
+.rectangleGroup {
+  position: absolute;
+  top: 91px;
+  left: 0;
+  width: 435px;
+  height: 90px;
+}
+.invisible1Icon,
+.rectangleContainer {
+  top: 0;
+}
+.invisible1Icon {
+  top: 54px;
+  left: 389px;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.groupParent1 {
+  position: absolute;
+  top: 211px;
+  left: 0;
+  width: 435px;
+  height: 90px;
+}
+.loremIpsumIs {
+  top: 0;
+  color: #5b5b5b;
+  display: inline-block;
+  width: 454px;
+  height: 49px;
+}
+.groupChild1,
+.groupDiv,
+.loremIpsumIs {
+  position: absolute;
+  left: 0;
+}
+.groupDiv {
+  top: 159px;
+  width: 454px;
+  height: 301px;
+  color: #000;
+}
+.groupChild1 {
+  top: 3px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  width: 15px;
+  height: 15px;
+}
+.forgotPassword,
+.rememebrMe {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-weight: 300;
+}
+.forgotPassword {
+  left: 324px;
+}
+.rectangleParent1 {
+  position: absolute;
+  top: 482px;
+  left: 0;
+  width: 432px;
+  height: 18px;
+  font-size: 12px;
+  color: #000;
+}
+.groupChild2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 36px;
+  background-color: #49bbbd;
+  width: 232px;
+  height: 49px;
+}
+.login2 {
+  position: absolute;
+  top: 13px;
+  left: 94px;
+}
+.groupParent,
+.rectangleParent2 {
+  position: absolute;
+  top: 562px;
+  left: 203px;
+  width: 232px;
+  height: 49px;
+}
+.groupParent {
+  top: 145px;
+  left: 889px;
+  width: 454px;
+  height: 611px;
+}
+.lovelyTeenageGirlWithCurlyIcon {
+  position: absolute;
+  top: 0;
+  left: 176px;
+  width: 544px;
+  height: 892px;
+  object-fit: cover;
+}
+.login {
+  position: absolute;
+  top: 118px;
+  left: 2px;
+  background-color: #fffefc;
+  width: 1440px;
+  height: 900px;
+  overflow: hidden;
+}
+.signUp {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 1136px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #fff;
+  font-family: Poppins;
+}
