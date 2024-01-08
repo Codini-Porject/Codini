@@ -26,9 +26,9 @@ const deleteOneStudent = async (req, res) => {
   const { id } = req.params;
   try {
     const student = await Student.findOne({
-      where: { idteachers: id },
+      where: { idstudents: id },
     });
-    await teacher.destroy();
+    await student.destroy();
     res.json({ message: "Student deleted successfully" });
   } catch (error) {
     console.error(error);
@@ -38,14 +38,14 @@ const deleteOneStudent = async (req, res) => {
 
 const addOneStudent = async (req, res) => {
   try {
-    const { name, email, password, image, review, accepted } = req.body;
+    const { name, email, password, image, Phrases, level } = req.body;
     const newStudent = await Student.create({
       name,
       email,
       password,
       image,
-      review,
-      accepted,
+      Phrases,
+      level,
     });
     res.status(201).json(newStudent);
   } catch (error) {
@@ -56,10 +56,10 @@ const addOneStudent = async (req, res) => {
 
 const updateStudent = async (req, res) => {
   const { id } = req.params;
-  const { name, password, image, review, accepted } = req.body;
+  const { name, password, image, Phrases, level } = req.body;
   try {
     const student = await Student.findByPk(id);
-    await student.update({ name, password, image, review, accepted });
+    await student.update({ name, password, image, Phrases, level });
     res.json({ message: "Student updated successfully" });
   } catch (error) {
     console.error(error);

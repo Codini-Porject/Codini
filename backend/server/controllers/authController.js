@@ -55,7 +55,6 @@ const createUser = async (req, res) => {
 
     if (role === "teacher") {
       const newTeacher = await Teacher.create({
-        teacherscol: "value",
         name: name,
         email,
         password: hashedPassword,

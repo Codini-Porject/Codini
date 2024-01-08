@@ -22,9 +22,13 @@ const Admin = sequelize.define(
       type: DataTypes.STRING(45),
       allowNull: false,
     },
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     reclamation_idreclamation: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: Reclamation,
         key: "idreclamation",

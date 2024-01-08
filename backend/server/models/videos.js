@@ -30,11 +30,7 @@ const Videos = sequelize.define(
     },
     history_idhistory: {
       type: DataTypes.INTEGER,
-      allowNull: false, // Replace this with the appropriate reference
-      // references: {
-      //   model: SomeModel,
-      //   key: 'someKey'
-      // }
+      allowNull: true,
     },
   },
   {

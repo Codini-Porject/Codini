@@ -14,6 +14,10 @@ const Language = sequelize.define(
       type: DataTypes.STRING(45),
       allowNull: false,
     },
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
   },
   {
     timestamps: false,

@@ -60,12 +60,9 @@ const addCourse = async (req, res) => {
   const { teachers_idteachers, desc, price, rate, languages_idlanguages } =
     req.body;
 
-  const { role } = req.user;
+  // const { role } = req.user;
 
   try {
-    if (role !== "teacher") {
-      return res.status(403).json({ error: "Unauthorized" });
-    }
 
     const newCourse = await Course.create({
       teachers_idteachers,

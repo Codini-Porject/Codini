@@ -26,13 +26,13 @@ const getLanguageById = async (req, res) => {
 
 const updateLanguage = async (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
+  const { name , image } = req.body;
   try {
     const language = await Language.findByPk(id);
     if (!language) {
       return res.status(404).json({ message: "Language not found" });
     }
-    await language.update({ name });
+    await language.update({ name , image});
     res.json({ message: "Language updated successfully" });
   } catch (error) {
     console.error(error);
@@ -56,9 +56,9 @@ const deleteLanguage = async (req, res) => {
 };
 
 const addLanguage = async (req, res) => {
-  const { name } = req.body;
+  const { name,image } = req.body;
   try {
-    const newLanguage = await Language.create({ name });
+    const newLanguage = await Language.create({ name , image });
     res.status(201).json(newLanguage);
   } catch (error) {
     console.error(error);
