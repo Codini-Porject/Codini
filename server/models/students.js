@@ -27,12 +27,12 @@ const Student = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    phase: {
-      type: DataTypes.STRING(45),
+    Phrases: {
+      type: DataTypes.ENUM("Bootstrap", "Junior", "Senior"),
       allowNull: false,
     },
     level: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
