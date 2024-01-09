@@ -1,4 +1,3 @@
-
 .footer-child {
   position: absolute;
   top: 0;
@@ -170,13 +169,14 @@
   color: var(--color-lightslategray);
 }
 .footer {
-  top: 1230px;
+  top: 4500px;
   left: 29px;
   width: 1920px;
   height: 593px;
   text-align: center;
   font-size: var(--font-size-3xl);
   color: var(--color-lightsteelblue);
+  display: fixed;
 }
 .rectangle-icon {
   position: absolute;
@@ -189,4 +189,3 @@
   opacity: 0.2;
   mix-blend-mode: normal;
 }
-
