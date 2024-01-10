@@ -1,6 +1,28 @@
+import  Link  from 'next/link';
 import styles from "../app/styles/home.module.css";
 
+
 const Home = () => {
+  
+  // const handleGetStartedClick = () => {
+  //   navigation.push('@/app/(auth)/register/page.tsx');
+  // };
+
+  // const handleFreeTrialClick = () => {
+  //   navigation.push('@/app/(auth)/register/page.tsx');
+  // };
+  interface Course {
+    title: string;
+    instructor: string;
+    price: number;
+    description: string;
+    image: string;
+}
+const courses: Course[] = [
+  // { title: "JavaScript Fundamentals", instructor: "Jane Cooper", price: 57.84, ... },
+  // { title: "Python for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
+  // { title: "PHP for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
+];
   return (
     <div className={styles.designFile}>
       <div className={styles.designFileInner}>
@@ -57,7 +79,7 @@ const Home = () => {
                 <b className={styles.upYourSkillsContainer}>
                   <p className={styles.upYourSkills}>
                     <span>{`up your `}</span>
-                    <span className={styles.skills}>skills</span>
+                    <span className={styles.skills}>software skills</span>
                   </p>
                   <p className={styles.toAdvanceYourCareerPath}>
                     <span className={styles.to}>{`to `}</span>
@@ -68,22 +90,22 @@ const Home = () => {
                   </p>
                 </b>
                 <div className={styles.learnUiUxDesign}>
-                  Learn UI-UX Design skills with weekend UX . The latest online
-                  learning system and material that help your knowledge growing.
+                  Learn software languages online with CODINI.  The latest online
+                  learning system that help your coding knowledge growing...
                 </div>
               </div>
               <div className={styles.buttonParent}>
-                <div className={styles.button2}>
-                  <div className={styles.buttonBase2}>
-                    <div className={styles.text3}>Get Started</div>
-                  </div>
-                </div>
-                <div className={styles.button3}>
-                  <div className={styles.buttonBase3}>
-                    <div className={styles.text3}>Get free trial</div>
-                  </div>
-                </div>
-              </div>
+        <Link href="/register"><button><div className={styles.button2} >
+        <div className={styles.buttonBase2}>
+        <div className={styles.text3}>Get Started</div>
+        </div>
+        </div></button></Link>
+        <Link href="/register"><button><div className={styles.button3} >
+        <div className={styles.buttonBase3}>
+        <div className={styles.text3}>Get free trial</div>
+        </div>
+        </div></button></Link>
+        </div>
             </div>
             <div className={styles.frameParent1}>
               <div className={styles.groupParent}>
@@ -92,7 +114,7 @@ const Home = () => {
                   alt=""
                   src="/group-518@2x.png"
                 />
-                <div className={styles.publicSpeaking}>Public Speaking</div>
+                <div className={styles.publicSpeaking}>online Teachers</div>
               </div>
               <div className={styles.groupParent}>
                 <img
@@ -100,7 +122,7 @@ const Home = () => {
                   alt=""
                   src="/briefcase@2x.png"
                 />
-                <div className={styles.publicSpeaking}>Career-Oriented</div>
+                <div className={styles.publicSpeaking}>Full Courses</div>
               </div>
               <div className={styles.groupParent}>
                 <img
@@ -108,7 +130,7 @@ const Home = () => {
                   alt=""
                   src="/idea@2x.png"
                 />
-                <div className={styles.publicSpeaking}>Creative Thinking</div>
+                <div className={styles.publicSpeaking}>Quiz </div>
               </div>
             </div>
           </div>
@@ -119,7 +141,7 @@ const Home = () => {
         <div className={styles.headingAndSupportingTextParent}>
           <div className={styles.headingAndSupportingText}>
             <div className={styles.headingAndSubheading}>
-              <div className={styles.subheading}>Our Services</div>
+              <div className={styles.subheading}>Our Packs</div>
               <div
                 className={styles.heading}
               >{`Fostering a playful & engaging learning environment`}</div>
@@ -142,7 +164,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className={styles.learnMoreParent}>
-                  <div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                </button></Link>
                   <img
                     className={styles.vectorIcon}
                     alt=""
@@ -164,7 +187,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className={styles.learnMoreGroup}>
-                  <div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                </button></Link>
                   <img
                     className={styles.vectorIcon}
                     alt=""
@@ -188,7 +212,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className={styles.learnMoreGroup}>
-                  <div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                </button></Link>
                   <img
                     className={styles.vectorIcon}
                     alt=""
@@ -203,106 +228,33 @@ const Home = () => {
         <div className={styles.headingAndSupportingTextGroup}>
           <div className={styles.headingAndSupportingText1}>
             <div className={styles.headingAndSubheading}>
-              <div className={styles.subheading}>Explore Programs</div>
-              <div className={styles.heading}>Our Most Popular Class</div>
+            <div className={styles.subheading}>Explore Our Program</div>
+              <div className={styles.heading}>Our Most Popular Courses</div>
             </div>
             <div className={styles.supportingText}>
-              Let's join our famous class, the knowledge provided will
-              definitely be useful for you.
+              Let's discover our most famous courses, the knowledge provided will
+              definitely be useful for you to become a software engineer
             </div>
           </div>
           <div className={styles.blogPostCardParent}>
-            <div className={styles.blogPostCard}>
-              <div className={styles.image}>
-                <div className={styles.parent}>
-                  <img className={styles.icon5} alt="" src="/22@2x.png" />
-                  <div className={styles.hr12Mins}>08 hr 12 mins</div>
-                </div>
-              </div>
-              <div className={styles.content2}>
-                <div className={styles.headingAndSubheading2}>
-                  <div className={styles.author}>Design</div>
-                  <div className={styles.headingAndText}>
-                    <div className={styles.headingAndIcon}>
-                      <div className={styles.heading2}>
-                        Figma UI UX Design..
-                      </div>
-                      <div className={styles.iconWrap}>
-                        <img
-                          className={styles.arrowUpRightIcon}
-                          alt=""
-                          src="/arrowupright@2x.png"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.formerFrontendDev}>
-                      Use Figma to get a job in UI Design, User Interface, User
-                      Experience design.
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.avatarLabelGroup}>
-                  <img
-                    className={styles.avatarIcon}
-                    alt=""
-                    src="/avatar@2x.png"
-                  />
-                  <div className={styles.inputField}>
-                    <div className={styles.text5}>Jane Cooper</div>
-                    <div className={styles.supportingText2}>2001 Enrolled</div>
-                  </div>
-                </div>
-                <div className={styles.rating}>
-                  <div className={styles.frameParent14}>
-                    <div className={styles.group}>
-                      <div className={styles.hr12Mins}>4.3</div>
-                      <div className={styles.rating1}>
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-1@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-2@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-3@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-4@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-5@2x.png"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.div4}>(16,325)</div>
-                  </div>
-                </div>
-                <b className={styles.b1}>$17.84</b>
-              </div>
-            </div>
+          {/* <div>
+      {courses.map((course) => (
+        <CourseCard key={course.id} course={course} />
+      ))}
+    </div> */}
             <div className={styles.blogPostCard}>
               <div className={styles.image1}>
                 <div className={styles.container}>
                   <img className={styles.icon5} alt="" src="/22@2x.png" />
-                  <div className={styles.hr12Mins}>06 hr 3 mins</div>
+                  <div className={styles.hr12Mins}>33 hr 50 mins</div>
                 </div>
               </div>
               <div className={styles.content2}>
                 <div className={styles.headingAndSubheading2}>
-                  <div className={styles.author}>Design</div>
+                  <div className={styles.author}>Python</div>
                   <div className={styles.headingAndText}>
                     <div className={styles.headingAndIcon}>
-                      <div className={styles.heading2}>Learn With Shoaib</div>
+                      <div className={styles.heading2}>Python courses for all the levels</div>
                       <div className={styles.iconWrap}>
                         <img
                           className={styles.arrowUpRightIcon}
@@ -312,8 +264,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className={styles.formerFrontendDev}>
-                      Design Web Sites and Mobile Apps that Your Users Love and
-                      Return to Again.
+                    free access for the first courses
                     </div>
                   </div>
                 </div>
@@ -331,7 +282,7 @@ const Home = () => {
                 <div className={styles.rating2}>
                   <div className={styles.frameParent14}>
                     <div className={styles.group}>
-                      <div className={styles.hr12Mins}>3.9</div>
+                      <div className={styles.hr12Mins}>7.9</div>
                       <div className={styles.rating1}>
                         <img
                           className={styles.ratingChild}
@@ -363,93 +314,17 @@ const Home = () => {
                     <div className={styles.div4}>(832)</div>
                   </div>
                 </div>
-                <b className={styles.b1}>$8.99</b>
-              </div>
-            </div>
-            <div className={styles.blogPostCard}>
-              <div className={styles.image2}>
-                <div className={styles.container}>
-                  <img className={styles.icon5} alt="" src="/22@2x.png" />
-                  <div className={styles.hr12Mins}>01 hr 2 mins</div>
-                </div>
-              </div>
-              <div className={styles.content2}>
-                <div className={styles.headingAndSubheading2}>
-                  <div className={styles.author}>Design</div>
-                  <div className={styles.headingAndText}>
-                    <div className={styles.headingAndIcon}>
-                      <div className={styles.heading2}>
-                        Building User Interface..
-                      </div>
-                      <div className={styles.iconWrap}>
-                        <img
-                          className={styles.arrowUpRightIcon}
-                          alt=""
-                          src="/arrowupright@2x.png"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.formerFrontendDev}>
-                      Learn how to apply User Experience (UX) principles to your
-                      website designs.
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.avatarLabelGroup}>
-                  <img
-                    className={styles.avatarIcon}
-                    alt=""
-                    src="/avatar@2x.png"
-                  />
-                  <div className={styles.inputField}>
-                    <div className={styles.text5}>Esther Howard</div>
-                    <div className={styles.supportingText2}>2001 Enrolled</div>
-                  </div>
-                </div>
-                <div className={styles.rating4}>
-                  <div className={styles.frameParent14}>
-                    <div className={styles.group}>
-                      <div className={styles.hr12Mins}>4.2</div>
-                      <div className={styles.rating1}>
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-1@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-2@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-3@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-4@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-5@2x.png"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.div4}>(125)</div>
-                  </div>
-                </div>
-                <b className={styles.b1}>$11.70</b>
+                <b className={styles.b1}>$48.99</b>
               </div>
             </div>
           </div>
           <img className={styles.frameInner} alt="" src="/group-521@2x.png" />
           <div className={styles.button4}>
-            <div className={styles.buttonBase4}>
+          <Link href="/register"><button > <div className={styles.buttonBase4}>
               <div className={styles.text1}>Explore All Programs</div>
             </div>
+            </button>
+            </Link>
           </div>
         </div>
         <div className={styles.headingAndSupportingTextContainer}>

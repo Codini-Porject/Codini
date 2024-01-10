@@ -1,24 +1,37 @@
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
     <div className="Navbar">
-       <img className="image15Icon"alt="" src="/image-15@2x.png" />
-       <div className="ab">
-      <div className="home">Home</div>
-      <div className="careers">Careers</div>
-      <div className="courses">Courses</div>
-      <div className="blog">Blog</div>
-      <div className="aboutUs">About Us</div>
+      <Link href="/page">
+        <a>
+          <img className="image15Icon" alt="Codinilogo" src="/Codinilogo.jpg" />
+        </a>
+      </Link>
+      <div className="ab">
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <Link href="/careers">
+          <a>Careers</a>
+        </Link>
+        <Link href="/courses">
+          <a>Courses</a>
+        </Link>
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
+        <Link href="/about">
+          <a>About Us</a>
+        </Link>
       </div>
-      <div className="lina">Louay</div>
-     
+      <div className="lina">LogIn</div>
       <div className="rectangleParent">
         <div className="groupChild" />
-        <img className="image12Icon" alt="" src="" />
-        
+        <img className="image12Icon" alt="Placeholder" src="path/to/placeholder.jpg" />
       </div>
-     
     </div>
   );
 };
+
 export default Navbar;

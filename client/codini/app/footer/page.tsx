@@ -1,4 +1,4 @@
-
+import  Link  from 'next/link';
 import "./Footer.css";
 
 const Footer = () => {
@@ -6,11 +6,11 @@ const Footer = () => {
     <div className="footer">
         <div className="footer-child" />
         <div className="class-technologies-inc">{`© 2021 Class Technologies Inc. `}</div>
-        <div className="subscribe-to-get">Subscribe to get our Newsletter</div>
+        <div className="subscribe-to-get">Subscribe to get the full courses</div>
         <div className="group-parent">
           <div className="polygon-parent">
-            <img className="group-item" alt="" src="/polygon-2@2x.png" />
-            <b className="totc">TOTC</b>
+            <img className="group-item" alt="" src="/Clogo.png" />
+            {/* <b className="totc">CODINI</b> */}
           </div>
           <div className="group-inner" />
           <div className="virtual-class-for">Virtual Class for Zoom</div>
@@ -23,12 +23,13 @@ const Footer = () => {
           <div className="terms-conditions">{`Terms & Conditions`}</div>
         </div>
         <div className="rectangle-group">
-          <div className="rectangle-div" />
-          <div className="your-email">Your Email</div>
+          {/* <div className="rectangle-div" /> */}
+          {/* <div className="your-email">Your Email</div> */}
           <div className="rectangle-container">
             <div className="group-child2" />
             <div className="group-child3" />
-            <div className="subscribe">Subscribe</div>
+            <Link href="/register"><button><div className="subscribe">Subscribe</div></button>
+            </Link>
           </div>
         </div>
       </div>
