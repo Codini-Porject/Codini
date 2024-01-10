@@ -51,12 +51,12 @@ const addVideoToCourse = async (req, res) => {
   const { courseId } = req.params;
   const { videos, islocked } = req.body;
 
-  const { role } = req.user;
+  // const { role } = req.user;
 
   try {
-    if (role !== "teacher") {
-      return res.status(403).json({ error: "Unauthorized" });
-    }
+    // if (role !== "teacher") {
+    //   return res.status(403).json({ error: "Unauthorized" });
+    // }
 
     const course = await Course.findByPk(courseId);
     if (!course) {

@@ -46,7 +46,7 @@ const createUser = async (req, res) => {
   const {
     name,
     email,
-    password,
+    password,desc ,
     role,
     image,
     Phrases,
@@ -69,6 +69,7 @@ const createUser = async (req, res) => {
         password: hashedPassword,
         image,
         review,
+        desc,
         accepted,
       });
       const token = generateToken(newTeacher.id, newTeacher.name, "teacher");
