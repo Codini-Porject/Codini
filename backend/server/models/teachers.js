@@ -25,7 +25,7 @@ const Teacher = sequelize.define(
     },
     image: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     desc: {
       type: DataTypes.TEXT,
@@ -33,7 +33,7 @@ const Teacher = sequelize.define(
     },
     review: {
       type: DataTypes.ENUM("1", "2", "3", "4", "5"),
-      allowNull: false,
+      allowNull: true,
     },
     accepted: {
       type: DataTypes.INTEGER,
