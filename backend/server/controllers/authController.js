@@ -43,8 +43,17 @@ const loginUser = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const { name, email, password, role, image, phase, level, review, accepted } =
-    req.body;
+  const {
+    name,
+    email,
+    password,
+    role,
+    image,
+    Phrases,
+    level,
+    review,
+    accepted,
+  } = req.body;
 
   try {
     if (!password || password.trim() === "") {
@@ -62,17 +71,19 @@ const createUser = async (req, res) => {
         review,
         accepted,
       });
-      res.status(201).json(newTeacher);
+      const token = generateToken(newTeacher.id, newTeacher.name, "teacher");
+      res.status(201).json({ ...newTeacher.toJSON(), token });
     } else if (role === "student") {
       const newStudent = await Student.create({
         name: name,
         email,
         password: hashedPassword,
         image,
-        phase,
+        Phrases,
         level,
       });
-      res.status(201).json(newStudent);
+      const token = generateToken(newStudent.id, newStudent.name, "student");
+      res.status(201).json({ ...newStudent.toJSON(), token });
     } else {
       res.status(400).json({ error: "Invalid role specified" });
     }
