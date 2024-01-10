@@ -43,7 +43,7 @@ const loginUser = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const { name, email, password, role, image, phase, level, review, accepted } =
+  const { name, email, password,desc , role, image, phase, level, review, accepted } =
     req.body;
 
   try {
@@ -60,6 +60,7 @@ const createUser = async (req, res) => {
         password: hashedPassword,
         image,
         review,
+        desc,
         accepted,
       });
       res.status(201).json(newTeacher);
