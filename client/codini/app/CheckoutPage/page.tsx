@@ -14,7 +14,8 @@ const CheckoutPage = () => {
       <div className={styles.checkoutPageChild} />
       <div className={styles.groupDiv}>
         <div className={styles.groupChild4} />
-        <div className={styles.confirmPayment}>Confirm Payment</div>
+        <div className={styles.confirmPayment}>
+          <a href="https://buy.stripe.com/test_eVafZUdhyavM63u6oo">Confirm Payment </a></div>
       </div>
       <img
         className={styles.confidentTeacherExplainingLIcon}
