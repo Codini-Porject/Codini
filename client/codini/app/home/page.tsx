@@ -968,18 +968,6 @@ const [langua, setLangua] = useState<Languages[]>([]);
           />
         </div>
         <div className={styles.courseChild} />
-        <div className={styles.onlineCoachingLessons}>
-          Online coaching lessons for remote learning.
-        </div>
-        <div className={styles.loremIpsumDolor16}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit,
-          sed do eiusmod tempor
-        </div>
-        <div className={styles.rectangleParent67}>
-          <div className={styles.groupChild146} />
-          <b className={styles.startLearningNow}>Start learning now</b>
-        </div>
         <div className={styles.groupParent42}>
           <div className={styles.rectangleParent68}>
             <div className={styles.groupChild147} />
