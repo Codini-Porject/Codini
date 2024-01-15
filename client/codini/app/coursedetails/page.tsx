@@ -4,9 +4,9 @@ import styles from "./index.module.css";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
-
-
-
+import YouTube from 'react-youtube';
+import Link from "next/link";
+import router from "next/router"
 interface Course {
     idcourse: number;
     teachers_idteachers: number;
@@ -25,22 +25,55 @@ interface Course {
   //   languages_idlanguages: number;
   //   // Add other fields if present in your API response
   // }
+  interface Video {
+    idvideos: number;
+    videos: string;
+    courses_idcourse:number; // Assuming this is the URL of the video
+  }
+  interface Review {
+    id:number;
+    body: string;
+   // Assuming this is the URL of the video
+  }
   
-  const CourseDetail: NextPage = () => {
+  const  CourseDetail: NextPage =  () => {
     const [course, setCourse] = useState<Course | null>(null);
-    const [allcourse, setAllcourse] = useState<Course[] | null>(null);
+    const [allcourse, setAllcourse] = useState<Course[]| null>(null);
+    const [videos, setVideos] = useState<Video[]>([]);
+    const [allreviews, setAllreviews] = useState<Review[]| null>(null);
+ 
+ 
      // Use the Course interface here
      useEffect(() => {
+    fetchData()
+    }, []);
+    const fetchData = async () => {
+      try {
+        const courseResponse = await axios.get<Course[]>("http://127.0.0.7:8000/courses");
+        setAllcourse(courseResponse.data);
+        
+        // Fetch videos for each course
+        const videosResponse = await axios.get<Video[]>(`http://127.0.0.7:8000/videos/courses/1`);
+        setVideos(videosResponse.data);
+        console.log("123",videosResponse);
+        
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      }
+    };
+
+      console.log(allcourse)
+      useEffect(() => {
         axios
-          .get<Course[]>("http://127.0.0.7:8000/courses")
+          .get<Review[]>("http://127.0.0.7:8000/Reviews/getAllR")
           .then((response) => {
-            setAllcourse(response.data);
+            setAllreviews(response.data);
           })
           .catch((error) => {
             console.log("Error fetching course data:", error);
           });
       }, []);
-      console.log(allcourse)
+      
   
     useEffect(() => {
       axios
@@ -52,83 +85,86 @@ interface Course {
           console.log("Error fetching course data:", error);
         });
     }, []);
-  console.log(course)
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+      },
+    };
+  const  _onReady=(event:any)=> {
+      // access to player in all event handlers via event.target
+      event.target.pauseVideo();
+    }
+    const getVideoUrl = (courseId: number) => {
+      const videoForCourse = videos?.find((video) => video.courses_idcourse === courseId);
+      console.log("vff",videoForCourse);
+      
+      
+      const youtubeId=videoForCourse?.videos.split('=')
+      console.log(youtubeId);
+     return youtubeId ? youtubeId[1] : "";
+      
+    };
+     // Initialize the useHistory hook
+
+    // ... (rest of your code)
+
+  
   if (!course) {
     return <div>Loading...</div>;
   }
+ if (!allcourse) {
+    return <div>Loading...</div>;
+  }
+  console.log("videos",videos);
+  console.log("sa0",allreviews);
+  
   return (
     <div className={styles.courseDetail}>
        
       <div  className={styles.groupParent}>
-      
-        <div className={styles.groupContainer}>
+      <div className={styles.groupContainer}>
           <div className={styles.marketingArticlesParent}>
             <div className={styles.marketingArticles}>Marketing Articles</div>
             <b className={styles.seeAll}>See all</b>
           </div>
-          <div className={styles.groupDiv}>
-            <div className={styles.groupFrame}>
-              <div className={styles.groupWrapper}>
-                <div className={styles.groupFrame}>
-                  <div className={styles.groupFrame}>
-                    <div className={styles.groupChild} />
-                    <div className={styles.groupParent2}>
-                      <div className={styles.rectangleGroup}>
-                        <img
-                          className={styles.groupItem}
-                          alt=""
-                          src="/rectangle-32@2x.png"
-                        />
-                        <div className={styles.groupInner} />
-                      </div>
-             
-                      <div  key={allcourse[0].idcourse} className={styles.awsCertifiedSolutions}>
-                        {allcourse[0].desc}
-                      </div>
-                      <div className={styles.loremIpsumDolor}>
-                        Lorem ipsum dolor sit amet, consectetur adipising elit,
-                        sed do eiusmod tempor
-                      </div>
-                    </div>
-                    <div className={styles.linaParent}>
-                      <div className={styles.lina}>Lina</div>
-                      <i className={styles.i}>$100</i>
-                      <b className={styles.b}>{allcourse[0].price}$</b>
-                      <div className={styles.rectangleContainer}>
-                        <div className={styles.rectangleDiv} />
-                        <img
-                          className={styles.image12Icon}
-                          alt=""
-                          src="/image-12@2x.png"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-  
-              <div className={styles.designParent}>
-                <div className={styles.design}>Design</div>
-                <div className={styles.rectangleParent1}>
-                  <div className={styles.groupChild1} />
-                  <div className={styles.groupChild2} />
-                  <div className={styles.groupChild3} />
-                  <div className={styles.groupChild4} />
-                </div>
-              </div>
-              <div className={styles.monthParent}>
-                <div className={styles.month}>3 Month</div>
-                <div className={styles.div}></div>
-              </div>
-            </div>
-          </div>
-          <img
-            className={styles.rectangleIcon}
-            alt=""
-            src="/rectangle-33@2x.png"
-          />
+           
+
+          {allcourse?.map((cour: Course) => (
+  <div key={cour.idcourse} className={styles.courseCard}>
+    <div className={styles.imageContainer}>
+    <YouTube videoId={getVideoUrl(cour.idcourse)} opts={opts} onReady={_onReady} />;
+    </div>
+    <div className={styles.courseInfo}>
+      <div className={styles.certification}>{cour.desc}</div>
+      <div className={styles.description}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      </div>
+      <div className={styles.priceContainer}>
+        
+        <i className={styles.currency}>$</i>
+        <b className={styles.price}>{cour.price}</b>
+   
+      </div>
+    </div>
+    <div className={styles.additionalInfo}>
+    <div className={styles.instructor}>Lina</div>
+    <div className={styles.imageContainer}>
+          <img className={styles.icon} alt="" src="/image-12@2x.png" />
         </div>
+      {/* <div className={styles.duration}>
+        <span className={styles.month}>3 Month</span>
+        <span className={styles.clock}></span>
+      </div> */}
+    </div>
+  </div>
+))}
+     
+ 
+        </div>
+ 
         <div className={styles.groupWrapper7}>
           <div className={styles.groupWrapper8}>
             <div className={styles.groupWrapper8}>
@@ -158,13 +194,14 @@ interface Course {
                       <img
                         className={styles.groupChild28}
                         alt=""
-                        src="/rectangle-77@2x.png"
+                        src="/rectangle-32@2x.png"
                       />
                       <div className={styles.groupChild29} />
                     </div>
                     <div className={styles.rectangleParent14}>
-                      <div className={styles.groupChild30} />
-                      <b className={styles.buyNow}>Buy Now</b>
+                      <div  />
+                       <Link href="/CheckoutPage" ><button >Buy Now</button></Link>
+
                     </div>
                     <div className={styles.rectangleParent15}>
                       <div className={styles.groupChild31} />
@@ -264,28 +301,23 @@ interface Course {
       <div className={styles.groupParent13}>
       </div>
       <div className={styles.courseDetailChild} />
-      <img className={styles.courseDetailItem} alt="" src="/line-21.png" />
+      {/* <img className={styles.courseDetailItem} alt="" src="/line-21.png" /> */}
       <div className={styles.groupParent14}>
-        <div className={styles.classLaunchedLessThanAYeParent}>
-          <div className={styles.classLaunchedLess1}>
-            Class, launched less than a year ago by Blackboard co-founder
-            Michael Chasen, integrates exclusively...
-          </div>
-          <div className={styles.lina5}>Lina</div>
-          <div className={styles.rectangleParent20}>
-            <div className={styles.groupChild37} />
-            <img
-              className={styles.image12Icon5}
-              alt=""
-              src="/image-12@2x.png"
-            />
-          </div>
-        </div>
+<div className={styles.reviewGrid}>
+  {allreviews?.map((one: Review) => (
+    <div key={one.id} className={styles.reviewItem}>
+      <div className={styles.reviewContent}>{one?.body}</div>
+      <div className={styles.userName}>Lina</div>
+      <div className={styles.imageContainer}>
+        <div className={styles.childElement} />
+        <img className={styles.iconImage} alt="" src="/image-12@2x.png" />
+      </div>
+    </div>
+  ))}
+</div>
+
         <div className={styles.groupWrapper9}>
-          <div className={styles.monthParent2}>
-            <div className={styles.month4}>3 Month</div>
-            <div className={styles.div11}></div>
-          </div>
+       
         </div>
       </div>
       <img
@@ -296,31 +328,7 @@ interface Course {
       <div className={styles.topRaiting}>Top Raiting</div>
       <img className={styles.vectorIcon} alt="" src="/vector.png" />
       <div className={styles.outOf5}>4 out of 5</div>
-      <div className={styles.groupParent15}>
-        <div className={styles.classLaunchedLessThanAYeParent}>
-          <div className={styles.classLaunchedLess1}>
-            Class, launched less than a year ago by Blackboard co-founder
-            Michael Chasen, integrates exclusively...
-          </div>
-          <div className={styles.lina5}>Lina</div>
-          <div className={styles.rectangleParent20}>
-            <div className={styles.groupChild37} />
-            <img
-              className={styles.image12Icon5}
-              alt=""
-              src="/image-12@2x.png"
-            />
-          </div>
-        </div>
-       
-        <div className={styles.groupWrapper9}>
-          <div className={styles.monthParent2}>
-            <div className={styles.month4}>3 Month</div>
-            <div className={styles.div11}></div>
-          </div>
-        </div>
-        
-      </div>
+      
  
     </div>
   );

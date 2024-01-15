@@ -8,6 +8,7 @@ const authRoute = require("./server/routes/authRoute.js");
 const languages = require("./server/routes/languages.js");
 const courses = require("./server/routes/courses.js");
 const videos = require("./server/routes/videos.js");
+const reviews=require("./server/routes/reviews.js")
 
 const teacher = require("./server/routes/teachers.js");
 const student = require("./server/routes/students.js");
@@ -35,7 +36,7 @@ app.use("/rec", reclamationRoutes);
 app.use("/ques", QuesRoute);
 // Quiz route
 app.use("/quiz", Quiz);
-
+app.use("/Reviews", reviews);
 //all routes below this middelware are secure
 // app.use(authenticateUser);
 

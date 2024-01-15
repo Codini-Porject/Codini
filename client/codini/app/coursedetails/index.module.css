@@ -4,7 +4,7 @@
   display: inline-block;
 }
 .marketingArticles {
-  top: 0;
+  bottom: 50px;
   left: 0;
   letter-spacing: 0.02em;
   font-weight: 500;
@@ -12,7 +12,7 @@
   height: 56.06px;
 }
 .seeAll {
-  top: 22.43px;
+  bottom: 65px;
   left: 1484.01px;
   font-size: var(--font-size-xl);
   color: var(--color-lightseagreen);
@@ -914,7 +914,7 @@
   width: 70.84px;
   height: 70.84px;
 }
-.classLaunchedLessThanAYeParent {
+.pnl {
   position: absolute;
   top: 0;
   left: 0;
@@ -1029,3 +1029,111 @@
   color: var(--color-slategray);
   font-family: var(--font-poppins);
 }
+.courseCard {
+  margin-top:100px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+}
+
+.courseImage {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.courseInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.certification {
+  font-weight: bold;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+}
+
+.currency {
+  font-style: italic;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.additionalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.category {
+  font-weight: bold;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+}
+
+.clock {
+  margin-left: 5px;
+}
+/* Assuming this is your CSS code */
+.reviewGrid {
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax value as needed */
+  gap: 50px;
+}
+
+.reviewItem {
+  /* Add styles for each individual item within the grid */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reviewContent {
+  /* Add styles for the review content */
+  margin-bottom: 10px;
+}
+
+.userName {
+  /* Add styles for the user name (Lina) */
+  font-weight: bold;
+}
+
+.imageContainer {
+  /* Add styles for the image container */
+  display: flex;
+  align-items: center;
+}
+
+.childElement {
+  /* Add styles for the child element */
+  /* Add your specific styles here */
+}
+
+.iconImage {
+  /* Add styles for the image */
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+

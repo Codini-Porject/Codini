@@ -4,9 +4,7 @@ const Course = require("../models/courses.js");
 const getAllVideosForCourse = async (req, res) => {
   const courseId = req.params.courseId;
   try {
-    const videos = await Videos.findAll({
-      where: { courses_idcourse: courseId },
-    });
+    const videos = await Videos.findAll({include:Course});
     res.json(videos);
   } catch (error) {
     console.error(error);
