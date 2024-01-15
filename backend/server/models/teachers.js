@@ -29,7 +29,7 @@ const Teacher = sequelize.define(
     },
     desc: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     review: {
       type: DataTypes.ENUM("1", "2", "3", "4", "5"),
