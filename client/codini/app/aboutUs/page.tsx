@@ -176,43 +176,16 @@ const AboutUs = () => {
                       alt=""
                       src="/search@2x.png"
                     /> */}
-              {/* <div className={styles.text}>Want to learn?</div>
-                          <div className={styles.button1}>
-                            <div className={styles.buttonBase}>
-                              <div className={styles.text1}>Explore</div>
-                              <img
-                                className={
-                                  styles.materialSymbolsarrowForwardIcon
-                                }
-                                alt=""
-                                src="/chevrondown@2x.png"
-                              />
-                            </div>
-                          </div> */}
+              
               {/* </div>
                       </div>
                     </div> */}
               {/* </div>
                 </div> */}
               {/* </div> */}
-              {/* <div className={styles.homeParent}>
-                <div className={styles.home}>Home</div>
-                <div className={styles.aboutUs1}>About us</div>
-                <div className={styles.home}>Courses</div>
-                <div className={styles.home}>Contact us</div>
-                <div className={styles.home}>FAQ’s</div>
-              </div> */}
+            
             </div>
-            {/* <div className={styles.menuParent}>
-              <div className={styles.menu}>
-                <div className={styles.signIn}>Sign in</div>
-              </div>
-              <div className={styles.button2}>
-                <div className={styles.buttonBase1}>
-                  <div className={styles.text1}>Create free account</div>
-                </div>
-              </div>
-            </div> */}
+           
           </div>
         </div>
       </div>
@@ -259,31 +232,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      {/* <div className={styles.footer}>
-        <div className={styles.footerChild} />
-        <div
-          className={styles.classTechnologiesInc}
-        >{`© 2021 Class Technologies Inc. `}</div>
-        <div className={styles.subscribeToGet}>
-          Subscribe to get our Newsletter
-        </div>
-        <div className={styles.lineParent}>
-          <div className={styles.lineDiv} />
-          <div className={styles.groupChild3} />
-          <div className={styles.careers}>Careers</div>
-          <div className={styles.privacyPolicy}>Privacy Policy</div>
-          <div className={styles.termsConditions}>{`Terms & Conditions`}</div>
-        </div>
-        <div className={styles.rectangleContainer}>
-          <div className={styles.groupChild4} />
-          <div className={styles.yourEmail}>Your Email</div>
-          <div className={styles.rectangleParent1}>
-            <div className={styles.groupChild5} />
-            <div className={styles.groupChild6} />
-            <div className={styles.subscribe}>Subscribe</div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

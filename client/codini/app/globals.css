@@ -77,10 +77,9 @@ body {
   font-size: var(--font-size-3xl);
 }
 .careers {
-  left: 850px;
+  left: 950px;
   top: 70px;
 }
-.blog,
 .careers,
 .courses {
   top: 70px;
@@ -88,16 +87,12 @@ body {
 }
 .courses {
   position: absolute;
-  left: 1020px;
+  left: 1200px;
   letter-spacing: 0.02em;
   top: 70px;
 }
-.blog {
-  left: 1200px;
-  top: 70px;
-}
+
 .aboutUs,
-.blog,
 .lina {
   position: absolute;
   letter-spacing: 0.02em;
@@ -105,13 +100,14 @@ body {
 }
 .aboutUs {
   top: 70px;
-  left: 1340px;
+  left: 1450px;
   font-size: var(--font-size-3xl);
 }
 .lina {
-  top: 59px;
-  left: 1738px;
+  top: 70px;
+  left: 1700px;
   font-weight: 500;
+  font-size: 20px;
   color: var(--color-black);
 }
 .groupChild {

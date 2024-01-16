@@ -156,11 +156,11 @@ const courses: Course[] = [
                       <img className={styles.icon2} alt="" src="/icon@2x.png" />
                     </div>
                     <b className={styles.interactionDesign}>
-                      Interaction Design
-                    </b>
+                         FullStack developer Courses        
+                                     </b>
                   </div>
                   <div className={styles.lessonsOnDesign}>
-                    Lessons on design that cover the most recent developments.
+                    Lessons on FrontEnd & BackEnd that cover the most recent developments.
                   </div>
                 </div>
                 <div className={styles.learnMoreParent}>
@@ -179,11 +179,10 @@ const courses: Course[] = [
                     <div className={styles.iconContainer}>
                       <img className={styles.icon3} alt="" src="/icon@2x.png" />
                     </div>
-                    <b className={styles.interactionDesign}>UX Design Course</b>
+                    <b className={styles.interactionDesign}>Machine Learning</b>
                   </div>
                   <div className={styles.classesInDevelopment}>
-                    Classes in development that cover the most recent
-                    advancements in web.
+                  Lessons on python & more that cover the most recent developments.
                   </div>
                 </div>
                 <div className={styles.learnMoreGroup}>
@@ -238,10 +237,10 @@ const courses: Course[] = [
           </div>
           <div className={styles.blogPostCardParent}>
           {/* <div>
-      {courses.map((course) => (
-        <CourseCard key={course.id} course={course} />
-      ))}
-    </div> */}
+              {courses.map((course) => (
+                <CourseCard key={course.id} course={course} />
+             ))}
+          </div> */}
             <div className={styles.blogPostCard}>
               <div className={styles.image1}>
                 <div className={styles.container}>
@@ -316,6 +315,7 @@ const courses: Course[] = [
                 </div>
                 <b className={styles.b1}>$48.99</b>
               </div>
+              
             </div>
           </div>
           <img className={styles.frameInner} alt="" src="/group-521@2x.png" />
@@ -334,8 +334,8 @@ const courses: Course[] = [
               <div className={styles.heading}>Meet the Heroes</div>
             </div>
             <div className={styles.supportingText}>
-              On Weekend UX, instructors from all over the world instruct
-              millions of students. We offer the knowledge and abilities.
+              On Weekend UX, instructors from all over the world instruc
+              millions of students. we offer the knowledge and abilities.
             </div>
           </div>
           <div className={styles.content5}>
