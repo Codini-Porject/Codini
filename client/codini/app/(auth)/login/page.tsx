@@ -21,26 +21,28 @@ const Login = () => {
         setErrorMessage("Please select a role");
         return;
       }
-      router.push("/homePage");
-
+      
       const response = await axios.post("http://localhost:8000/auth/login", {
         email: userEmail,
         password: userPassword,
         role: selectedRole,
       });
-
+      console.log(response.data);
+      
       const { token, userId, role } = response.data;
-
+      
       if (token && userId && role) {
+       console.log("hhhhhhhh",userId);
+       
         setUser({
           id: userId,
           role: role,
           email: userEmail,
           password: userPassword,
         });
-
+        
         Cookies.set("authToken", token, { expires: 60 * 60 * 24 });
-        router.push("/");
+        router.push("/home");
       } else {
         setErrorMessage("Login failed. Please check your credentials.");
       }
@@ -102,10 +104,6 @@ const Login = () => {
                 alt=""
                 src="/invisible-1@2x.png"
               />
-            </div>
-            <div className={styles.loremIpsumIs}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
             </div>
           </div>
           <div className={styles.rectangleParent1}>

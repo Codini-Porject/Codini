@@ -1,6 +1,7 @@
 import styles from "../styles/aboutUs.module.css";
 
 const AboutUs = () => {
+
   return (
     <div className={styles.aboutUs}>
       <div className={styles.aboutUsInner}>

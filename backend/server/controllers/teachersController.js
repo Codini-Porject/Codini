@@ -59,10 +59,11 @@ const addOneTeacher = async (req, res) => {
 
 const updateTeacher = async (req, res) => {
     const { id } = req.params;
-    const { name, password, image ,review ,accepted} = req.body;
+    const { name, password,desc, image ,review ,accepted} = req.body;
     try {
       const teacher = await Teacher.findByPk(id);
-      await teacher.update({ name, password, image ,review ,accepted });
+      await teacher.update({ name, password,desc, image ,review ,accepted });
+      console.log(req.body);
       res.json({ message: "Teacher updated successfully" });
     } catch (error) {
       console.error(error);

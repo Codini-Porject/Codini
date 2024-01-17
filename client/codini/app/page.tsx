@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../app/styles/home.module.css";
 
 const Home = () => {
@@ -68,14 +69,14 @@ const Home = () => {
                   </p>
                 </b>
                 <div className={styles.learnUiUxDesign}>
-                  Learn UI-UX Design skills with weekend UX . The latest online
-                  learning system and material that help your knowledge growing.
+                E-learning provides access to educational resources and courses from anywhere in the world.
+                Students can connect with instructors and fellow learners globally, breaking down geographical barriers.
                 </div>
               </div>
               <div className={styles.buttonParent}>
                 <div className={styles.button2}>
                   <div className={styles.buttonBase2}>
-                    <div className={styles.text3}>Get Started</div>
+                    <div className={styles.text3}><Link href={"/login"}>Get Started</Link> </div>
                   </div>
                 </div>
                 <div className={styles.button3}>
@@ -83,32 +84,6 @@ const Home = () => {
                     <div className={styles.text3}>Get free trial</div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className={styles.frameParent1}>
-              <div className={styles.groupParent}>
-                <img
-                  className={styles.frameItem}
-                  alt=""
-                  src="/group-518@2x.png"
-                />
-                <div className={styles.publicSpeaking}>Public Speaking</div>
-              </div>
-              <div className={styles.groupParent}>
-                <img
-                  className={styles.briefcaseIcon}
-                  alt=""
-                  src="/briefcase@2x.png"
-                />
-                <div className={styles.publicSpeaking}>Career-Oriented</div>
-              </div>
-              <div className={styles.groupParent}>
-                <img
-                  className={styles.briefcaseIcon}
-                  alt=""
-                  src="/idea@2x.png"
-                />
-                <div className={styles.publicSpeaking}>Creative Thinking</div>
               </div>
             </div>
           </div>
@@ -635,102 +610,6 @@ const Home = () => {
             </div>
           </div>
           <img className={styles.frameInner} alt="" src="/group-521@2x.png" />
-        </div>
-        <div className={styles.container2}>
-          <div className={styles.heading6}>Our recent blogs</div>
-          <div className={styles.content7}>
-            <div className={styles.column}>
-              <div className={styles.blogPostCard3}>
-                <img className={styles.imageIcon} alt="" src="/image@2x.png" />
-                <div className={styles.content8}>
-                  <div className={styles.headingAndSubheading}>
-                    <div className={styles.author}>November 16, 2014</div>
-                    <div className={styles.headingAndText4}>
-                      <div className={styles.heading7}>
-                        Three Pillars of User Delight
-                      </div>
-                      <div className={styles.formerFrontendDev}>
-                        Delight can be experienced viscerally, behaviourally,
-                        and reflectively. A great design is ...
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.categories}>
-                    <div className={styles.badge}>
-                      <div className={styles.badgeBase}>
-                        <div className={styles.text5}>Research</div>
-                      </div>
-                    </div>
-                    <div className={styles.badge1}>
-                      <div className={styles.badgeBase1}>
-                        <div className={styles.text5}>UI UX</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.blogPostCard3}>
-                <img className={styles.imageIcon} alt="" src="/image@2x.png" />
-                <div className={styles.content8}>
-                  <div className={styles.headingAndSubheading}>
-                    <div className={styles.author}>September 24, 2017</div>
-                    <div className={styles.headingAndText4}>
-                      <div className={styles.heading7}>UX Mapping Methods</div>
-                      <div className={styles.formerFrontendDev}>
-                        Visual-design principles can be applied consistently
-                        throughout the process of creating a polished UX map...
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.categories}>
-                    <div className={styles.badge}>
-                      <div className={styles.badgeBase}>
-                        <div className={styles.text5}>Research</div>
-                      </div>
-                    </div>
-                    <div className={styles.badge1}>
-                      <div className={styles.badgeBase1}>
-                        <div className={styles.text5}>UI Design</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.blogPostCard5}>
-              <img className={styles.imageIcon2} alt="" src="/image@2x.png" />
-              <div className={styles.content10}>
-                <div className={styles.headingAndSubheading}>
-                  <div className={styles.author}>March 13, 2014</div>
-                  <div className={styles.headingAndIcon3}>
-                    <div className={styles.heading2}>
-                      Agile Development Projects and Usability
-                    </div>
-                  </div>
-                  <div
-                    className={styles.formerFrontendDev}
-                  >{`Agile methods aim to overcome usability barriers in traditional development, but post new threats to user experience quality. `}</div>
-                </div>
-                <div className={styles.categories2}>
-                  <div className={styles.badge}>
-                    <div className={styles.badgeBase4}>
-                      <div className={styles.text5}>Programming</div>
-                    </div>
-                  </div>
-                  <div className={styles.badge5}>
-                    <div className={styles.badgeBase5}>
-                      <div className={styles.text5}>Research</div>
-                    </div>
-                  </div>
-                  <div className={styles.badge6}>
-                    <div className={styles.badgeBase}>
-                      <div className={styles.text5}>Developments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

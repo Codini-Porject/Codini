@@ -1,3 +1,298 @@
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+
+.cta {
+  position: relative;
+  margin-top: 2cm;
+  /* margin: auto; */
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #83e687;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #83e687;
+}
+
+/* .cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #83e687;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+} */
+
+.cta:hover:before {
+  width: 100%;
+  background: #44815d;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+/* .wave-group-input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+
+.wave-group-input:focus {
+  outline: none;
+}
+
+.wave-group-label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.wave-group-label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+.wave-group-input:focus ~ .wave-group-label .wave-group-label-char,
+.wave-group-input:valid ~ .wave-group-label .wave-group-label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #5264AE;
+}
+
+.wave-group-bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.wave-group-bar:before,
+.wave-group-bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group-bar:before {
+  left: 50%;
+}
+
+.wave-group-bar:after {
+  right: 50%;
+}
+
+.wave-group-input:focus ~ .wave-group-bar:before,
+.wave-group-input:focus ~ .wave-group-bar:after {
+  width: 50%; */
+/* } */
+.container-xl {
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 0;
+  background-color: #6c757d;
+  color: #fff;
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.35rem;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  flex: 0 0 30%;
+  text-align: center;
+}
+
+.profile-picture img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.upload-box {
+  flex: 0 0 60%;
+  padding-left: 20px;
+}
+
+.upload-box .small {
+  color: #6c757d;
+}
+
+.upload-box button {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 0.35rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.upload-box button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.form-control,
+.dataTable-input {
+  display: block;
+  width: calc(100% - 2.25rem);
+  padding: 1rem 1.25rem;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #f8f9fa;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  border-radius: 0.35rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+.file-input-label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.file-input-label svg {
+  margin-right: 5px; /* Add spacing between the SVG and text if needed */
+}
+
+
+  
+
+/* .custom-form-container {
+  border-radius: 10px;
+  border: 5px solid #049f75 ; 
+  padding: 1cm; 
+  max-width: 430px;
+  height: 10cm;
+  margin-top: 5cm;
+  margin-left: 40%;
+  background-color:transparent;
+}  */
+/* .custom-form {
+  max-width: 400px;
+  margin: 0 auto;
+} */
+
+/* .form-group {
+  margin-bottom: 15px;
+} */
+
+/* .form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+} */
+
+/* .form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} */
+
+/* .submit-button {
+  margin-left: 7cm;
+  margin-top: 0.5cm;
+  width: 3.5cm;
+  background-color: #049f75 ;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #049f75 ;
+} */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 body {
   margin: 0;
@@ -36,10 +331,10 @@ body {
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
-body {
+/* body {
   margin: 0;
   line-height: normal;
-}
+} */
 :root {
   /* fonts */
   --font-poppins: Poppins;
@@ -754,7 +1049,7 @@ body {
   content: "";
   display: block;
   height: 2px;
-  width: 2900px; /* Adjust the width as needed, in this case, it's set to 50% of the container's width */
+  width: 2900px; /* Adjust the width as needed, in this case, it's set to 50% of the container width */
   background-color: var(--color-dimgray); /* You can adjust the line color */
   margin-top: 140px; /* Adjust the margin as needed */
   margin-left: auto;
