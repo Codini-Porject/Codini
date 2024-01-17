@@ -102,6 +102,8 @@ body {
   top: 70px;
   left: 1450px;
   font-size: var(--font-size-3xl);
+  font-family: var(--font-poppins);
+
 }
 .lina {
   top: 70px;
