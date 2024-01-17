@@ -1,4 +1,6 @@
+"use client";
 import styles from "../styles/aboutUs.module.css";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
@@ -7,7 +9,9 @@ const AboutUs = () => {
         <div className={styles.featuresSectionParent}>
           <div className={styles.featuresSection}>
             <div className={styles.imageBg} />
-            <img
+            <motion.img
+              initial={{ rotate: "0deg" }}
+              animate={{ rotate: "0deg" }}
               className={styles.sectionImgIcon}
               alt=""
               src="/section-img@2x.png"
@@ -157,63 +161,7 @@ const AboutUs = () => {
         <div className={styles.frameChild} />
         <div className={styles.rectangleGroup}>
           <div className={styles.rectangleGroup} />
-          <div className={styles.frameParent}>
-            <div className={styles.frameGroup}>
-              {/* <div className={styles.image2Parent}>
-                <img
-                  className={styles.image2Icon}
-                  alt=""
-                  src="/image-2@2x.png"
-                /> */}
-              {/* <div className={styles.inputField}> */}
-              {/* <div className={styles.inputFieldBase}> */}
-              {/* <div className={styles.inputWithLabel}> */}
-              {/* <div className={styles.label}>Email</div> */}
-              {/* <div className={styles.input}>
-                  <div className={styles.content}>
-                    <img
-                      className={styles.searchIcon}
-                      alt=""
-                      src="/search@2x.png"
-                    /> */}
-              {/* <div className={styles.text}>Want to learn?</div>
-                          <div className={styles.button1}>
-                            <div className={styles.buttonBase}>
-                              <div className={styles.text1}>Explore</div>
-                              <img
-                                className={
-                                  styles.materialSymbolsarrowForwardIcon
-                                }
-                                alt=""
-                                src="/chevrondown@2x.png"
-                              />
-                            </div>
-                          </div> */}
-              {/* </div>
-                      </div>
-                    </div> */}
-              {/* </div>
-                </div> */}
-              {/* </div> */}
-              {/* <div className={styles.homeParent}>
-                <div className={styles.home}>Home</div>
-                <div className={styles.aboutUs1}>About us</div>
-                <div className={styles.home}>Courses</div>
-                <div className={styles.home}>Contact us</div>
-                <div className={styles.home}>FAQ’s</div>
-              </div> */}
-            </div>
-            {/* <div className={styles.menuParent}>
-              <div className={styles.menu}>
-                <div className={styles.signIn}>Sign in</div>
-              </div>
-              <div className={styles.button2}>
-                <div className={styles.buttonBase1}>
-                  <div className={styles.text1}>Create free account</div>
-                </div>
-              </div>
-            </div> */}
-          </div>
+          <div className={styles.frameParent}></div>
         </div>
       </div>
       <div className={styles.aboutUsSection}>
@@ -259,31 +207,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      {/* <div className={styles.footer}>
-        <div className={styles.footerChild} />
-        <div
-          className={styles.classTechnologiesInc}
-        >{`© 2021 Class Technologies Inc. `}</div>
-        <div className={styles.subscribeToGet}>
-          Subscribe to get our Newsletter
-        </div>
-        <div className={styles.lineParent}>
-          <div className={styles.lineDiv} />
-          <div className={styles.groupChild3} />
-          <div className={styles.careers}>Careers</div>
-          <div className={styles.privacyPolicy}>Privacy Policy</div>
-          <div className={styles.termsConditions}>{`Terms & Conditions`}</div>
-        </div>
-        <div className={styles.rectangleContainer}>
-          <div className={styles.groupChild4} />
-          <div className={styles.yourEmail}>Your Email</div>
-          <div className={styles.rectangleParent1}>
-            <div className={styles.groupChild5} />
-            <div className={styles.groupChild6} />
-            <div className={styles.subscribe}>Subscribe</div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

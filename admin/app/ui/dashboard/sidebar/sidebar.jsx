@@ -79,19 +79,26 @@ const menuItems = [
 ];
 
 const Sidebar = async () => {
-  const { user } = await auth();
+  const user = await auth();
+  console.log(user);
+  // auth()
+  //   .then((res) => console.log("res", res))
+  //   .catch((err) => console.log("err", err));
   return (
     <div className={styles.container}>
       <div className={styles.user}>
         <Image
           className={styles.userImage}
-          src={user.img || "/noavatar.png"}
+          src={
+            user?.img ||
+            "https://upload.wikimedia.org/wikipedia/commons/7/7e/Borat_in_Cologne.jpg"
+          }
           alt=""
           width="50"
           height="50"
         />
         <div className={styles.userDetail}>
-          <span className={styles.username}>{user.username}</span>
+          <span className={styles.username}>Amine</span>
           <span className={styles.userTitle}>Administrator</span>
         </div>
       </div>

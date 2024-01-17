@@ -13,12 +13,12 @@ const login = async (credentials) => {
     const user = await User.findOne({ username: credentials.username });
     console.log("User:", user);
 
-    if (!user || !user.isAdmin) throw new Error("Wrong credentials!");
+    if (!user || !user.isAdmin) {
+      console.log("err");
+      throw new Error("Wrong credentials!");
+    }
 
-    const isPasswordCorrect = await bcrypt.compare(
-      credentials.password,
-      user.password
-    );
+    const isPasswordCorrect = credentials.password === user.password;
 
     console.log("Password Correct:", isPasswordCorrect);
 
@@ -35,11 +35,18 @@ export const { signIn, signOut, auth } = NextAuth({
   ...authConfig,
   providers: [
     CredentialsProvider({
-      async authorize(credentials) {
+      authorize: async (credentials) => {
         try {
+          console.log("usercccc", credentials);
           const user = await login(credentials);
+
+          if (!user) {
+            return null;
+          }
+
           return user;
         } catch (err) {
+          console.error(err);
           return null;
         }
       },
@@ -52,8 +59,10 @@ export const { signIn, signOut, auth } = NextAuth({
         token.username = user.username;
         token.img = user.img;
       }
+      console.log("token", token);
       return token;
     },
+
     async session({ session, token }) {
       if (token) {
         session.user.username = token.username;
@@ -63,3 +72,6 @@ export const { signIn, signOut, auth } = NextAuth({
     },
   },
 });
+auth()
+  .then((res) => console.log("ressssssssss", res))
+  .catch((err) => console.log("err", err));
