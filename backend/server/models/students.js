@@ -25,15 +25,15 @@ const Student = sequelize.define(
     },
     image: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     Phrases: {
       type: DataTypes.ENUM("Bootstrap", "Junior", "Senior"),
-      allowNull: false,
+      allowNull: true,
     },
     level: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {

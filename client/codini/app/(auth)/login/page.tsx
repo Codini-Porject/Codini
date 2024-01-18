@@ -1,9 +1,54 @@
 "use client";
 import styles from "../../styles/login.module.css";
 import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import axios from "axios";
+import { useIdentity } from "../IdentityContext";
+import Cookies from "js-cookie";
 
-const SignUp = () => {
+const Login = () => {
+  const [userPassword, setUserPassword] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [selectedRole, setSelectedRole] = useState("");
+  const [userRole, setUserRole] = useState("");
+  const { setUser } = useIdentity();
   const router = useRouter();
+
+  const handleSubmit = async () => {
+    try {
+      if (!selectedRole) {
+        setErrorMessage("Please select a role");
+        return;
+      }
+      router.push("/homePage");
+
+      const response = await axios.post("http://localhost:8000/auth/login", {
+        email: userEmail,
+        password: userPassword,
+        role: selectedRole,
+      });
+
+      const { token, userId, role } = response.data;
+
+      if (token && userId && role) {
+        setUser({
+          id: userId,
+          role: role,
+          email: userEmail,
+          password: userPassword,
+        });
+
+        Cookies.set("authToken", token, { expires: 60 * 60 * 24 });
+        router.push("/");
+      } else {
+        setErrorMessage("Login failed. Please check your credentials.");
+      }
+    } catch (error) {
+      setErrorMessage("Error during login. Please try again.");
+      console.error("Error during login:", error);
+    }
+  };
 
   const handleRegisterClick = () => {
     router.push("/register");
@@ -32,17 +77,21 @@ const SignUp = () => {
             <div className={styles.rectangleGroup}>
               <input
                 type="text"
-                placeholder="Enter your User name"
+                placeholder="Enter your Email"
+                value={userEmail}
+                onChange={(e) => setUserEmail(e.target.value)}
                 className={styles.groupInner}
               />
-              <div className={styles.userName}>User name</div>
+              <div className={styles.userName}>Email</div>
               <div className={styles.enterYourUser}></div>
             </div>
             <div className={styles.groupParent1}>
               <div className={styles.rectangleContainer}>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Enter your Password"
+                  value={userPassword}
+                  onChange={(e) => setUserPassword(e.target.value)}
                   className={styles.groupInner}
                 />
                 <div className={styles.userName}>Password</div>
@@ -61,12 +110,27 @@ const SignUp = () => {
           </div>
           <div className={styles.rectangleParent1}>
             <div className={styles.groupChild1} />
-            <div className={styles.rememebrMe}>Rememebr me</div>
-            <div className={styles.forgotPassword}>Forgot Password ?</div>
+            <div className={styles.rememebrMe}>Remember me</div>
+            <div className={styles.forgotPassword}>Forgot Password?</div>
           </div>
           <div className={styles.rectangleParent2}>
-            <div className={styles.groupChild2} />
-            <div className={styles.login2}>Login</div>
+            <select
+              value={selectedRole}
+              onChange={(e) => setSelectedRole(e.target.value)}
+              className={styles.roleSelect}
+            >
+              <option value="">Select Role</option>
+              <option value="teacher">Teacher</option>
+              <option value="student">Student</option>
+            </select>
+          </div>
+          <div className={styles.rectangleParent2}>
+            <button className={styles.login2} onClick={handleSubmit}>
+              Login
+            </button>
+            {errorMessage && (
+              <div className={styles.errorMessage}>{errorMessage}</div>
+            )}
           </div>
         </div>
         <img
@@ -79,4 +143,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
