@@ -22,7 +22,7 @@ interface Course {
 }
 const PeakUserSettings = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [course, setCourse] = useState<Course | null>(null);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const PeakUserSettings = () => {
   const variants = ["solid"];
 
   return (
-    <div className="relative rounded-3xl   w-full h-[1861px] overflow-hidden text-left text-[16px] text-peak-primary font-montserrat transition-all duration-800 bg-green-50">
+    <div className="relative rounded-3xl   w-full h-[1861px] overflow-hidden text-left text-[16px] text-peak-primary font-montserrat transition-all duration-800 bg-gradient-to-r from-green-100 to-white-200">
       <div className="flex flex-col flex-wrap gap-4 left-[100px] bg-black-50">
         {variants?.map((variant) => (
           <Breadcrumbs key={variant} variant={variant}>
@@ -120,7 +120,7 @@ const PeakUserSettings = () => {
         )}
       </div>
       <div className="h-12 relative"></div>
-      <div className="absolute top-[118px] left-[348.74px] w-[1037.26px] h-[202.3px] text-center text-5xl bg-white rounded-xl p-8 border border-white">
+      <div className="absolute top-[118px] left-[348.74px] w-[1037.26px] h-[202.3px] text-center text-5xl bg-gradient-to-r from-green-500 to-white-500">
         <div className="absolute top-[10px] left-[300px] ">
           <h3 className="text-3xl font-bold text-gray-400 ${scrollY > 100 ? 'text-bleu-500' : 'text-indigo-700'} transition-all hover:text-green-500`}">
             Welcome to My Profile!
@@ -171,8 +171,8 @@ const PeakUserSettings = () => {
 
       <div className="relative w-[1440px] h-[1138px] hidden" />
       <div className="absolute top-0 left-[275px] w-1 h-full bg-black"></div>
-      <div className=" absolute top-[900px] border border-[20px] bg-gray-200 w-[1250px] left-[380px] h-[800px]"></div>
-      <div className="absolute top-[997px] left-[392px] w-[363px] h-[444px] text-white font-poppins bg-gradient-to-r from-pink-500 to-purple-500 ">
+      <div className=" absolute top-[900px] border border-[20px] bg-gradient-to-r from-green-200 to-white-500"></div>
+      <div className="absolute top-[997px] left-[392px] w-[363px] h-[444px] text-white font-poppins bg-gradient-to-r from-green-300 to-white-100 ">
         <div className="absolute top-[0px] left-[0px] w-[363px] h-[444px]  ">
           <div className="absolute top-[0px] left-[0px] w-[363px] h-[444px] ">
             <div className="absolute top-[0px] left-[0px] w-[363px] h-[444px] text-5xl text-gray-100">
@@ -273,7 +273,7 @@ const PeakUserSettings = () => {
       <div className="absolute top-[908px] left-[469px] text-23xl font-medium font-dm-sans text-black">
         <span className="relative inline-block">
           Courses
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 to-purple-500"></div>
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-white-500"></div>
           <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-pattern-1"></div>
         </span>
       </div>
@@ -283,7 +283,7 @@ const PeakUserSettings = () => {
       <div className="absolute top-[906px] left-[1140px] text-23xl font-medium font-dm-sans text-black">
         <span className="relative inline-block">
           Languages
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 to-purple-500"></div>
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-white-500"></div>
           <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-pattern-2"></div>
         </span>
       </div>
