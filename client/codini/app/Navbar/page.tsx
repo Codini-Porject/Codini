@@ -13,6 +13,7 @@ const Navbar=()=>{
        <Link href="/home"><button><div className="home">Home</div></button></Link>
 =======
 
+
        <Link href="/"><button><div className="home">Home</div></button></Link>
 >>>>>>> 7bcf4d802668912d6d4208beeca85ce95a7e9266
        <Link href="/"><button><div className="careers">Careers</div></button></Link>
