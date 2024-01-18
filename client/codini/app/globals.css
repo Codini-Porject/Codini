@@ -334,7 +334,73 @@ body {
 /* body {
   margin: 0;
   line-height: normal;
-} */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+6+Brands:wght@400&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+
+/* nav footer chekout  */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-poppins: Poppins;
+  --font-font-awesome-5-free: "Font Awesome 5 Free";
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-lg: 18px;
+  --font-size-5xl: 24px;
+  --font-size-7xl: 26px;
+  --font-size-3xl: 22px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-dimgray: #5b5b5b;
+  --color-black: #000;
+  --color-gainsboro-100: #d9d9d9;
+  --color-gainsboro-200: rgba(217, 217, 217, 0);
+  --color-lightseagreen: #49bbbd;
+  --color-darkgray: #9d9b9b;
+  --color-gray: #252641;
+  --color-lightslategray: #83839a;
+  --color-lightsteelblue: #b2b3cf;
+  --color-slategray: #626381;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+  --br-mid-5: 17.5px;
+  --br-mini: 15px;
+  --br-3xs: 10px;
+  --br-41xl: 60px;
+}
 :root {
   /* fonts */
   --font-poppins: Poppins;
@@ -380,10 +446,9 @@ body {
   font-size: var(--font-size-3xl);
 }
 .careers {
-  left: 850px;
+  left: 950px;
   top: 70px;
 }
-.blog,
 .careers,
 .courses {
   top: 70px;
@@ -391,16 +456,12 @@ body {
 }
 .courses {
   position: absolute;
-  left: 1020px;
+  left: 1200px;
   letter-spacing: 0.02em;
   top: 70px;
 }
-.blog {
-  left: 1200px;
-  top: 70px;
-}
+
 .aboutUs,
-.blog,
 .lina {
   position: absolute;
   letter-spacing: 0.02em;
@@ -408,13 +469,15 @@ body {
 }
 .aboutUs {
   top: 70px;
-  left: 1340px;
+  left: 1450px;
   font-size: var(--font-size-3xl);
+  font-family: var(--font-poppins);
 }
 .lina {
-  top: 59px;
-  left: 1738px;
+  top: 70px;
+  left: 1700px;
   font-weight: 500;
+  font-size: 20px;
   color: var(--color-black);
 }
 .groupChild {

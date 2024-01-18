@@ -1,5 +1,8 @@
-import styles from "../styles/aboutUs.module.css";
+import  Link  from 'next/link';
+import { motion, useScroll } from "framer-motion";
 
+import styles from "../styles/aboutUs.module.css";
+import "./about.css";
 const AboutUs = () => {
 
   return (
@@ -11,47 +14,48 @@ const AboutUs = () => {
             <img
               className={styles.sectionImgIcon}
               alt=""
-              src="/section-img@2x.png"
+              src="/codini3C.jpg" 
             />
             <div className={styles.sectionData}>
-              <b className={styles.features}>Features</b>
+              <b className={styles.features}>Learn Coding with the best & modern way</b>
               <div className={styles.weAreAlways}>
-                We are always working to provide you best of the features in all
-                aspects.
-              </div>
+              CODINI provides you with the best teachers and courses, catering to both beginners and advanced learners..     
+                    </div>
               <div className={styles.sectionContent}>
                 <div className={styles.atWeekenduxThe}>
-                  At WEEKENDUX the chief determination is to clear the minds of
-                  our students about their goals, while making them consistent
-                  in their ambitions and pushing them to be confident for their
-                  journey towards the course of time.
+                our primary goal is to empower students by helping them clarify their objectives,
+                 fostering consistency in their ambitions, and instilling
+                  confidence in their journey over time. We are committed to providing a 
+                  supportive environment that encourages personal and professional growth,
+                   ensuring our students are well-prepared for the challenges they
+                    may encounter along their educational path.  
                 </div>
-                <div className={styles.youWillFindContainer}>
+                {/* <div className={styles.youWillFindContainer}>
                   <p className={styles.youWillFind}>
                     You will find every little thing on the internet in just a
                     click of hand, but here we admire that without knowledge and
                     practice the internet may even also fail you in your life.
                   </p>
-                </div>
+                </div> */}
               </div>
-              <div className={styles.button}>
-                <div className={styles.contactUs}>Learn More</div>
+              {/* <div className={styles.button}>
+              <Link href="/"><button><div className={styles.contactUs}>Learn More</div>
+                </button></Link>
                 <img
                   className={styles.materialSymbolsarrowForwardIcon}
                   alt=""
                   src="/materialsymbolsarrowforwardrounded@2x.png"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className={styles.benefitsSection}>
             <b className={styles.ourBenefits}>Our Benefits</b>
             <div className={styles.byJoiningWeekens}>
-              By Joining WEEKENS UX Platform, One Can Avail a Lot Of Benefits.
+              By Joining CODINI Platform, One Can Avail a Lot Of Benefits.
             </div>
             <div className={styles.installOurTopRated}>
-              Install our top-rated dropshipping app to your e-commerce site and
-              get access to US Suppliers, AliExpress vendors, and the best.
+              create an account by your phone or your laptop to can access to the courses & become a developer from your home..
             </div>
             <div className={styles.benefitCard}>
               <div className={styles.featureCardContent}>
@@ -61,10 +65,9 @@ const AboutUs = () => {
                     <div className={styles.div}>01</div>
                   </div>
                 </div>
-                <div className={styles.standardization}>Standardization</div>
+                <div className={styles.standardization}>Free starting courses</div>
                 <div className={styles.whenWorkingInContainer}>
-                  <span>{`When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are ... `}</span>
-                  <span className={styles.readMore}>Read More</span>
+                  <span>{`By creating your account, CODINI provides you with some free courses to start..`}</span>
                 </div>
               </div>
             </div>
@@ -79,11 +82,8 @@ const AboutUs = () => {
                 <div className={styles.standardization}>Affordable Pricing</div>
                 <div className={styles.whenWorkingInContainer}>
                   <span>
-                    {`With `}
-                    <span className={styles.weekend}>Weekend</span>
-                    {` UX, there’s no cost to reproduce materials and, thanks to mobile learning and microlearning ... `}
+                    {`With CODINI, there’s no cost to reproduce materials and, thanks to web learning ... `}
                   </span>
-                  <span className={styles.readMore1}>Read More</span>
                 </div>
               </div>
             </div>
@@ -95,10 +95,9 @@ const AboutUs = () => {
                     <div className={styles.div}>02</div>
                   </div>
                 </div>
-                <div className={styles.standardization}>Reduced Costs</div>
+                <div className={styles.standardization}>Contemporary mentors</div>
                 <div className={styles.whenWorkingInContainer}>
-                  <span>{`With Weekend UX, there’s no cost to reproduce materials and, thanks to mobile learning and microlearning ... `}</span>
-                  <span className={styles.readMore}>Read More</span>
+                  <span>{`Explore coding with our platform's contemporary mentors, guiding you through the latest in technology and programming..`}</span>
                 </div>
               </div>
             </div>
@@ -114,8 +113,7 @@ const AboutUs = () => {
                   Learner Satisfaction
                 </div>
                 <div className={styles.whenWorkingInContainer}>
-                  <span>{`If you really want students to retain what they learn, you’ll need to aim for high satisfaction rates. Bad ... `}</span>
-                  <span className={styles.readMore}>Read More</span>
+                  <span>{`Maximize learner satisfaction with our platform, featuring contemporary mentors, engaging quizzes, and exceptional courses for an unparalleled learning experience.`}</span>
                 </div>
               </div>
             </div>
@@ -130,7 +128,6 @@ const AboutUs = () => {
                 <div className={styles.standardization}>More Customization</div>
                 <div className={styles.whenWorkingInContainer}>
                   <span>{`ust like learners aren’t one-size-fits-all, learning is not a one-size-fits-all experience. By using different ... `}</span>
-                  <span className={styles.readMore}>Read More</span>
                 </div>
               </div>
             </div>
@@ -142,12 +139,9 @@ const AboutUs = () => {
                     <div className={styles.div}>06</div>
                   </div>
                 </div>
-                <div className={styles.standardization}>
-                  Multimedia Materials
-                </div>
+                <div className={styles.standardization}>Best Methods</div>
                 <div className={styles.whenWorkingInContainer}>
                   <span>{`One of the main reasons why custom eLearning is effective is that it’s the perfect delivery method for ... `}</span>
-                  <span className={styles.readMore}>Read More</span>
                 </div>
               </div>
             </div>
@@ -160,60 +154,8 @@ const AboutUs = () => {
           <div className={styles.rectangleGroup} />
           <div className={styles.frameParent}>
             <div className={styles.frameGroup}>
-              {/* <div className={styles.image2Parent}>
-                <img
-                  className={styles.image2Icon}
-                  alt=""
-                  src="/image-2@2x.png"
-                /> */}
-              {/* <div className={styles.inputField}> */}
-              {/* <div className={styles.inputFieldBase}> */}
-              {/* <div className={styles.inputWithLabel}> */}
-              {/* <div className={styles.label}>Email</div> */}
-              {/* <div className={styles.input}>
-                  <div className={styles.content}>
-                    <img
-                      className={styles.searchIcon}
-                      alt=""
-                      src="/search@2x.png"
-                    /> */}
-              {/* <div className={styles.text}>Want to learn?</div>
-                          <div className={styles.button1}>
-                            <div className={styles.buttonBase}>
-                              <div className={styles.text1}>Explore</div>
-                              <img
-                                className={
-                                  styles.materialSymbolsarrowForwardIcon
-                                }
-                                alt=""
-                                src="/chevrondown@2x.png"
-                              />
-                            </div>
-                          </div> */}
-              {/* </div>
-                      </div>
-                    </div> */}
-              {/* </div>
-                </div> */}
-              {/* </div> */}
-              {/* <div className={styles.homeParent}>
-                <div className={styles.home}>Home</div>
-                <div className={styles.aboutUs1}>About us</div>
-                <div className={styles.home}>Courses</div>
-                <div className={styles.home}>Contact us</div>
-                <div className={styles.home}>FAQ’s</div>
-              </div> */}
             </div>
-            {/* <div className={styles.menuParent}>
-              <div className={styles.menu}>
-                <div className={styles.signIn}>Sign in</div>
-              </div>
-              <div className={styles.button2}>
-                <div className={styles.buttonBase1}>
-                  <div className={styles.text1}>Create free account</div>
-                </div>
-              </div>
-            </div> */}
+
           </div>
         </div>
       </div>
@@ -222,70 +164,46 @@ const AboutUs = () => {
         <img
           className={styles.aboutUsSectionItem}
           alt=""
-          src="/rectangle-13@2x.png"
+          src="/codini2C.jpg"
         />
         <img
           className={styles.aboutUsSectionInner}
           alt=""
-          src="/rectangle-14@2x.png"
+          src="/codini1C.jpg"
         />
         <div className={styles.sectionData1}>
           <b className={styles.aboutUs2}>About Us</b>
           <div className={styles.weekendUxProvidingContainer}>
-            <span>WEEKEND UX</span>
+            <span>CODINI</span>
             <span className={styles.providingTheBest}>
               {" "}
-              providing the best opportunities to the students around the glob.
+              providing the best opportunities to the students from anywhere..
             </span>
           </div>
           <div className={styles.sectionContent1}>
             <div className={styles.atWeekenduxThe}>
-              Weekend UX, is a UI/UX Design Academy in Delhi involved in User
-              Experience and User Interface Training and Consulting. It was
-              started in 2023 and passionate towards User Interface Design/ User
-              Experience Design, Human Computer Interaction Design. Humanoid is
-              gushing towards competence to acquire knowledge and have a wide
-              understanding towards the sphere through the foremost courses in
-              the area of UI/UX Design, by strengthening up your skills, for
-              your golden future
+            Codini offers unparalleled opportunities for students worldwide to excel in the field of coding.
+             Our online coding school is dedicated to providing top-notch education, 
+             empowering learners to thrive in a global tech landscape. 
+             With a comprehensive curriculum and expert instructors, 
+             Codini ensures that students receive the best resources 
+             and support to sharpen their coding skills. 
+             Join us as we pave the way for your success, 
+             turning coding aspirations into thriving careers on a global scale
             </div>
           </div>
-          <div className={styles.button3}>
-            <div className={styles.contactUs}>Join Us</div>
+          {/* <div className={styles.button3}>
+          <Link href="/login"><button><div className={styles.contactUs}>Join Us</div></button></Link>
             <img
               className={styles.materialSymbolsarrowForwardIcon}
               alt=""
               src="/materialsymbolsarrowforwardrounded@2x.png"
             />
-          </div>
+          </div> */}
         </div>
       </div>
-      {/* <div className={styles.footer}>
-        <div className={styles.footerChild} />
-        <div
-          className={styles.classTechnologiesInc}
-        >{`© 2021 Class Technologies Inc. `}</div>
-        <div className={styles.subscribeToGet}>
-          Subscribe to get our Newsletter
-        </div>
-        <div className={styles.lineParent}>
-          <div className={styles.lineDiv} />
-          <div className={styles.groupChild3} />
-          <div className={styles.careers}>Careers</div>
-          <div className={styles.privacyPolicy}>Privacy Policy</div>
-          <div className={styles.termsConditions}>{`Terms & Conditions`}</div>
-        </div>
-        <div className={styles.rectangleContainer}>
-          <div className={styles.groupChild4} />
-          <div className={styles.yourEmail}>Your Email</div>
-          <div className={styles.rectangleParent1}>
-            <div className={styles.groupChild5} />
-            <div className={styles.groupChild6} />
-            <div className={styles.subscribe}>Subscribe</div>
-          </div>
-        </div>
-      </div> */}
     </div>
+    
   );
 };
 

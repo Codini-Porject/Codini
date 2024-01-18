@@ -19,6 +19,7 @@ const adminRoute = require("./server/routes/admin.js");
 
 const stripe = require("./server/routes/stripe.js");
 const QuesRoute = require("./server/routes/questions.js");
+const reviews = require("./server/routes/reviews.js");
 
 app.use(express.json());
 
@@ -36,6 +37,8 @@ app.use("/rec", reclamationRoutes);
 app.use("/ques", QuesRoute);
 // Quiz route
 app.use("/quiz", Quiz);
+//
+app.use("/Reviews", reviews);
 
 //all routes below this middelware are secure
 // app.use(authenticateUser);
