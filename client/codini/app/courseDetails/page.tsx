@@ -81,6 +81,7 @@ const CourseDetail: NextPage = () => {
       .get<Course>("http://127.0.0.7:8000/courses/oneCourse/1")
       .then((response) => {
         setCourse(response.data);
+        console.log(course);
       })
       .catch((error) => {
         console.log("Error fetching course data:", error);
@@ -112,12 +113,12 @@ const CourseDetail: NextPage = () => {
 
   // ... (rest of your code)
 
-  if (!course) {
-    return <div>Loading...</div>;
-  }
-  if (!allcourse) {
-    return <div>Loading...</div>;
-  }
+  // if (!course) {
+  //   return <div>Loading...</div>;
+  // }
+  // if (!allcourse) {
+  //   return <div>Loading...</div>;
+  // }
   console.log("videos", videos);
   console.log("sa0", allreviews);
 
@@ -242,7 +243,7 @@ const CourseDetail: NextPage = () => {
                     />
                   </div>
                   <div className={styles.parent}>
-                    <div className={styles.div4}>{course.price}$</div>
+                    <div className={styles.div4}>{course?.price}$</div>
                     <div className={styles.off}>50% Off</div>
                     <div className={styles.hourLeftAt}>
                       11 hour left at this price
