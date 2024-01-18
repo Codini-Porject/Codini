@@ -32,6 +32,16 @@
   top: 709px;
   left: 109.44px;
 }
+.mrabet {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  margin-left: -200px;
+  margin-top: 77%;
+  margin-left: -1%;
+}
+
 .groupChild {
   top: 0;
   left: 0;

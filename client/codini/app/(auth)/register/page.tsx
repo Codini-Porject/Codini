@@ -1,9 +1,60 @@
 "use client";
 import styles from "../../styles/register.module.css";
 import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useIdentity } from "../IdentityContext";
 
-const Login = () => {
+const Register = () => {
   const router = useRouter();
+  const [username, setUsername] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [role, setRole] = useState("student");
+  const { user, setUser, clearUser } = useIdentity();
+
+  //   const { setUser } = useIdentity();
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8000/auth/register", {
+        name: username,
+        email: userEmail,
+        password: userPassword,
+        role: role,
+      });
+
+      if (response.status === 201) {
+        const { data } = response;
+
+        Cookies.set("authToken", data.token, { expires: 7 });
+        setSuccessMessage("Registration successful");
+
+        router.push("/login");
+        // Optional: Redirect based on user role
+        // if (data.role === "teacher") {
+        //   router.push(`/teacher/${data.idteachers}`);
+        // } else if (data.role === "student") {
+        //   router.push(`/student/${data.idstudents}`);
+        // } else {
+        //   router.push(`/`);
+        // }
+      } else {
+        setErrorMessage("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      setErrorMessage("Error during registration. Please try again.");
+      console.error("Error during registration:", error);
+    }
+  };
+
+  const handleInputChange = (e, setState) => {
+    setState(e.target.value);
+  };
 
   const handleloginClick = () => {
     router.push("/login");
@@ -13,10 +64,8 @@ const Login = () => {
     <div className={styles.login}>
         <div className={styles.registerInner}>
           <div className={styles.loremIpsumIsSimplyParent}>
-            <b className={styles.loremIpsumIs}>{`Lorem Ipsum is simply `}</b>
-            <div
-              className={styles.loremIpsumIs1}
-            >{`Lorem Ipsum is simply `}</div>
+            <b className={styles.loremIpsumIs}>Lorem Ipsum is simply</b>
+            <div className={styles.loremIpsumIs1}>Lorem Ipsum is simply</div>
           </div>
         </div>
         <div className={styles.groupParent}>
@@ -35,40 +84,60 @@ const Login = () => {
             </div>
             <div className={styles.welcomeToLorem}>Welcome to Codini..!</div>
           </div>
-          <div className={styles.rectangleGroup}>
-            <input
-              type="text"
-              placeholder="Enter your User name"
-              className={styles.groupInner}
-            />
-            <div className={styles.userName}>User name</div>
-            <div className={styles.enterYourUser}></div>
-          </div>
-          <div className={styles.rectangleContainer}>
-            <input
-              type="text"
-              placeholder="Enter your Email Address"
-              className={styles.groupInner}
-            />
-            <div className={styles.userName}>Email Address</div>
-            <div className={styles.enterYourUser}></div>
-          </div>
-          <div className={styles.groupDiv}>
-            <div className={styles.rectangleParent1}>
+          <form className={styles.registerForm} onSubmit={handleSignup}>
+            <div className={styles.rectangleGroup}>
               <input
                 type="text"
-                placeholder="Enter your Password"
+                placeholder="Enter your User name"
+                value={username}
+                onChange={(e) => handleInputChange(e, setUsername)}
                 className={styles.groupInner}
               />
-              <div className={styles.userName}>Password</div>
-              <div className={styles.enterYourUser}></div>
+              <div className={styles.userName}>User name</div>
             </div>
-            <img
-              className={styles.invisible1Icon}
-              alt=""
-              src="/invisible-1@2x.png"
-            />
-          </div>
+            <div className={styles.rectangleContainer}>
+              <input
+                type="text"
+                placeholder="Enter your Email Address"
+                value={userEmail}
+                onChange={(e) => handleInputChange(e, setUserEmail)}
+                className={styles.groupInner}
+              />
+              <div className={styles.userName}>Email Address</div>
+            </div>
+            <div className={styles.groupDiv}>
+              <input
+                type="password"
+                placeholder="Enter your Password"
+                value={userPassword}
+                onChange={(e) => handleInputChange(e, setUserPassword)}
+                className={styles.groupInner}
+              />
+
+              <div className={styles.userName}>Password</div>
+            </div>
+            <div className={styles.mrabet}>
+              {/* <label htmlFor="role">Select Role:</label> */}
+              <select
+                id="role"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                className={styles.mrabet}
+              >
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+              </select>
+            </div>
+            {errorMessage && (
+              <div className={styles.errorMessage}>{errorMessage}</div>
+            )}
+            {successMessage && (
+              <div className={styles.successMessage}>{successMessage}</div>
+            )}
+            <button type="submit" className={styles.registerButton}>
+              Register
+            </button>
+          </form>
           <div className={styles.loremIpsumIs2}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
@@ -87,4 +156,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

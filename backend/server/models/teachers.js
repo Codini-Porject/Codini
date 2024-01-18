@@ -25,11 +25,15 @@ const Teacher = sequelize.define(
     },
     image: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
+    },
+    desc: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
     review: {
       type: DataTypes.ENUM("1", "2", "3", "4", "5"),
-      allowNull: false,
+      allowNull: true,
     },
     accepted: {
       type: DataTypes.INTEGER,
