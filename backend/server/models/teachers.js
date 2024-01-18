@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../db/config.js");
+const bcrypt = require("bcrypt")
 
 const Teacher = sequelize.define(
   "teachers",
@@ -22,6 +23,9 @@ const Teacher = sequelize.define(
     password: {
       type: DataTypes.STRING(500),
       allowNull: false,
+      set(value) {
+        this.setDataValue('password', bcrypt.hashSync(value, 10));
+      },
     },
     image: {
       type: DataTypes.TEXT,
@@ -46,5 +50,12 @@ const Teacher = sequelize.define(
     tableName: "teachers",
   }
 );
+
+Teacher.beforeSave(async (teacher, options) => {
+  if (teacher.changed('password')) {
+    const hash = await bcrypt.hash(teacher.password, 10);
+    teacher.password = hash;
+  }
+});
 
 module.exports = Teacher;

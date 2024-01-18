@@ -27,7 +27,7 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const passwordMatch = password=== user.password
+    const passwordMatch =bcrypt.compare (password, user.password)
     console.log(passwordMatch);
     if (passwordMatch) {
       const role = user instanceof Teacher ? "teacher" : "student";
