@@ -4,6 +4,7 @@ import React, { ChangeEvent, useState } from "react";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useIdentity } from "../(auth)/IdentityContext";
+import { useRouter } from 'next/navigation';
 
 
 interface Course {
@@ -13,11 +14,13 @@ interface Course {
 }
 
 interface Video {
-  id:number
+  idteachers_idteachers:number
   Videos: string;
 }
 
 const Create: React.FC = () => {
+  const route=useRouter()
+
   const { user } = useIdentity();
   const idTeacher = user?.id;
   console.log(idTeacher);
@@ -32,7 +35,6 @@ const Create: React.FC = () => {
     e.preventDefault();
 
     try {
-      // First, add course
       const courseResponse = await axios.post(
         "http://localhost:8000/courses/addcourse",
         {
@@ -43,18 +45,11 @@ const Create: React.FC = () => {
           languages_idlanguages: select,
         }
       );
-
-      // Then, add video
-      const videoResponse = await axios.post(
-        `http://localhost:8000/videos/courses/${select}`,
-        {
-          videos: vid,
-          id:idTeacher
-        }
-      );
+      console.log(courseResponse);
+      route.push(`http://localhost:3000/create/${courseResponse.data.idcourse}`)
+ 
 
       console.log("Course response:", courseResponse.data);
-      console.log("Video response:", videoResponse.data);
     } catch (error) {
       console.error("Error creating course or video:", error);
     }

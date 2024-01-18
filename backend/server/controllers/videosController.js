@@ -75,7 +75,7 @@ const deleteVideoForCourse = async (req, res) => {
 
 const addVideoToCourse = async (req, res) => {
   const { courseId } = req.params;
-  const { videos, islocked } = req.body;
+  const { videos, islocked  } = req.body;
 
   // const { role } = req.user;
 
