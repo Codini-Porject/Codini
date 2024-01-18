@@ -11,7 +11,6 @@ const Login = () => {
 
   return (
     <div className={styles.login}>
-      <div className={styles.register}>
         <div className={styles.registerInner}>
           <div className={styles.loremIpsumIsSimplyParent}>
             <b className={styles.loremIpsumIs}>{`Lorem Ipsum is simply `}</b>
@@ -85,7 +84,6 @@ const Login = () => {
           src="/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin-1@2x.png"
         />
       </div>
-    </div>
   );
 };
 
