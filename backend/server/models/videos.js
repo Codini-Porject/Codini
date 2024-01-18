@@ -32,6 +32,8 @@ const Videos = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    
+    
   },
   {
     timestamps: false,

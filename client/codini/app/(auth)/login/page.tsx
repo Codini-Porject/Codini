@@ -107,9 +107,7 @@ const Login = () => {
             </div>
           </div>
           <div className={styles.rectangleParent1}>
-            <div className={styles.groupChild1} />
-            <div className={styles.rememebrMe}>Remember me</div>
-            <div className={styles.forgotPassword}>Forgot Password?</div>
+            {/* <div className={styles.groupChild1} /> */}
           </div>
           <div className={styles.rectangleParent2}>
             <select

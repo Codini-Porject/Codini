@@ -13,64 +13,76 @@ interface Course {
 }
 
 interface Video {
+  id:number
   Videos: string;
 }
 
 const Create: React.FC = () => {
   const { user } = useIdentity();
-  console.log(user);
+  const idTeacher = user?.id;
+  console.log(idTeacher);
 
   const [rate, setRate] = useState<number>(0);
   const [price, setPrice] = useState<number>(0);
   const [desc, setDescription] = useState<string>("");
   const [select, setSelect] = useState<number>(0);
-  const [vid, setVideo] = useState<File | null>(null);
+  const [vid, setVideo] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
+      // First, add course
+      const courseResponse = await axios.post(
         "http://localhost:8000/courses/addcourse",
         {
           desc: desc,
           price: price,
           rate: rate,
-          teachers_idteachers: 1,
-          languages_idlanguages: select, // no need to parse it again
-          videos: vid,
-        },
+          teachers_idteachers: idTeacher,
+          languages_idlanguages: select,
+        }
       );
-      console.log(response.data);
+
+      // Then, add video
+      const videoResponse = await axios.post(
+        `http://localhost:8000/videos/courses/${select}`,
+        {
+          videos: vid,
+          id:idTeacher
+        }
+      );
+
+      console.log("Course response:", courseResponse.data);
+      console.log("Video response:", videoResponse.data);
     } catch (error) {
-      console.error("Error creating course:", error);
+      console.error("Error creating course or video:", error);
     }
   };
+  // const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files?.[0];
 
-  const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+  //   if (file) {
+  //     try {
+  //       const formData = new FormData();
+  //       formData.append("file", file);
 
-    if (file) {
-      try {
-        const formData = new FormData();
-        formData.append("file", file);
-
-        const response = await axios.post(
-          `https://api.cloudinary.com/v1_1/doytchn8h/video/upload?upload_preset=marketplace&cloud_name=doytchn8h`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        console.log(response.data);
-        setVideo(response.data.secure_url);
-      } catch (error) {
-        console.error("Error uploading video:", error);
-      }
-    }
-  };
+  //       const response = await axios.post(
+  //         `https://api.cloudinary.com/v1_1/doytchn8h/video/upload?upload_preset=marketplace&cloud_name=doytchn8h`,
+  //         formData,
+  //         {
+  //           headers: {
+  //             "Content-Type": "multipart/form-data",
+  //           },
+  //         }
+  //       );
+  //       console.log(response.data);
+  //       setVideo(response.data.secure_url);
+  //     } catch (error) {
+  //       console.error("Error uploading video:", error);
+  //     }
+  //   }
+  // };
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '10px', width: '440px', margin: 'auto', marginTop: '20px' }}>
       <Box
@@ -92,6 +104,16 @@ const Create: React.FC = () => {
         autoComplete="off"
       >
         <TextField id="standard-basic" label="Price" variant="standard" onChange={(e) => setPrice(parseFloat(e.target.value))} />
+      </Box>
+      <Box
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 1, width: '55ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField id="standard-basic" label="video" variant="standard" onChange={(e) => setVideo((e.target.value))} />
       </Box>
       <Box
         component="form"
