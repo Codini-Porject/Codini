@@ -35,14 +35,6 @@ const Register = () => {
         setSuccessMessage("Registration successful");
 
         router.push("/login");
-        // Optional: Redirect based on user role
-        // if (data.role === "teacher") {
-        //   router.push(`/teacher/${data.idteachers}`);
-        // } else if (data.role === "student") {
-        //   router.push(`/student/${data.idstudents}`);
-        // } else {
-        //   router.push(`/`);
-        // }
       } else {
         setErrorMessage("Registration failed. Please try again.");
       }
@@ -129,24 +121,19 @@ const Register = () => {
                 <option value="teacher">Teacher</option>
               </select>
             </div>
-            {errorMessage && (
-              <div className={styles.errorMessage}>{errorMessage}</div>
-            )}
-            {successMessage && (
-              <div className={styles.successMessage}>{successMessage}</div>
-            )}
-            <button type="submit" className={styles.registerButton}>
-              Register
-            </button>
-          </form>
-          <div className={styles.loremIpsumIs2}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </div>
+            
           <div className={styles.rectangleParent2}>
             <div className={styles.groupChild2} />
-            <div className={styles.register2}>Register</div>
+            <button className={styles.register2} style={{backgroundColor:"transparent"}} type="submit">
+            {errorMessage && (
+              <div className={styles.errorMessage}>{errorMessage}</div>
+              )}
+            {successMessage && (
+              <div className={styles.successMessage}>{successMessage}</div>
+              )}
+              Register</button>
           </div>
+              </form>
         </div>
         <img
           className={styles.lovelyTeenageGirlWithCurlyIcon}

@@ -1,4 +1,5 @@
 const Teacher = require("../models/teachers.js");
+const bcrypt = require("bcrypt");
 
 const getAllTeachers = async (req, res) => {
   try {
@@ -58,18 +59,26 @@ const addOneTeacher = async (req, res) => {
 };
 
 const updateTeacher = async (req, res) => {
-    const { id } = req.params;
-    const { name, password, image ,review ,accepted} = req.body;
-    try {
-      const teacher = await Teacher.findByPk(id);
-      await teacher.update({ name, password, image ,review ,accepted });
-      res.json({ message: "Teacher updated successfully" });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: "Server Error" });
-    }
-  };
+  const { id } = req.params;
+  const { name, password, desc, image, review, accepted } = req.body;
 
+  try {
+    const teacher = await Teacher.findByPk(id);
+
+    // Don't manually hash the password, it will be handled by the model's beforeSave hook
+    if (password) {
+      await teacher.update({ name, password, desc, image, review, accepted });
+    } else {
+      await teacher.update({ name, desc, image, review, accepted });
+    }
+
+    console.log(req.body);
+    res.json({ message: "Teacher updated successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
 
 module.exports = {
   getAllTeachers,

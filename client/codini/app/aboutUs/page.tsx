@@ -4,17 +4,7 @@ import { motion, useScroll } from "framer-motion";
 import styles from "../styles/aboutUs.module.css";
 import "./about.css";
 const AboutUs = () => {
-//   const { scrollYProgress } = useScroll();
-//   <>
-//   <motion.div
-//     className="progress-bar"
-//     style={{ scaleX: scrollYProgress }}
-//   />
-//   <h1>
-//     <code>useScroll</code> demo
-//   </h1>
-//   <LoremIpsum />
-// </>
+
   return (
     <div className={styles.aboutUs}>
       <div className={styles.aboutUsInner}>

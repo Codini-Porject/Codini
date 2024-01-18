@@ -86,23 +86,22 @@ const courses: Course[] = [
                   </p>
                 </b>  
                 <div className={styles.learnUiUxDesign}>
-                  Learn software languages online with CODINI.  The latest online
-                  learning system that help your coding knowledge growing...
-                  </div>
-                  </div>
+                  Learn UI-UX Design skills with weekend UX . The latest online
+                  learning system and material that help your knowledge growing.
+                </div>
+              </div>
               <div className={styles.buttonParent}>
-        <Link href="/register"><button><div className={styles.button2} >
-        <div className={styles.buttonBase2}>
-        <div className={styles.text3}>Get Started</div>
-        </div>
-        </div></button></Link>
-        <Link href="/register"><button><div className={styles.button3} >
-          
-        <div className={styles.buttonBase3}>
-        <div className={styles.text3}>Get free trial</div>
-        </div>
-        </div></button></Link>
-        </div>
+                <div className={styles.button2}>
+                  <div className={styles.buttonBase2}>
+                    <div className={styles.text3}>Get Started</div>
+                  </div>
+                </div>
+                <div className={styles.button3}>
+                  <div className={styles.buttonBase3}>
+                    <div className={styles.text3}>Get free trial</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className={styles.frameParent1}>
               <div className={styles.groupParent}>
@@ -111,7 +110,7 @@ const courses: Course[] = [
                   alt=""
                   src="/group-518@2x.png"
                 />
-                <div className={styles.publicSpeaking}>online Teachers</div>
+                <div className={styles.publicSpeaking}>Public Speaking</div>
               </div>
               <div className={styles.groupParent}>
                 <img
@@ -119,7 +118,7 @@ const courses: Course[] = [
                   alt=""
                   src="/briefcase@2x.png"
                 />
-                <div className={styles.publicSpeaking}>Full Courses</div>
+                <div className={styles.publicSpeaking}>Career-Oriented</div>
               </div>
               <div className={styles.groupParent}>
                 <img
@@ -127,7 +126,7 @@ const courses: Course[] = [
                   alt=""
                   src="/idea@2x.png"
                 />
-                <div className={styles.publicSpeaking}>Quiz </div>
+                <div className={styles.publicSpeaking}>Creative Thinking</div>
               </div>
             </div>
           </div>
@@ -649,97 +648,89 @@ const courses: Course[] = [
           </div>
         </div>
         <div className={styles.container2}>
-          <div className={styles.heading6}>Our recent offers</div>
+          <div className={styles.heading6}>Our recent blogs</div>
           <div className={styles.content7}>
             <div className={styles.column}>
               <div className={styles.blogPostCard3}>
-                <img className={styles.imageIcon} alt="" src="/offer1.jpg" />
+                <img className={styles.imageIcon} alt="" src="/image@2x.png" />
                 <div className={styles.content8}>
                   <div className={styles.headingAndSubheading}>
-                    <div className={styles.author}>November 16, 2023</div>
+                    <div className={styles.author}>November 16, 2014</div>
                     <div className={styles.headingAndText4}>
                       <div className={styles.heading7}>
-                      full stack courses & meets
+                        Three Pillars of User Delight
                       </div>
                       <div className={styles.formerFrontendDev}>
-                        full stack courses with all the technologies to become a fullstack dev 
+                        Delight can be experienced viscerally, behaviourally,
+                        and reflectively. A great design is ...
                       </div>
                     </div>
                   </div>
                   <div className={styles.categories}>
                     <div className={styles.badge}>
                       <div className={styles.badgeBase}>
-                        <div className={styles.text5}>JS</div>
-                      </div>
-                    </div>
-                    <div className={styles.badge}>
-                      <div className={styles.badgeBase}>
-                        <div className={styles.text5}>Express.js</div>
+                        <div className={styles.text5}>Research</div>
                       </div>
                     </div>
                     <div className={styles.badge1}>
                       <div className={styles.badgeBase1}>
-                        <div className={styles.text5}>React JS</div>
+                        <div className={styles.text5}>UI UX</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className={styles.blogPostCard3}>
-                <img className={styles.imageIcon} alt="" src="/offer2.jpg" />
+                <img className={styles.imageIcon} alt="" src="/image@2x.png" />
                 <div className={styles.content8}>
                   <div className={styles.headingAndSubheading}>
-                    <div className={styles.author}>January 4, 2024</div>
+                    <div className={styles.author}>September 24, 2017</div>
                     <div className={styles.headingAndText4}>
-                      <div className={styles.heading7}>DevOps courses</div>
+                      <div className={styles.heading7}>UX Mapping Methods</div>
                       <div className={styles.formerFrontendDev}>
-                       a hight quality devops courses 
+                        Visual-design principles can be applied consistently
+                        throughout the process of creating a polished UX map...
                       </div>
                     </div>
                   </div>
                   <div className={styles.categories}>
                     <div className={styles.badge}>
                       <div className={styles.badgeBase}>
-                        <div className={styles.text5}>Python</div>
+                        <div className={styles.text5}>Research</div>
                       </div>
                     </div>
                     <div className={styles.badge1}>
                       <div className={styles.badgeBase1}>
-                        <div className={styles.text5}>GIT</div>
+                        <div className={styles.text5}>UI Design</div>
                       </div>
                     </div>
-                    <div className={styles.badge}>
-                    <div className={styles.badgeBase4}>
-                      <div className={styles.text5}>Docker</div>
-                    </div>
-                  </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className={styles.blogPostCard5}>
-              <img className={styles.imageIcon2} alt="" src="/offer3.jpg" />
+              <img className={styles.imageIcon2} alt="" src="/image@2x.png" />
               <div className={styles.content10}>
                 <div className={styles.headingAndSubheading}>
-                  <div className={styles.author}>november 24, 2023</div>
+                  <div className={styles.author}>March 13, 2014</div>
                   <div className={styles.headingAndIcon3}>
                     <div className={styles.heading2}>
-                      JAVA developer 
-                        </div>
+                      Agile Development Projects and Usability
+                    </div>
                   </div>
                   <div
                     className={styles.formerFrontendDev}
-                  >{`become a JAVA developer with 8 of the best teacher you can have`}</div>
+                  >{`Agile methods aim to overcome usability barriers in traditional development, but post new threats to user experience quality. `}</div>
                 </div>
                 <div className={styles.categories2}>
                   <div className={styles.badge}>
                     <div className={styles.badgeBase4}>
-                      <div className={styles.text5}>JAVA</div>
+                      <div className={styles.text5}>Programming</div>
                     </div>
                   </div>
                   <div className={styles.badge5}>
                     <div className={styles.badgeBase5}>
-                      <div className={styles.text5}>GIT & GITHUB</div>
+                      <div className={styles.text5}>Research</div>
                     </div>
                   </div>
                   <div className={styles.badge6}>

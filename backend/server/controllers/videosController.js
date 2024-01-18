@@ -1,5 +1,6 @@
 const Videos = require("../models/videos.js");
 const Course = require("../models/courses.js");
+const { where } = require("sequelize");
 
 const getAllVideosForCourse = async (req, res) => {
   const courseId = req.params.courseId;
@@ -13,6 +14,31 @@ const getAllVideosForCourse = async (req, res) => {
     res.status(500).json({ error: "Server Error" });
   }
 };
+
+const getAllVideos = async (req, res) => {
+  
+  try {
+    const videos = await Videos.findAll({});
+    res.json(videos);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
+
+const getAllVideosfor = async (req, res) => {
+  
+  try {
+    const videos = await Videos.findAll({
+      where : {teachers_idteachers : req.params.id}
+    });
+    res.json(videos);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
+
 
 const getVideoForCourseById = async (req, res) => {
   const { courseId, videoId } = req.params;
@@ -80,4 +106,6 @@ module.exports = {
   getVideoForCourseById,
   deleteVideoForCourse,
   addVideoToCourse,
+  getAllVideos,
+  getAllVideosfor
 };
