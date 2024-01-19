@@ -18,7 +18,7 @@ const QuizComponent = () => {
   };
 
   return (
-    <div className="container mt-sm-5 my-1">
+    <div className="container1 mt-sm-5 my-1">
     <div className="question ml-sm-5 pl-sm-5 pt-2">
       <div className="py-2 h5"><b>Q. which option best describes your job role?</b></div>
       <div className="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
