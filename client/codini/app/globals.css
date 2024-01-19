@@ -41,6 +41,7 @@ body {
   line-height: normal;
 }
 
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Font+Awesome+6+Brands:wght@400&display=swap");
@@ -74,6 +75,68 @@ body {
   margin: 0;
   line-height: normal;
 }
+body {
+  margin: 0;
+  padding-top: 40px;
+  color: #2e323c;
+  /* background: #f5f6fa; */
+  position: relative;
+  height: 100%;
+}
+.account-settings .user-profile {
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+  margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+  margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #9fa8b9;
+}
+.account-settings .about {
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+.account-settings .about h5 {
+  margin: 0 0 15px 0;
+  color: #007ae1;
+}
+.account-settings .about p {
+  font-size: 0.825rem;
+}
+.form-control {
+  border: 1px solid #cfd1d8;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: .825rem;
+  background: #ffffff;
+  color: #2e323c;
+}
+
+.card {
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  margin-bottom: 1rem;
+}
+
 :root {
   /* fonts */
   --font-poppins: Poppins;
@@ -137,6 +200,60 @@ body {
   --br-mini: 15px;
   --br-3xs: 10px;
   --br-41xl: 60px;
+}
+
+body{
+  margin-top:20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;    
+}
+.main-body {
+  padding: 15px;
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.mb-3, .my-3 {
+  margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+.h-100 {
+  height: 100%!important;
+}
+.shadow-none {
+  box-shadow: none!important;
 }
 
 .careers,
@@ -822,37 +939,4 @@ body {
   margin-top: 140px; /* Adjust the margin as needed */
   margin-left: auto;
   margin-right: auto;
-}
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
-body {
-  margin: 0;
-  line-height: normal;
-}
-:root {
-  /* fonts */
-  --font-poppins: Poppins;
-  --font-font-awesome-5-free: "Font Awesome 5 Free";
-
-  /* font sizes */
-  --font-size-xl: 20px;
-  --font-size-lg: 18px;
-  --font-size-5xl: 24px;
-  --font-size-7xl: 26px;
-  --font-size-3xl: 22px;
-
-  /* Colors */
-  --color-white: #fff;
-  --color-black: #000;
-  --color-dimgray: #5b5b5b;
-  --color-gray-100: #252641;
-  --color-lightseagreen: #49bbbd;
-  --color-gainsboro-100: #d9d9d9;
-  --color-lightslategray: #83839a;
-  --color-lightsteelblue: #b2b3cf;
-  --color-slategray: #626381;
-
-  /* Border radiuses */
-  --br-xl: 20px;
-  --br-41xl: 60px;
 }

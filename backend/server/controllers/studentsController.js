@@ -56,10 +56,10 @@ const addOneStudent = async (req, res) => {
 
 const updateStudent = async (req, res) => {
   const { id } = req.params;
-  const { name, password, image, Phrases, level } = req.body;
+  const { name, password, image } = req.body;
   try {
     const student = await Student.findByPk(id);
-    await student.update({ name, password, image, Phrases, level });
+    await student.update({ name, password, image });
     res.json({ message: "Student updated successfully" });
   } catch (error) {
     console.error(error);

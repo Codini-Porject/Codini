@@ -1,4 +1,4 @@
-// Import necessary dependencies
+
 import React from "react";
 import { IdentityProvider } from "../app/(auth)/IdentityContext";
 import Navbar from "./Navbar/page";
@@ -14,6 +14,7 @@ export default function RootLayout({
 
     <IdentityProvider>
       <html lang="en">
+        
         <body>
           <Navbar />
           {children}
