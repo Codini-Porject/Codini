@@ -65,7 +65,6 @@ const updateTeacher = async (req, res) => {
   try {
     const teacher = await Teacher.findByPk(id);
 
-    // Don't manually hash the password, it will be handled by the model's beforeSave hook
     if (password) {
       await teacher.update({ name, password, desc, image, review, accepted });
     } else {

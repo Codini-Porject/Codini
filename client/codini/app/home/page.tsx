@@ -25,7 +25,7 @@
     // }
 
     interface Languages {
-      id: number;
+      idlanguages: number;
       name: string;
       image: string;
       description:string
@@ -83,9 +83,9 @@
     <div>
       <div className={styles.parent}>
         {langua.map((language, i) => (
-          <div key={i} className={styles.rectangleDiv}>
+          <div key={i} className={styles.rectangleDiv} onClick={()=>{reduce.push(`/language/${language.idlanguages}`)}}>
             <img className={styles.rectangleIcon} src={language.image} alt={language.name} />
-            <h1 className={styles.design}> {language.name}</h1>          
+            <h1 className={styles.design1}> {language.name}</h1>          
             <p className={styles.description}>{language.description}</p>
           </div>
         ))}
@@ -111,18 +111,18 @@
         <div className={styles.textContainer}>
           <div className={styles.design}>{teacher.name}</div>
           <div className={styles.descriptionWithBorderRadius}>{teacher.desc} <br></br>
-          <span style={{fontFamily:"1px"}}>review:{teacher.review}</span>
+          {/* <span style={{fontFamily:"1px"}}>review:{teacher.review}</span> */}
           </div>
         </div>
       </div>
     ))}
   </div>
-  <div >
-     <Footer />
 </div>
+  <div style={{marginTop:"10cm"}}> 
+    <Footer />
+      </div>
 </div>
 
-      </div>
     );
   };
   

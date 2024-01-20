@@ -3,6 +3,8 @@ import axios from "axios";
 import React, { useState, ChangeEvent } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import { useRouter } from "next/navigation";
 import style from "./index.module.css"
 
@@ -15,6 +17,8 @@ const route = useRouter()
   const [name, setName] = useState<string | null>("");
     const [desc, setDescription] = useState<string | null>("");
   const [password, setPassword] = useState<string | null>("");
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,9 +32,11 @@ const route = useRouter()
           image: image,
           password: password,
         }    
-      );
+        );
+        route.push(`/teacher/${id}`);
 
       ;
+      console.log(response.data);
       
       // Handle the response as needed
     } catch (error) {
@@ -47,7 +53,7 @@ const route = useRouter()
         const formData = new FormData();
         formData.append("file", file);
   console.log("hhheeee",formData);
-  
+  setPreviewImage(URL.createObjectURL(file));
         const response = await axios.post(
           `https://api.cloudinary.com/v1_1/doytchn8h/image/upload?upload_preset=marketplace&cloud_name=doytchn8h`,
           formData,
@@ -73,7 +79,15 @@ const route = useRouter()
       <div className="card mb-4 mb-xl-0">
         <div className="card-header">Profile Picture</div>
         <div className="card-body text-center">
-          <img className="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+        {previewImage ? (
+          <img className="img-account-profile rounded-circle mb-2" src={previewImage} alt="Preview" />
+        ) : (
+          <img
+            className="img-account-profile rounded-circle mb-2"
+            src="http://bootdey.com/img/Content/avatar/avatar1.png"
+            alt=""
+          />
+        )}
           <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
           <label className="file-input-label">
             <input
@@ -83,6 +97,7 @@ const route = useRouter()
               accept="image/*"
               style={{ display: 'none' }} // Hide the input element
             />
+         
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -101,38 +116,52 @@ const route = useRouter()
               <polyline points="16 16 12 12 8 16"></polyline>
             </svg>
           </label>
+          <Box
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 1, width: '55ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField id="standard-basic" label="name" variant="standard" onChange={(e) => setName(e.target.value)} />
+      </Box>
+      <Box
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 1, width: '55ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField id="standard-basic" label="Description" variant="standard" onChange={(e) => setDescription(e.target.value)}/>
+      </Box>
+      <Box
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 1, width: '55ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField id="standard-basic" label="password" variant="standard" type="password" onChange={(e) => setPassword(e.target.value)} />
+      </Box>
         </div>
       </div>
     </div>
     <div className="col-xl-8">
-      <div className="card mb-4">
-        <div className="card-header">Account Details</div>
-        <div className="card-body">
-          <form onChange={handleSubmit}>
-            <div className="mb-3">
-              <label className="small mb-1" htmlFor="inputUsername">Name</label>
-              <input className="form-control" id="inputUsername" type="text" placeholder="Enter your name" name="name" onChange={(e) => setName(e.target.value)} />
-            </div>
-            <div className="row gx-3 mb-3">
-              <div className="mb-3">
-                <label className="small mb-1" htmlFor="inputEmailAddress">Description</label>
-                <input className="form-control" id="inputEmailAddress" placeholder="Enter your description" name="desc" onChange={(e) => setDescription(e.target.value)} />
-              </div>
-              <div className="col-md-6">
-                <label className="small mb-1" htmlFor="inputLastName">Password</label>
-                <input className="form-control" id="inputLastName" type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
-              </div>
-            </div>
-            <Link href={`/teacher/${id}`}>
-  <button className="btn btn-primary" type="submit">Save changes</button>
-</Link>
-          </form>
-        </div>
-      </div>
-    </div>
+    <div className="card mb-4">
+  <div className="card-body">
+      <form>
+      <button className="btn btn-primary" onClick={handleSubmit}>
+        Save changes
+</button>
+      </form>
   </div>
 </div>
-
+  </div>
+</div>
+</div>
   );
 };
 

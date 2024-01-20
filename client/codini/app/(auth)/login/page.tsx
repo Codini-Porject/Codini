@@ -42,7 +42,7 @@ const Login = () => {
         });
         
         Cookies.set("authToken", token, { expires: 60 * 60 * 24 });
-        router.push("/home");
+        router.push(`teacher/${userId}`);
       } else {
         setErrorMessage("Login failed. Please check your credentials.");
       }

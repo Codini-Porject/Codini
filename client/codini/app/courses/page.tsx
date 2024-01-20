@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import style from "./course.module.css"
-import YouTube from "react-youtube";
+ 
 
 interface Course {
   id: number;
@@ -34,6 +34,8 @@ const fetchAllCourses: React.FC = () => {
 
         setCourses(fetchedCourses);
         setVideos(fetchedVideos);
+        console.log(fetchedVideos);
+        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -42,8 +44,8 @@ const fetchAllCourses: React.FC = () => {
     fetchData();
   }, []);
   const opts = {
-    height: '250',
-    width: '350',
+    height: '240',
+    width: '320',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
@@ -67,21 +69,37 @@ const  _onReady=(event:any)=> {
 
   return (
     <div className={style.gridcontainer}>
-      {videos.map((video, i) => (
-        <div className={style.videocontainer} key={i}>
-          <YouTube videoId={getVideoUrl(video.idvideos)} opts={opts} onReady={_onReady} />;
+    {videos.map((video, i) => (
+      <div className={style.videoCourseContainer} key={i}>
+        <div className={style.videocontainer}>
+          {/* Displaying YouTube video */}
+          {/* <YouTube videoId={getVideoUrl(video.idvideos)} opts={opts} onReady={_onReady} /> */}
         </div>
-      ))}
-      {/* {courses.map((course, i) => (
-        <div key={i} className={style.coursecontainer}>
-          <p>{course.desc}</p>
-          <span>Price: ${course.price}</span>
-          <br />
-          <span>Rate: {course.rate}</span>
+        <div className={style.videocontainer}>
+          {/* Displaying uploaded video */}
+          <video width="320" height="240" controls>
+            <source src={video.videos} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+  
+          {/* Conditionally render the image based on the value of videos.isLocked */}
+          {video?.isLocked === 0 && (
+            <img src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg" alt="Locked" />
+          )}
         </div>
-      ))} */}
-    </div>
-  );
-};
+        {courses[i] && (
+          <div className={style.coursecontainer}>
+            <p>{courses[i].desc}</p>
+            <span>Price: ${courses[i].price}</span>
+            <br />
+            <span>Rate: {courses[i].rate}</span>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+  )
+}
+
 
 export default fetchAllCourses;
