@@ -1,5 +1,11 @@
+
+"use client";
+import styles from "../styles/aboutUs.module.css";
+
+
 import  Link  from 'next/link';
 import { motion, useScroll } from "framer-motion";
+
 
 import styles from "../styles/aboutUs.module.css";
 import "./about.css";
@@ -11,7 +17,9 @@ const AboutUs = () => {
         <div className={styles.featuresSectionParent}>
           <div className={styles.featuresSection}>
             <div className={styles.imageBg} />
-            <img
+            <motion.img
+              initial={{ rotate: "0deg" }}
+              animate={{ rotate: "0deg" }}
               className={styles.sectionImgIcon}
               alt=""
               src="/codini3C.jpg" 
@@ -152,11 +160,13 @@ const AboutUs = () => {
         <div className={styles.frameChild} />
         <div className={styles.rectangleGroup}>
           <div className={styles.rectangleGroup} />
+
           <div className={styles.frameParent}>
             <div className={styles.frameGroup}>
             </div>
 
           </div>
+
         </div>
       </div>
       <div className={styles.aboutUsSection}>
