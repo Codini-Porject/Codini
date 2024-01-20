@@ -71,6 +71,8 @@ const IdentityProvider: React.FC<IdentityProviderProps> = ({ children }) => {
     password: string;
     token: string;
   }) => {
+    console.log("hu");
+    
     dispatch({
       type: "SET_USER",
       payload: user ? user : { id: -1, role: null, token: null },

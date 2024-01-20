@@ -1,0 +1,25 @@
+.myform {
+  max-width: 600px; /* Increase max-width for a larger form */
+  margin: 0 auto;
+  padding: 40px; /* Increase padding for more spacing */
+  border: 10px solid #339d27;
+  border-radius: 10px;
+}
+
+.forminput {
+  margin-bottom: 20px; /* Increase margin for more spacing */
+}
+
+.forminput label {
+  display: block;
+  margin-bottom: 10px; /* Increase margin for more spacing */
+}
+
+.form-input input,
+.forminput select {
+  width: 100%;
+  padding: 12px; /* Increase padding for larger inputs */
+  box-sizing: border-box;
+  border: 2px solid #ccc; /* Increase border width for larger inputs */
+  border-radius: 6px; /* Increase border-radius for rounded corners */
+}

@@ -12,10 +12,10 @@ const generateToken = (userId, userName, role) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
-
+  console.log(req.body);
   try {
     let user = await Teacher.findOne({ where: { email: email } });
-
+    console.log(user);
     if (!user) {
       user = await Student.findOne({ where: { email: email } });
       if (!user) {
@@ -27,12 +27,13 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password);
-
+    const passwordMatch =bcrypt.compare (password, user.password)
+    console.log(passwordMatch);
     if (passwordMatch) {
       const role = user instanceof Teacher ? "teacher" : "student";
       const token = generateToken(user.id, user.name, role);
-      res.json({ token, userId: user.id, role });
+      console.log(user.id);
+      res.json({ token, userId: user.idstudents?user.idstudents:user.idteachers, role });
     } else {
       res.status(401).json({ message: "Invalid Password" });
     }
@@ -47,7 +48,7 @@ const createUser = async (req, res) => {
     name,
     email,
     password,
-    desc,
+    desc ,
     role,
     image,
     Phrases,

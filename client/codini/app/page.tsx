@@ -1,8 +1,26 @@
+import  Link  from 'next/link';
+import { useScroll } from "framer-motion"
+import { motion, useAnimation } from "framer-motion";
 import styles from "../app/styles/home.module.css";
 
+
 const Home = () => {
+
+  interface Course {
+    title: string;
+    instructor: string;
+    price: number;
+    description: string;
+    image: string;
+}
+const courses: Course[] = [
+  // { title: "JavaScript Fundamentals", instructor: "Jane Cooper", price: 57.84, ... },
+  // { title: "Python for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
+  // { title: "PHP for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
+];
   return (
     <div className={styles.designFile}>
+    
       <div className={styles.designFileInner}>
         <div className={styles.rectangleParent}>
           <div className={styles.groupChild} />
@@ -27,28 +45,28 @@ const Home = () => {
             <img
               className={styles.progressCircleIcon}
               alt=""
-              src="/progress-circle@2x.png"
+              src="/teacher.jpg"
             />
-            <b className={styles.k}>5K+</b>
-            <div className={styles.onlineCourses}>Online Courses</div>
+            <b className={styles.k}>+20</b>
+            <div className={styles.onlineCourses}>software teacher</div>
           </div>
           <img
             className={styles.maskGroupIcon}
             alt=""
             src="/mask-group@2x.png"
-          />
+          />  
           <div className={styles.div1}>
-            <img className={styles.icon} alt="" src="/icon@2x.png" />
+            <img className={styles.icon} alt="" src="/JavaScript.png" />
             <div className={styles.content1}>
-              <b className={styles.k}>2K+</b>
+              <b className={styles.k}>+50</b>
               <div className={styles.onlineCourses}>Video Courses</div>
             </div>
           </div>
           <div className={styles.div2}>
-            <img className={styles.icon} alt="" src="/icon@2x.png" />
+            <img className={styles.icon} alt="" src="/react1.png" />
             <div className={styles.inputField}>
-              <div className={styles.tutors}>Tutors</div>
-              <b className={styles.b}>250+</b>
+              <div className={styles.tutors}>Courses</div>
+              <b className={styles.b}>+40</b>
             </div>
           </div>
           <div className={styles.frameContainer}>
@@ -57,7 +75,7 @@ const Home = () => {
                 <b className={styles.upYourSkillsContainer}>
                   <p className={styles.upYourSkills}>
                     <span>{`up your `}</span>
-                    <span className={styles.skills}>skills</span>
+                    <span className={styles.skills}>software skills</span>
                   </p>
                   <p className={styles.toAdvanceYourCareerPath}>
                     <span className={styles.to}>{`to `}</span>
@@ -66,7 +84,7 @@ const Home = () => {
                     <span className={styles.skills}>career</span>
                     <span className={styles.to}> path</span>
                   </p>
-                </b>
+                </b>  
                 <div className={styles.learnUiUxDesign}>
                   Learn UI-UX Design skills with weekend UX . The latest online
                   learning system and material that help your knowledge growing.
@@ -119,7 +137,7 @@ const Home = () => {
         <div className={styles.headingAndSupportingTextParent}>
           <div className={styles.headingAndSupportingText}>
             <div className={styles.headingAndSubheading}>
-              <div className={styles.subheading}>Our Services</div>
+              <div className={styles.subheading}>Our Packs</div>
               <div
                 className={styles.heading}
               >{`Fostering a playful & engaging learning environment`}</div>
@@ -131,18 +149,19 @@ const Home = () => {
                 <div className={styles.frameParent6}>
                   <div className={styles.frameParent7}>
                     <div className={styles.iconWrapper}>
-                      <img className={styles.icon2} alt="" src="/icon@2x.png" />
+                      <img className={styles.icon2} alt="" src="/JavaScript.png" />
                     </div>
                     <b className={styles.interactionDesign}>
-                      Interaction Design
-                    </b>
+                         FullStack developer Courses        
+                                     </b>
                   </div>
                   <div className={styles.lessonsOnDesign}>
-                    Lessons on design that cover the most recent developments.
+                    Lessons on FrontEnd & BackEnd that cover the most recent developments.
                   </div>
                 </div>
                 <div className={styles.learnMoreParent}>
-                  <div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                </button></Link>
                   <img
                     className={styles.vectorIcon}
                     alt=""
@@ -154,17 +173,17 @@ const Home = () => {
                 <div className={styles.frameParent6}>
                   <div className={styles.frameParent7}>
                     <div className={styles.iconContainer}>
-                      <img className={styles.icon3} alt="" src="/icon@2x.png" />
+                      <img className={styles.icon3} alt="" src="/Python2.png" />
                     </div>
-                    <b className={styles.interactionDesign}>UX Design Course</b>
+                    <b className={styles.interactionDesign}>Machine Learning</b>
                   </div>
                   <div className={styles.classesInDevelopment}>
-                    Classes in development that cover the most recent
-                    advancements in web.
+                  Lessons on python & more that cover the most recent developments.
                   </div>
                 </div>
                 <div className={styles.learnMoreGroup}>
-                  <div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                </button></Link>
                   <img
                     className={styles.vectorIcon}
                     alt=""
@@ -176,19 +195,19 @@ const Home = () => {
                 <div className={styles.frameParent6}>
                   <div className={styles.frameParent7}>
                     <div className={styles.iconFrame}>
-                      <img className={styles.icon4} alt="" src="/icon@2x.png" />
+                      <img className={styles.icon4} alt="" src="/java2.jpg" />
                     </div>
                     <b className={styles.interactionDesign}>
-                      User Interface Design
+                      JAVA developing
                     </b>
                   </div>
                   <div className={styles.userInterfaceDesign1}>
-                    User Interface Design courses that cover the most recent
-                    trends
+                    JAVA full courses to become a Java developer 
                   </div>
                 </div>
                 <div className={styles.learnMoreGroup}>
-                  <div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                </button></Link>
                   <img
                     className={styles.vectorIcon}
                     alt=""
@@ -203,106 +222,36 @@ const Home = () => {
         <div className={styles.headingAndSupportingTextGroup}>
           <div className={styles.headingAndSupportingText1}>
             <div className={styles.headingAndSubheading}>
-              <div className={styles.subheading}>Explore Programs</div>
-              <div className={styles.heading}>Our Most Popular Class</div>
+            <div className={styles.subheading}>Explore Our Program</div>
+              <div className={styles.heading}>Our Most Popular Courses</div>
             </div>
             <div className={styles.supportingText}>
-              Let's join our famous class, the knowledge provided will
-              definitely be useful for you.
+              Let's discover our most famous courses, the knowledge provided will
+              definitely be useful for you to become a software engineer
             </div>
           </div>
+
+
+          {/* <div className={styles.blogPostCardParent} style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}> */}
           <div className={styles.blogPostCardParent}>
-            <div className={styles.blogPostCard}>
-              <div className={styles.image}>
-                <div className={styles.parent}>
-                  <img className={styles.icon5} alt="" src="/22@2x.png" />
-                  <div className={styles.hr12Mins}>08 hr 12 mins</div>
-                </div>
-              </div>
-              <div className={styles.content2}>
-                <div className={styles.headingAndSubheading2}>
-                  <div className={styles.author}>Design</div>
-                  <div className={styles.headingAndText}>
-                    <div className={styles.headingAndIcon}>
-                      <div className={styles.heading2}>
-                        Figma UI UX Design..
-                      </div>
-                      <div className={styles.iconWrap}>
-                        <img
-                          className={styles.arrowUpRightIcon}
-                          alt=""
-                          src="/arrowupright@2x.png"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.formerFrontendDev}>
-                      Use Figma to get a job in UI Design, User Interface, User
-                      Experience design.
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.avatarLabelGroup}>
-                  <img
-                    className={styles.avatarIcon}
-                    alt=""
-                    src="/avatar@2x.png"
-                  />
-                  <div className={styles.inputField}>
-                    <div className={styles.text5}>Jane Cooper</div>
-                    <div className={styles.supportingText2}>2001 Enrolled</div>
-                  </div>
-                </div>
-                <div className={styles.rating}>
-                  <div className={styles.frameParent14}>
-                    <div className={styles.group}>
-                      <div className={styles.hr12Mins}>4.3</div>
-                      <div className={styles.rating1}>
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-1@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-2@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-3@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-4@2x.png"
-                        />
-                        <img
-                          className={styles.ratingChild}
-                          alt=""
-                          src="/star-5@2x.png"
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.div4}>(16,325)</div>
-                  </div>
-                </div>
-                <b className={styles.b1}>$17.84</b>
-              </div>
-            </div>
+          {/* <div>
+              {courses.map((course) => (
+                <CourseCard key={course.id} course={course} />
+             ))}
+          </div> */}
             <div className={styles.blogPostCard}>
               <div className={styles.image1}>
                 <div className={styles.container}>
                   <img className={styles.icon5} alt="" src="/22@2x.png" />
-                  <div className={styles.hr12Mins}>06 hr 3 mins</div>
+                  <div className={styles.hr12Mins}>43 hr 50 mins</div>
                 </div>
               </div>
               <div className={styles.content2}>
                 <div className={styles.headingAndSubheading2}>
-                  <div className={styles.author}>Design</div>
+                  <div className={styles.author}>Python</div>
                   <div className={styles.headingAndText}>
                     <div className={styles.headingAndIcon}>
-                      <div className={styles.heading2}>Learn With Shoaib</div>
+                      <div className={styles.heading2}>Python courses for all the levels</div>
                       <div className={styles.iconWrap}>
                         <img
                           className={styles.arrowUpRightIcon}
@@ -312,8 +261,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className={styles.formerFrontendDev}>
-                      Design Web Sites and Mobile Apps that Your Users Love and
-                      Return to Again.
+                    free access for the first courses
                     </div>
                   </div>
                 </div>
@@ -321,17 +269,17 @@ const Home = () => {
                   <img
                     className={styles.avatarIcon}
                     alt=""
-                    src="/avatar@2x.png"
+                    src="teacher4.png"
                   />
                   <div className={styles.inputField}>
-                    <div className={styles.text5}>Jenny Wilson</div>
-                    <div className={styles.supportingText2}>2001 Enrolled</div>
+                    <div className={styles.text5}>Simone Shivora</div>
+                    <div className={styles.supportingText2}>2024</div>
                   </div>
                 </div>
                 <div className={styles.rating2}>
                   <div className={styles.frameParent14}>
                     <div className={styles.group}>
-                      <div className={styles.hr12Mins}>3.9</div>
+                      <div className={styles.hr12Mins}>7.4</div>
                       <div className={styles.rating1}>
                         <img
                           className={styles.ratingChild}
@@ -363,24 +311,24 @@ const Home = () => {
                     <div className={styles.div4}>(832)</div>
                   </div>
                 </div>
-                <b className={styles.b1}>$8.99</b>
+                <b className={styles.b1}>$58.99</b>
               </div>
+              
             </div>
+            
             <div className={styles.blogPostCard}>
-              <div className={styles.image2}>
+              <div className={styles.image1}>
                 <div className={styles.container}>
                   <img className={styles.icon5} alt="" src="/22@2x.png" />
-                  <div className={styles.hr12Mins}>01 hr 2 mins</div>
+                  <div className={styles.hr12Mins}>33 hr 50 mins</div>
                 </div>
               </div>
               <div className={styles.content2}>
                 <div className={styles.headingAndSubheading2}>
-                  <div className={styles.author}>Design</div>
+                  <div className={styles.author}>Python</div>
                   <div className={styles.headingAndText}>
                     <div className={styles.headingAndIcon}>
-                      <div className={styles.heading2}>
-                        Building User Interface..
-                      </div>
+                      <div className={styles.heading2}>Python courses for all the levels</div>
                       <div className={styles.iconWrap}>
                         <img
                           className={styles.arrowUpRightIcon}
@@ -390,8 +338,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className={styles.formerFrontendDev}>
-                      Learn how to apply User Experience (UX) principles to your
-                      website designs.
+                    free access for the first courses
                     </div>
                   </div>
                 </div>
@@ -402,14 +349,14 @@ const Home = () => {
                     src="/avatar@2x.png"
                   />
                   <div className={styles.inputField}>
-                    <div className={styles.text5}>Esther Howard</div>
+                    <div className={styles.text5}>Jenny Wilson</div>
                     <div className={styles.supportingText2}>2001 Enrolled</div>
                   </div>
                 </div>
-                <div className={styles.rating4}>
+                <div className={styles.rating2}>
                   <div className={styles.frameParent14}>
                     <div className={styles.group}>
-                      <div className={styles.hr12Mins}>4.2</div>
+                      <div className={styles.hr12Mins}>7.9</div>
                       <div className={styles.rating1}>
                         <img
                           className={styles.ratingChild}
@@ -438,29 +385,108 @@ const Home = () => {
                         />
                       </div>
                     </div>
-                    <div className={styles.div4}>(125)</div>
+                    <div className={styles.div4}>(832)</div>
                   </div>
                 </div>
-                <b className={styles.b1}>$11.70</b>
+                <b className={styles.b1}>$48.99</b>
+              </div>
+                  
+            </div>
+            <div className={styles.blogPostCard}>
+              <div className={styles.image1}>
+                <div className={styles.container}>
+                  <img className={styles.icon5} alt="" src="/22@2x.png" />
+                  <div className={styles.hr12Mins}>33 hr 50 mins</div>
+                </div>
+              </div>
+              <div className={styles.content2}>
+                <div className={styles.headingAndSubheading2}>
+                  <div className={styles.author}>Python</div>
+                  <div className={styles.headingAndText}>
+                    <div className={styles.headingAndIcon}>
+                      <div className={styles.heading2}>Python courses for all the levels</div>
+                      <div className={styles.iconWrap}>
+                        <img
+                          className={styles.arrowUpRightIcon}
+                          alt=""
+                          src="/arrowupright@2x.png"
+                        />
+                      </div>
+                    </div>
+                    <div className={styles.formerFrontendDev}>
+                    free access for the first courses
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.avatarLabelGroup}>
+                  <img
+                    className={styles.avatarIcon}
+                    alt=""
+                    src="/avatar@2x.png"
+                  />
+                  <div className={styles.inputField}>
+                    <div className={styles.text5}>Jenny Wilson</div>
+                    <div className={styles.supportingText2}>2001 Enrolled</div>
+                  </div>
+                </div>
+                <div className={styles.rating2}>
+                  <div className={styles.frameParent14}>
+                    <div className={styles.group}>
+                      <div className={styles.hr12Mins}>7.9</div>
+                      <div className={styles.rating1}>
+                        <img
+                          className={styles.ratingChild}
+                          alt=""
+                          src="/star-1@2x.png"
+                        />
+                        <img
+                          className={styles.ratingChild}
+                          alt=""
+                          src="/star-2@2x.png"
+                        />
+                        <img
+                          className={styles.ratingChild}
+                          alt=""
+                          src="/star-3@2x.png"
+                        />
+                        <img
+                          className={styles.ratingChild}
+                          alt=""
+                          src="/star-4@2x.png"
+                        />
+                        <img
+                          className={styles.ratingChild}
+                          alt=""
+                          src="/star-5@2x.png"
+                        />
+                      </div>
+                    </div>
+                    <div className={styles.div4}>(832)</div>
+                  </div>
+                </div>
+                <b className={styles.b1}>$48.99</b>
               </div>
             </div>
           </div>
+          </div>
           <img className={styles.frameInner} alt="" src="/group-521@2x.png" />
           <div className={styles.button4}>
-            <div className={styles.buttonBase4}>
+          <Link href="/register"><button > <div className={styles.buttonBase4}>
               <div className={styles.text1}>Explore All Programs</div>
             </div>
-          </div>
+            </button>
+            </Link>
+          {/* </div> */}
         </div>
         <div className={styles.headingAndSupportingTextContainer}>
           <div className={styles.headingAndSupportingText2}>
             <div className={styles.headingAndSubheading}>
-              <div className={styles.subheading}>Tutors</div>
-              <div className={styles.heading}>Meet the Heroes</div>
+              <div className={styles.subheading}>Teachers</div>
+              <div className={styles.heading}>Meet the Instractors</div>
             </div>
             <div className={styles.supportingText}>
-              On Weekend UX, instructors from all over the world instruct
-              millions of students. We offer the knowledge and abilities.
+              With CODINI you find the best instractors to guide you with everythink you need 
+              in your journey
             </div>
           </div>
           <div className={styles.content5}>
@@ -469,19 +495,18 @@ const Home = () => {
                 <img
                   className={styles.avatarIcon3}
                   alt=""
-                  src="/avatar@2x.png"
+                  src="/mme1.png"
                 />
                 <div className={styles.textAndSocialLinks}>
                   <div className={styles.nameAndSupportingText}>
                     <div className={styles.nameAndRole}>
-                      <div className={styles.name}>Theresa Webb</div>
+                      <div className={styles.name}>Sofia berrardi</div>
                       <div className={styles.role}>
-                        Application Support Analyst Lead
+                        FrontEnd Software engineer
                       </div>
                     </div>
                     <div className={styles.formerFrontendDev}>
-                      Former co-founder of Opendoor. Early staff at Spotify and
-                      Clearbit.
+                     +12y experience 
                     </div>
                   </div>
                   <div className={styles.socialIcons}>
@@ -490,6 +515,36 @@ const Home = () => {
                       alt=""
                       src="/social-icon@2x.png"
                     />
+                    {/* <img
+                      className={styles.chevronDownIcon}
+                      alt=""
+                      src="/social-icon@2x.png"
+                    /> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.teamMemberWrap}>
+              <div className={styles.teamMember}>
+                <img
+                  className={styles.avatarIcon3}
+                  alt=""
+                  src="/teacher2.png"
+                />
+                <div className={styles.textAndSocialLinks}>
+                  <div className={styles.nameAndSupportingText}>
+                    <div className={styles.nameAndRole}>
+                      <div className={styles.name}>Henry Mosh</div>
+                      <div className={styles.role}>
+                        IT teacher
+                      </div>
+                    </div>
+                    <div className={styles.formerFrontendDev}>
+                      IT engineer with over 8y experience 
+                    </div>
+                  </div>
+                  <div className={styles.socialIcons}>
+                  
                     <img
                       className={styles.chevronDownIcon}
                       alt=""
@@ -504,51 +559,17 @@ const Home = () => {
                 <img
                   className={styles.avatarIcon3}
                   alt=""
-                  src="/avatar@2x.png"
+                  src="/teacher3.png"
                 />
                 <div className={styles.textAndSocialLinks}>
                   <div className={styles.nameAndSupportingText}>
                     <div className={styles.nameAndRole}>
-                      <div className={styles.name}>Courtney Henry</div>
-                      <div className={styles.role}>
-                        Director, Undergraduate Analytics and Planning
-                      </div>
-                    </div>
-                    <div className={styles.formerFrontendDev}>
-                      Lead engineering teams at Figma, Pitch, and Protocol Labs.
-                    </div>
-                  </div>
-                  <div className={styles.socialIcons}>
-                    <img
-                      className={styles.chevronDownIcon}
-                      alt=""
-                      src="/social-icon@2x.png"
-                    />
-                    <img
-                      className={styles.chevronDownIcon}
-                      alt=""
-                      src="/social-icon@2x.png"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.teamMemberWrap}>
-              <div className={styles.teamMember}>
-                <img
-                  className={styles.avatarIcon3}
-                  alt=""
-                  src="/avatar@2x.png"
-                />
-                <div className={styles.textAndSocialLinks}>
-                  <div className={styles.nameAndSupportingText}>
-                    <div className={styles.nameAndRole}>
-                      <div className={styles.name}>Albert Flores</div>
-                      <div className={styles.role}>Career Educator</div>
+                      <div className={styles.name}>Mohammad Anwar</div>
+                      <div className={styles.role}>FullStack Developer</div>
                     </div>
                     <div className={styles.formerFrontendDev}>
                       <p className={styles.formerPmFor}>
-                        Former PM for Linear, Lambda School, and On Deck.
+                        Former fullstack developer for google, over 6y experience.
                       </p>
                     </div>
                   </div>
@@ -558,11 +579,6 @@ const Home = () => {
                       alt=""
                       src="/social-icon@2x.png"
                     />
-                    <img
-                      className={styles.chevronDownIcon}
-                      alt=""
-                      src="/social-icon@2x.png"
-                    />
                   </div>
                 </div>
               </div>
@@ -572,18 +588,18 @@ const Home = () => {
                 <img
                   className={styles.avatarIcon3}
                   alt=""
-                  src="/avatar@2x.png"
+                  src="/teacher4.png"
                 />
                 <div className={styles.textAndSocialLinks}>
                   <div className={styles.nameAndSupportingText}>
                     <div className={styles.nameAndRole}>
-                      <div className={styles.name}>Marvin McKinney</div>
+                      <div className={styles.name}>Simone Shivora</div>
                       <div
                         className={styles.role}
-                      >{`Co-op & Internships Program & Operations Manager`}</div>
+                      >{`BackEnd Developer`}</div>
                     </div>
                     <div className={styles.formerFrontendDev}>
-                      Former frontend dev for Linear, Coinbase, and Postscript.
+                      Former BackEnd dev for Facebook 
                     </div>
                   </div>
                   <div className={styles.socialIcons}>
@@ -592,11 +608,7 @@ const Home = () => {
                       alt=""
                       src="/social-icon@2x.png"
                     />
-                    <img
-                      className={styles.chevronDownIcon}
-                      alt=""
-                      src="/social-icon@2x.png"
-                    />
+                  
                   </div>
                 </div>
               </div>
@@ -611,7 +623,7 @@ const Home = () => {
                   <img
                     className={styles.image2Icon}
                     alt=""
-                    src="/image-2@2x.png"
+                    src="/codiniblack2.png"
                   />
                   <div className={styles.quote}>
                     Courses was fantastic! It is Master platform for those
@@ -621,12 +633,12 @@ const Home = () => {
                     <img
                       className={styles.avatarIcon7}
                       alt=""
-                      src="/avatar@2x.png"
+                      src="/student.png"
                     />
                     <div className={styles.textAndSupportingText3}>
-                      <div className={styles.name}>Jacob Jones</div>
+                      <div className={styles.name}>Youssef BenAli</div>
                       <div className={styles.formerFrontendDev}>
-                        Student, National University
+                        Student, CODINI SCHOOL
                       </div>
                     </div>
                   </div>
@@ -634,7 +646,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <img className={styles.frameInner} alt="" src="/group-521@2x.png" />
         </div>
         <div className={styles.container2}>
           <div className={styles.heading6}>Our recent blogs</div>
@@ -737,4 +748,20 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home ;
+// {
+//   const { scrollYProgress } = useScroll();
+
+//   return (
+//     <>
+//       <motion.div
+//         className="progress-bar"
+//         style={{ scaleX: scrollYProgress }}
+//       />
+//       <h1>
+//         <code>useScroll</code> demo
+//       </h1>
+//       <LoremIpsum />
+//     </>
+//   );
+// }
