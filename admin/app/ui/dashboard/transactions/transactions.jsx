@@ -25,7 +25,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Guezmir Amine
               </div>
             </td>
             <td>
@@ -46,7 +46,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Louay Sakly
               </div>
             </td>
             <td>
@@ -65,7 +65,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Mohamed Mrabet
               </div>
             </td>
             <td>
@@ -86,7 +86,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Hamza Ben Jmea
               </div>
             </td>
             <td>

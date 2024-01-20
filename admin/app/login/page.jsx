@@ -4,7 +4,7 @@ import LoginForm from "../ui/login/loginForm/loginForm";
 const LoginPage = () => {
   return (
     <div className={styles.container}>
-      <LoginForm/>
+      <LoginForm />
     </div>
   );
 };

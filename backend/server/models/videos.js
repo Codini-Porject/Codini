@@ -22,6 +22,7 @@ const Videos = sequelize.define(
         model: Course,
         key: "idcourse",
       },
+      
     },
     islocked: {
       type: DataTypes.INTEGER,
@@ -32,6 +33,8 @@ const Videos = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    
+    
   },
   {
     timestamps: false,

@@ -6,7 +6,15 @@
   background-color: #f2f2f2;
   width: 474px;
   height: 474px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
 }
+
+.featuresSection:hover .imageBg {
+  transform: scale(1.1);
+}
+
 .sectionImgIcon {
   position: absolute;
   top: 40px;
@@ -16,6 +24,11 @@
   height: 471px;
   object-fit: cover;
 }
+
+.featuresSection:hover .sectionImgIcon {
+  transform: scale(1.1);
+}
+
 .features {
   position: relative;
   font-size: 24px;

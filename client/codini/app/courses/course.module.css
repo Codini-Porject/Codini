@@ -1,0 +1,17 @@
+.gridcontainer {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 20px;
+  padding: 2cm;
+  border: 2px solid black; 
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+
+.coursecontainer {
+  border: 3px solid black;
+  padding: 10px;
+  /* margin: 10px; */
+  width: 7.80cm;
+  text-align: center;
+}
