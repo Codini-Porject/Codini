@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+
+
 .checkbox-button {
   appearance: none;
   border: 1px solid #ccc;
@@ -42,9 +44,9 @@
   z-index: 1000;
 }
 
-.video-item {
+/* .video-item {
   transition: transform 0.3s ease-in-out;
-}
+} */
 
 .video-item.clicked {
   transform: scale(3); /* Increase size for the clicked video */
@@ -529,8 +531,18 @@ body {
   left: 700px;
   font-size: var(--font-size-3xl);
 }
+.search {
+  position: absolute;
+  letter-spacing: 0.02em;
+  top: 70px;
+}
+.search {
+  top: 70px;
+  left: 1450px;
+  font-size: var(--font-size-3xl);
+}
 .careers {
-  left: 950px;
+  left: 900px;
   top: 70px;
 }
 .careers,
@@ -540,7 +552,7 @@ body {
 }
 .courses {
   position: absolute;
-  left: 1200px;
+  left: 1100px;
   letter-spacing: 0.02em;
   top: 70px;
 }
@@ -552,10 +564,11 @@ body {
   /* top:40px; */
 }
 .aboutUs {
-  top: 70px;
-  left: 1450px;
+  top: 68px;
+  left: 1250px;
   font-size: var(--font-size-3xl);
   font-family: var(--font-poppins);
+
 }
 .lina {
   top: 70px;

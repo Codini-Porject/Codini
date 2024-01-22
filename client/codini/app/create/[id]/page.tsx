@@ -20,7 +20,7 @@ function Page() {
 
   const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files;
-
+  
     if (e.target.files) {
       try {
         for (let i = 0; i < e.target?.files?.length; i++) {

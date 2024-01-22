@@ -71,14 +71,14 @@
 <div >
 
 </div>
-<div className="w-[1682px] h-[459px] bg-slate-800 rounded-[37px] mt-10 flex flex-col items-center justify-center" style={{ marginTop: '4cm' }}>
+<div className="w-[1900px] h-[459px] bg-slate-800 rounded-[37px] mt-10 flex flex-col items-center justify-center" style={{ marginTop: '4cm' }}>
   <div className="w-[827px] text-white text-4xl font-semibold font-Poppins mt-10 ml-15" style={{ marginLeft: '4cm' }}>
   Online Languages lessons for remote learning.
 </div>
   <div className="w-[1259px] text-center text-white text-2xl font-normal font-Poppins leading-[43.20px] tracking-wide mt-10">Welcome to Our website</div>
 </div>
 
-  <div className="container" style={{ marginLeft: '120px', marginTop: "5cm" }}>
+  <div className="container" style={{ marginLeft: '210px', marginTop: "5cm" }}>
     <h2>Languages</h2>
     <div>
       <div className={styles.parent}>
@@ -94,13 +94,13 @@
   </div>
 
 
-  <div className="w-[1682px] h-[459px] bg-slate-800 rounded-[37px] mt-10 flex flex-col items-center justify-center" style={{ marginTop: '4cm' }}>
+  <div className="w-[1900px] h-[459px] bg-slate-800 rounded-[37px] mt-10 flex flex-col items-center justify-center" style={{ marginTop: '4cm' }}>
   <div className="w-[827px] text-white text-4xl font-semibold font-Poppins mt-10 ml-15" style={{ marginLeft: '4cm' }}>
   Online coaching lessons for remote learning.
 </div>
   <div className="w-[1259px] text-center text-white text-2xl font-normal font-Poppins leading-[43.20px] tracking-wide mt-10">Learn, connect, and collaborate in the virtual classroom</div>
 </div>
-          <div className="container-1" style={{ marginLeft: "70px" ,marginTop : "5cm"}}>
+          <div className="container-1" style={{ marginLeft: "210px" ,marginTop : "5cm"}}>
   <h2>Teachers</h2>
   <div className={styles.parent1}>
     {teachers.map((teacher, i) => (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import style from "./course.module.css"
  
 
@@ -12,9 +13,9 @@ interface Course {
 }
 
 interface Video {
+  islocked: number;
   idvideos: number;
   videos: string;
-  isLocked: number;
   courses_idcourse: number;
 }
 
@@ -23,6 +24,7 @@ interface Video {
 const fetchAllCourses: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [videos, setVideos] = useState<Video[]>([]);
+const route = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -83,9 +85,7 @@ const  _onReady=(event:any)=> {
           </video>
   
           {/* Conditionally render the image based on the value of videos.isLocked */}
-          {video?.isLocked === 0 && (
-            <img src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg" alt="Locked" />
-          )}
+        
         </div>
         {courses[i] && (
           <div className={style.coursecontainer}>
@@ -93,6 +93,9 @@ const  _onReady=(event:any)=> {
             <span>Price: ${courses[i].price}</span>
             <br />
             <span>Rate: {courses[i].rate}</span>
+            {video?.islocked === 0 && (
+             <img style={{marginLeft:"4cm"}} src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg"  width={"50px"} height={"50px"}  alt="Locked" onClick={()=>route.push("/courseDetails/")} />
+            )}
           </div>
         )}
       </div>
