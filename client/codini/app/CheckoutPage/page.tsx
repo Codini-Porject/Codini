@@ -19,16 +19,16 @@ const CheckoutPage = () => {
       <img
         className={styles.confidentTeacherExplainingLIcon}
         alt=""
-        src="/confidentteacherexplaininglessonpupils-1@2x.png"
+        src="https://i.ytimg.com/vi/o1IaduQICO0/maxresdefault.jpg"
       />
       <img className={styles.playButtonIcon} alt="" src="/playbutton@2x.png" />
       <div className={styles.adipisingElitSed}>
-        adipising elit, sed do eiusmod tempor
+        Javascript courses
       </div>
       <div className={styles.div1}>$24.69</div>
       <div className={styles.subtotal}>Subtotal</div>
       <div className={styles.div2}>$51.38</div>
-      <div className={styles.loremIpsumDollar}>Lorem ipsum dollar...</div>
+      <div className={styles.loremIpsumDollar}>Amazing ...</div>
       <div className={styles.checkoutPageItem} />
       <div className={styles.checkoutPageInner} />
       <div className={styles.couponDiscount}>Coupon Discount</div>

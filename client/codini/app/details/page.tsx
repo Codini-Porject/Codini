@@ -7,6 +7,7 @@ import axios from "axios";
 import YouTube from "react-youtube";
 import Link from "next/link";
 import router from "next/router";
+import { Button } from "@nextui-org/react";
 interface Course {
   idcourse: number;
   teachers_idteachers: number;
@@ -144,8 +145,9 @@ const CourseDetail: NextPage = () => {
               <div className={styles.courseInfo}>
                 <div className={styles.certification}>{cour.desc}</div>
                 <div className={styles.description}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor
+                  
+A language, be it spoken or programming, is a dynamic system of communication or instruction. It serves as a medium for expressing thoughts, ideas, and emotions
+                  
                 </div>
                 <div className={styles.priceContainer}>
                   <i className={styles.currency}>$</i>
@@ -195,18 +197,20 @@ const CourseDetail: NextPage = () => {
                       <img
                         className={styles.groupChild28}
                         alt=""
-                        src="/rectangle-32@2x.png"
+                        src="https://i.ytimg.com/vi/o1IaduQICO0/maxresdefault.jpg"
                       />
+                        
                       <div className={styles.groupChild29} />
                     </div>
                     <div className={styles.rectangleParent14}>
                       <div />
-                      <Link href="/CheckoutPage">
-                        <button>Buy Now</button>
-                      </Link>
+                      
+                      
+                      
                     </div>
                     <div className={styles.rectangleParent15}>
                       <div className={styles.groupChild31} />
+                     <Link href="/CheckoutPage"> <button className={styles.buyNow }>Buy Now</button></Link>
                       <b className={styles.overview}>Overview</b>
                     </div>
                     <div className={styles.rectangleParent16}>

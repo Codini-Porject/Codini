@@ -8,10 +8,18 @@ import 'tailwindcss/tailwind.css';
 
 
 
+interface CreateProps {
+	searchParams?: {
+	  imagestu?: string;
+	};
+  }
 
-const Create: React.FC = () => {
+const Create: React.FC<CreateProps> = ({searchParams } 
+	
+) => {
   const { id } = useParams();
-
+  
+  
   const [image, setImage] = useState<string>("");
   const [name, setName] = useState<string | null>("");
     const [email, setEmail] = useState<string | null>("");
@@ -75,7 +83,7 @@ const Create: React.FC = () => {
 	<div className="card-body">
 		<div className="account-settings">
         <div className="user-avatar">
-  <img src={image || "https://bootdey.com/img/Content/avatar/avatar7.png"} alt="Maxwell Admin" />
+  <img src={image || (searchParams?.imagestu ?? "")} alt="Maxwell Admin" />
   <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
 </div>
 <input

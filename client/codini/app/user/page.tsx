@@ -147,7 +147,10 @@ const UserProfile = () => {
                   <hr />
                   <div className="row">
                     <div className="col-sm-12">
-                     <Link href="/updateuser"> <a className="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a></Link>
+                    <Link href={{
+  pathname: "/updateuser",
+  query: { imagestu: student?.image }
+}}> <a className="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a></Link>
                     </div>
                   </div>
                 </div>
