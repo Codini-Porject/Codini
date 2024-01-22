@@ -27,7 +27,7 @@ const Login = () => {
         password: userPassword,
         role: selectedRole,
       });
-      console.log(response.data);
+      console.log("res",response.data);
       
       const { token, userId, role } = response.data;
       
@@ -42,7 +42,11 @@ const Login = () => {
         });
         
         Cookies.set("authToken", token, { expires: 60 * 60 * 24 });
-        router.push(`teacher/${userId}`);
+        if (role === "teacher") {
+          router.push(`teacher/${userId}`);
+        } else {
+        router.push("/home")
+        }
       } else {
         setErrorMessage("Login failed. Please check your credentials.");
       }
@@ -121,7 +125,8 @@ const Login = () => {
             </select>
           </div>
           <div className={styles.rectangleParent2}>
-            <button className={styles.login2} onClick={handleSubmit}>
+            
+            <button className="button" style={{backgroundColor:"transparent",marginLeft:"45px"}} type="submit" onClick={handleSubmit} >
               Login
             </button>
             {errorMessage && (

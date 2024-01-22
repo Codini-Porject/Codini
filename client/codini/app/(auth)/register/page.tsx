@@ -123,7 +123,7 @@ const Register = () => {
             
           <div className={styles.rectangleParent2}>
             <div className={styles.groupChild2} />
-            <button className={styles.register2} style={{backgroundColor:"transparent"}} type="submit">
+            <button className="button" style={{backgroundColor:"transparent"}} type="submit">
             {errorMessage && (
               <div className={styles.errorMessage}>{errorMessage}</div>
               )}
