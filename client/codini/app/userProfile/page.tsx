@@ -9,6 +9,7 @@ import {
   Breadcrumbs,
   BreadcrumbItem,
 } from "@nextui-org/react";
+
 import axios from "axios";
 
 interface Course {
@@ -24,6 +25,7 @@ const PeakUserSettings = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(true);
   const [course, setCourse] = useState<Course | null>(null);
+ 
 
   useEffect(() => {
     axios

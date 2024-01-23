@@ -14,6 +14,7 @@ interface Course {
   desc: string;
   price: number;
   rate: number;
+  image:string
 }
 
 interface Video {
@@ -31,6 +32,7 @@ const Create: React.FC = () => {
   const [rate, setRate] = useState<number>(0);
   const [price, setPrice] = useState<number>(0);
   const [desc, setDescription] = useState<string>("");
+  const [image, setImage] = useState<string>("");
   const [select, setSelect] = useState<number>(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -43,6 +45,7 @@ const Create: React.FC = () => {
           desc: desc,
           price: price,
           rate: rate,
+          image:image,
           teachers_idteachers: idTeacher,
           languages_idlanguages: select,
         }
@@ -57,12 +60,37 @@ const Create: React.FC = () => {
     }
   };
 
+  const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+  
+    if (file) {
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
+  console.log("hhheeee",formData);
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/doytchn8h/image/upload?upload_preset=marketplace&cloud_name=doytchn8h`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+  
+        setImage(response.data.secure_url);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
+    }
+  };
+
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '10px', width: '440px', margin: 'auto', marginTop: '20px' }}>
       <Box
         component="form"
         sx={{
-          '& > :not(style)': { m: 1, width: '55ch' },
+          '& > :not(style)': { m: 1, width: '40ch' },
         }}
         noValidate
         autoComplete="off"
@@ -72,7 +100,7 @@ const Create: React.FC = () => {
       <Box
         component="form"
         sx={{
-          '& > :not(style)': { m: 1, width: '55ch' },
+          '& > :not(style)': { m: 1, width: '40ch' },
         }}
         noValidate
         autoComplete="off"
@@ -82,7 +110,7 @@ const Create: React.FC = () => {
       <Box
         component="form"
         sx={{
-          '& > :not(style)': { m: 1, width: '55ch' },
+          '& > :not(style)': { m: 1, width: '40ch' },
         }}
         noValidate
         autoComplete="off"
@@ -90,6 +118,33 @@ const Create: React.FC = () => {
         <TextField id="standard-basic" label="Rate" variant="standard" onChange={(e) => setRate(parseFloat(e.target.value))} />
       </Box>
   
+      <label className="file-input-label">
+            <input
+              onChange={handleImageUpload}
+              name="image"
+              type="file"
+              accept="image/*"
+              style={{ display: 'none' }} 
+            />
+         
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              fill="none"
+              stroke="currentColor"
+              className="icon"
+            >
+              <polyline points="16 16 12 12 8 16"></polyline>
+              <line y2="21" x2="12" y1="12" x1="12"></line>
+              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+              <polyline points="16 16 12 12 8 16"></polyline>
+            </svg>
+          </label>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
 
       <Box sx={{ minWidth: 120 }}>

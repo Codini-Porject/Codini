@@ -2,6 +2,8 @@
 import React, { ChangeEvent, useState, useEffect } from 'react';
 import axios from 'axios';
 import { useIdentity } from "../../(auth)/IdentityContext";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import { useRouter } from 'next/navigation';
 
 function Page() {
@@ -9,6 +11,8 @@ function Page() {
   const [vid, setVideo] = useState<string>("");
   const [courseId, setCoureseId] = useState<string>("");
   const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
 
   const { user } = useIdentity();
   const idTeacher = user?.id;
@@ -23,6 +27,7 @@ function Page() {
   
     if (e.target.files) {
       try {
+        setLoading(true);
         for (let i = 0; i < e.target?.files?.length; i++) {
           const formData = new FormData();
           formData.append("file", file[i]);
@@ -36,7 +41,7 @@ function Page() {
             }
           );
           setVideo(response.data.secure_url);
-          const videoResponse = await axios.post(
+          await axios.post(
             `http://localhost:8000/videos/courses/${courseId}`,
             {
               videos: response.data.secure_url,
@@ -44,18 +49,15 @@ function Page() {
             }
           );
         }
+
         setUploadSuccess(true);
       } catch (error) {
         console.error("Error uploading video:", error);
+      } finally {
+        setLoading(false);
       }
     }
   };
-
-  useEffect(() => {
-    if (uploadSuccess) {
-      alert("Video uploaded successfully!");
-    }
-  }, [uploadSuccess]);
 
   return (
     <div className="h-screen font-sans text-gray-900 bg-gray-300 border-box">
@@ -74,6 +76,11 @@ function Page() {
               </svg>
             </label>
           </form>
+          {loading && (
+            <Box sx={{ display: 'flex' }}>
+              <CircularProgress />
+            </Box>
+          )}
           <button
             onClick={() => route.push(`/teacher/${idTeacher}`)}
             className="checkbox-button"
@@ -82,7 +89,7 @@ function Page() {
           </button>
         </div>
       </div>
-    </div>
+  </div>
   );
 }
 

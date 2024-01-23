@@ -57,8 +57,10 @@ const deleteCourse = async (req, res) => {
 };
 
 const addCourse = async (req, res) => {
-  const { teachers_idteachers, desc, price, rate, languages_idlanguages } =
-    req.body;
+  const { teachers_idteachers, desc, price, rate,image, languages_idlanguages } =
+  req.body;
+
+  console.log(req.body);
 
   // const { role } = req.user;
 
@@ -69,6 +71,7 @@ const addCourse = async (req, res) => {
       desc,
       price,
       rate,
+      image,
       languages_idlanguages,
     });
     res.status(201).json(newCourse);

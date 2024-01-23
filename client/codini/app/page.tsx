@@ -1,6 +1,4 @@
-import  Link  from 'next/link';
-import { useScroll } from "framer-motion"
-import { motion, useAnimation } from "framer-motion";
+import Link from 'next/link';
 import styles from "../app/styles/home.module.css";
 
 
@@ -515,11 +513,6 @@ const courses: Course[] = [
                       alt=""
                       src="/social-icon@2x.png"
                     />
-                    {/* <img
-                      className={styles.chevronDownIcon}
-                      alt=""
-                      src="/social-icon@2x.png"
-                    /> */}
                   </div>
                 </div>
               </div>
@@ -749,19 +742,3 @@ const courses: Course[] = [
 };
 
 export default Home ;
-// {
-//   const { scrollYProgress } = useScroll();
-
-//   return (
-//     <>
-//       <motion.div
-//         className="progress-bar"
-//         style={{ scaleX: scrollYProgress }}
-//       />
-//       <h1>
-//         <code>useScroll</code> demo
-//       </h1>
-//       <LoremIpsum />
-//     </>
-//   );
-// }

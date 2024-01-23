@@ -175,7 +175,7 @@
 }
 .container1{
     background-color: #555;
-    color: #ddd;
+    color: white;
     border-radius: 10px;
     padding: 70px;
     font-family: 'Montserrat', sans-serif;
@@ -1193,7 +1193,7 @@ body {
 .Navbar {
   position: relative;
   background-color: var(--color-white);
-  width: 100%;
+  width: 110%;
   height: 180px;
   overflow: hidden;
   text-align: left;

@@ -6,7 +6,7 @@ import style from "./course.module.css"
  
 
 interface Course {
-  id: number;
+  idcourse: number;
   desc: string;
   price: number;
   rate: number;
@@ -94,7 +94,7 @@ const  _onReady=(event:any)=> {
             <br />
             <span>Rate: {courses[i].rate}</span>
             {video?.islocked === 0 && (
-             <img style={{marginLeft:"4cm"}} src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg"  width={"50px"} height={"50px"}  alt="Locked" onClick={()=>route.push("/courseDetails/")} />
+             <img style={{marginLeft:"4cm"}} src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg"  width={"50px"} height={"50px"}  alt="Locked" onClick={()=>route.push(`/courseDetails/${idcourse}`)} />
             )}
           </div>
         )}

@@ -1,12 +1,12 @@
 "use client";
 import type { NextPage } from "next";
-import styles from "./index.module.css";
+import styles from "../index.module.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { useParams, useRouter } from "next/navigation";
 import YouTube from "react-youtube";
 import Link from "next/link";
-import router from "next/router";
+
 
 
 
@@ -17,26 +17,17 @@ interface Course {
   price: string;
   rate: string;
   languages_idlanguages: number;
-  // Add other fields if present in your API response
 }
-// interface courses{
-//   idcourse: number;
-//   teachers_idteachers: number;
-//   desc: string;
-//   price: string;
-//   rate: string;
-//   languages_idlanguages: number;
-//   // Add other fields if present in your API response
-// }
+
 interface Video {
   idvideos: number;
   videos: string;
-  courses_idcourse: number; // Assuming this is the URL of the video
+  courses_idcourse: number;
 }
 interface Review {
   id: number;
   body: string;
-  // Assuming this is the URL of the video
+
 }
 
 const CourseDetail: NextPage = () => {
@@ -45,6 +36,11 @@ const CourseDetail: NextPage = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [allreviews, setAllreviews] = useState<Review[] | null>(null);
 
+
+  const route = useRouter()
+  const { id } = useParams();
+  console.log(id);
+  
   // Use the Course interface here
   useEffect(() => {
     fetchData();
@@ -52,22 +48,22 @@ const CourseDetail: NextPage = () => {
   const fetchData = async () => {
     try {
       const courseResponse = await axios.get<Course[]>(
-        "http://127.0.0.7:8000/courses"
+        `http://127.0.0.7:8000/courses/55`
       );
       setAllcourse(courseResponse.data);
-
+      console.log("here1",courseResponse.data);
       // Fetch videos for each course
       const videosResponse = await axios.get<Video[]>(
-        `http://127.0.0.7:8000/videos/courses/1`
+        `http://127.0.0.7:8000/videos/courses/55`
       );
       setVideos(videosResponse.data);
-      console.log("123", videosResponse);
+      console.log("123", videosResponse.data);
     } catch (error) {
       console.log("Error fetching data:", error);
     }
   };
 
-  console.log(allcourse);
+  console.log("here3",allcourse);
   useEffect(() => {
     axios
       .get<Review[]>("http://127.0.0.7:8000/Reviews/getAllR")
@@ -81,7 +77,7 @@ const CourseDetail: NextPage = () => {
 
   useEffect(() => {
     axios
-      .get<Course>("http://127.0.0.7:8000/courses/oneCourse/1")
+      .get<Course>(`http://127.0.0.7:8000/courses/oneCourse/${id}`)
       .then((response) => {
         setCourse(response.data);
         console.log(course);
@@ -116,12 +112,12 @@ const CourseDetail: NextPage = () => {
 
   // ... (rest of your code)
 
-  // if (!course) {
-  //   return <div>Loading...</div>;
-  // }
-  // if (!allcourse) {
-  //   return <div>Loading...</div>;
-  // }
+  if (!course) {
+    return <div>Loading...</div>;
+  }
+  if (!allcourse) {
+    return <div>Loading...</div>;
+  }
   console.log("videos", videos);
   console.log("sa0", allreviews);
 

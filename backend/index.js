@@ -52,9 +52,10 @@ app.use("/student", studentRouter);
 
 //////////////////////////////////////////////
 
-const CHAT_ENGINE_PROJECT_ID = `ef2eab1d-2c81-4699-bb60-9bfac5601021`;
+const CHAT_ENGINE_PROJECT_ID = `
+ae8c21fc-e8a1-404b-9bca-01906fbceb77`;
 
-const CHAT_ENGINE_PRIVATE_KEY = "87ab4cba-ba46-433d-a4a2-f97fc0a81938";
+const CHAT_ENGINE_PRIVATE_KEY = "aa3b1e79-9ddf-4411-bd2c-207125796dfd";
 
 app.post("/signup", async (req, res) => {
   const { username, secret, email, first_name, last_name } = req.body;

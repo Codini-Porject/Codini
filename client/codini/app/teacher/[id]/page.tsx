@@ -1,14 +1,11 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import styles from '../index.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { useParams } from 'next/navigation';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
-import YouTube from 'react-youtube';
 import Footer from '@/app/footer/page';
 
 interface OneTeacher {
@@ -110,7 +107,7 @@ const fetchDetail: React.FC = () => {
             <div>
               <Stack direction="row" spacing={1}>
                 <Chip
-                  onDelete={() => handleDeleteClick(el.idvideos)} // Pass the correct video ID
+                  onDelete={() => handleDeleteClick(el.idvideos)}
                   deleteIcon={<DeleteIcon />}
                   variant="outlined"
                 />
@@ -127,4 +124,3 @@ const fetchDetail: React.FC = () => {
 };
 
       export default fetchDetail;
-      // <button onClick={() => handleDeleteClick(el.idvideos)}></button>
