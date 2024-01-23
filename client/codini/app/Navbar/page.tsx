@@ -4,25 +4,27 @@ import  Link  from 'next/link';
 import "./navbar.css"
 
 
-import { useRouter } from "next/navigation";
 
 const Navbar=()=>{
     return (
-      <div className="Navbar">
-       <img className="image15Icon"alt="" src="/Codinilogo.jpg" />
+      <nav className="Navbar">
+       <img style={{marginLeft:"3cm"}} alt="" src="https://cdn.discordapp.com/attachments/1161195165503995984/1198935168589779005/codinilogo5.jpg?ex=65c0b663&is=65ae4163&hm=91bcc05644c8567e3060768dd6114aba830a787cc2ab00d4608b84a6ddd76d25&" />
        <div className="ab">
-      <div className="home"><Link href={"/"}>Home</Link></div>
-      <div className="careers">Careers</div>
-      <div className="courses"><Link href={"/courses"}>Courses</Link></div>
-      <div className="blog"><Link href={"/aboutUs"} >About Us</Link></div>
-      {/* <div className="aboutUs">About Us</div> */}
-      </div>
-      <div className="lina">Louay</div>
-     
-      <div className="rectangleParent">
-    
-      </div>
-    </div>
+
+       <Link href="/"><button><div className="home">Home</div></button></Link>
+       <Link href="/"><button><div className="careers">Careers</div></button></Link>
+       <Link href="/courses"><button><div className="courses">Courses</div></button></Link>
+       <Link href="/aboutUs"><button><div className="aboutUs">About Us</div></button></Link>
+       <Link href="/search"><button><div className="search">Search</div></button></Link>
+
+        </div>
+     <Link href="/login"><button><div className="lina">LogIn</div></button></Link>
+
+      {/* <div className="rectangleParent">
+
+      </div> */}
+    </nav>
+
   );
   };
 export default Navbar;

@@ -54,7 +54,6 @@ const Register = () => {
 
   return (
     <div className={styles.login}>
-      <div className={styles.register}>
         <div className={styles.registerInner}>
           <div className={styles.loremIpsumIsSimplyParent}>
             <b className={styles.loremIpsumIs}>Lorem Ipsum is simply</b>
@@ -124,7 +123,7 @@ const Register = () => {
             
           <div className={styles.rectangleParent2}>
             <div className={styles.groupChild2} />
-            <button className={styles.register2} style={{backgroundColor:"transparent"}} type="submit">
+            <button className="button" style={{backgroundColor:"transparent"}} type="submit">
             {errorMessage && (
               <div className={styles.errorMessage}>{errorMessage}</div>
               )}
@@ -141,7 +140,6 @@ const Register = () => {
           src="/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin-1@2x.png"
         />
       </div>
-    </div>
   );
 };
 

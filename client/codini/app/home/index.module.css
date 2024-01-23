@@ -26,14 +26,14 @@
       font-family: Poppins;
       color: #000;
       text-align: left;
-      margin-left: 30%;
+      margin-left: 33%;
       margin-top: 20px;
       }
 
       .rectangleIcon {
         position: relative;
 border-radius: 4px;
-        width: 90px;
+        width: 100px;
         height: 90px;
         margin-left: 32%;
         margin-top: 20px;
@@ -46,19 +46,32 @@ border-radius: 4px;
           grid-template-columns:repeat(3,1fr) ;
           grid-template-rows: repeat(2, 1fr);
           grid-column-gap: 10px;
-          grid-row-gap: 3cm;
+          grid-row-gap: 5cm;
       }
       .rectangleDiv1{
         border-radius: 20px;
         background-color: #fff;
         box-shadow: 0px 18.829999923706055px 47.08px rgba(47, 50, 125, 0.1);
         width: 400px;
-        height: 400px;
+        height: 470px;
         }
+
+        .design1 {
+          position: relative;
+          font-size: 30px;
+          letter-spacing: 0.02em;
+          font-weight: 600;
+          font-family: Poppins;
+          color: #000;
+          text-align: left;
+          margin-left: 33%;
+          margin-top: 20px;
+          }
+    
           .image10Icon {
             margin-top: 0.5cm;
             position: relative;
-            margin-left: 2.5cm;
+            margin-left: 2.95cm;
             width: 150px;
             height: 150px;
             object-fit: cover;
@@ -67,7 +80,8 @@ border-radius: 4px;
   margin-top: 15px;
   border: 2px solid #000; 
   border-radius: 8px; 
-  padding: 35px; 
+  padding: 35px;
+
 }
 /* .phrase{
   display: flex;

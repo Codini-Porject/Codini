@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import styles from "../app/styles/home.module.css";
 
 
-const Home = () => {
+const Home =()=>{
 
   interface Course {
     title: string;
@@ -20,7 +20,6 @@ const courses: Course[] = [
 ];
   return (
     <div className={styles.designFile}>
-    
       <div className={styles.designFileInner}>
         <div className={styles.rectangleParent}>
           <div className={styles.groupChild} />
@@ -100,8 +99,21 @@ const courses: Course[] = [
                   <div className={styles.buttonBase3}>
                     <div className={styles.text3}>Get free trial</div>
                   </div>
-                </div>
-              </div>
+
+              <div className={styles.buttonParent}>
+        <Link href="/register"><button className='button'><div className={styles.button2} >
+        <div className={styles.buttonBase2}>
+        <div className={styles.text3}>Get Started</div>
+        </div>
+        </div></button></Link>
+        <Link href="/register"><button className='button'><div className={styles.button3} >
+          
+        <div className={styles.buttonBase3}>
+        <div className={styles.text3}>Get free trial</div>
+        </div>
+        </div></button></Link>
+        </div>
+
             </div>
             <div className={styles.frameParent1}>
               <div className={styles.groupParent}>
@@ -160,7 +172,7 @@ const courses: Course[] = [
                   </div>
                 </div>
                 <div className={styles.learnMoreParent}>
-                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button className="button"><div>Learn More</div>
                 </button></Link>
                   <img
                     className={styles.vectorIcon}
@@ -175,14 +187,14 @@ const courses: Course[] = [
                     <div className={styles.iconContainer}>
                       <img className={styles.icon3} alt="" src="/Python2.png" />
                     </div>
-                    <b className={styles.interactionDesign}>Machine Learning</b>
+                    <b className={styles.interactionDesign}>HTML & CSS courses</b>
                   </div>
                   <div className={styles.classesInDevelopment}>
-                  Lessons on python & more that cover the most recent developments.
+                  html 5 & css 3 courses to learn how build your web page..
                   </div>
                 </div>
                 <div className={styles.learnMoreGroup}>
-                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button  className="button"><div className={styles.learnMore}>Learn More</div>
                 </button></Link>
                   <img
                     className={styles.vectorIcon}
@@ -206,7 +218,7 @@ const courses: Course[] = [
                   </div>
                 </div>
                 <div className={styles.learnMoreGroup}>
-                <Link href="/register"><button><div className={styles.learnMore}>Learn More</div>
+                <Link href="/register"><button  className="button"><div className={styles.learnMore}>Learn More</div>
                 </button></Link>
                   <img
                     className={styles.vectorIcon}
@@ -248,7 +260,7 @@ const courses: Course[] = [
               </div>
               <div className={styles.content2}>
                 <div className={styles.headingAndSubheading2}>
-                  <div className={styles.author}>Python</div>
+                  <div className={styles.author}>HTML & CSS</div>
                   <div className={styles.headingAndText}>
                     <div className={styles.headingAndIcon}>
                       <div className={styles.heading2}>Python courses for all the levels</div>
@@ -471,9 +483,7 @@ const courses: Course[] = [
           </div>
           <img className={styles.frameInner} alt="" src="/group-521@2x.png" />
           <div className={styles.button4}>
-          <Link href="/register"><button > <div className={styles.buttonBase4}>
-              <div className={styles.text1}>Explore All Programs</div>
-            </div>
+          <Link href="/register"><button className='button'>Explore All Programs
             </button>
             </Link>
           {/* </div> */}

@@ -150,7 +150,7 @@
   width: 435px;
   height: 90px;
 }
-.groupChild2,
+
 .loremIpsumIs2 {
   position: absolute;
   left: 0;
@@ -163,7 +163,7 @@
   width: 454px;
 }
 .groupChild2 {
-  top: 0;
+  margin-top: 0;
   border-radius: 36px;
   background-color: #49bbbd;
   width: 232px;
@@ -183,7 +183,7 @@
 }
 .groupParent {
   position: absolute;
-  top: 113px;
+  top: 3cm;
   left: 889px;
   width: 454px;
   height: 674px;
@@ -191,8 +191,11 @@
 }
 .lovelyTeenageGirlWithCurlyIcon {
   position: absolute;
+
+  margin-top:4.56cm;
   top: -3px;
-  left: 109px;
+  left: 179px;
+
   width: 544px;
   height: 892px;
   object-fit: cover;

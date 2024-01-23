@@ -7,6 +7,9 @@ import axios from "axios";
 import YouTube from "react-youtube";
 import Link from "next/link";
 import router from "next/router";
+
+
+
 interface Course {
   idcourse: number;
   teachers_idteachers: number;
@@ -181,16 +184,6 @@ const CourseDetail: NextPage = () => {
                 <div className={styles.groupParent11}>
                   <div className={styles.groupParent11}>
                     <div className={styles.groupChild27} />
-                    <img
-                      className={styles.whatsappIcon}
-                      alt=""
-                      src="/whatsapp.png"
-                    />
-                    <img
-                      className={styles.telegramIcon}
-                      alt=""
-                      src="/telegram.png"
-                    />
                     <div className={styles.rectangleParent13}>
                       <img
                         className={styles.groupChild28}
@@ -221,26 +214,6 @@ const CourseDetail: NextPage = () => {
                         <b className={styles.overview}>Overview</b>
                       </div>
                     </div>
-                    <img
-                      className={styles.twitterIcon}
-                      alt=""
-                      src="/twitter.png"
-                    />
-                    <img
-                      className={styles.youtubeIcon}
-                      alt=""
-                      src="/youtube.jpg"
-                    />
-                    <img
-                      className={styles.facebookIcon}
-                      alt=""
-                      src="/facebook.png"
-                    />
-                    <img
-                      className={styles.instagramIcon}
-                      alt=""
-                      src="/instagram.png"
-                    />
                   </div>
                   <div className={styles.parent}>
                     <div className={styles.div4}>{course?.price}$</div>
@@ -274,19 +247,19 @@ const CourseDetail: NextPage = () => {
                 <div className={styles.groupParent12}>
                   <div className={styles.modulsParent}>
                     <div className={styles.moduls}>32 Moduls</div>
-                    <div className={styles.div6}></div>
+            
                   </div>
                   <div className={styles.certificationOfCompletionParent}>
                     <div className={styles.certificationOfCompletion}>
                       Certification of completion
                     </div>
-                    <div className={styles.div7}></div>
+                  
                   </div>
                   <div className={styles.accessOnAllDevicesParent}>
                     <div className={styles.accessOnAll}>
                       Access on all devices
                     </div>
-                    <div className={styles.div6}></div>
+               
                   </div>
                   <div className={styles.moneyBackGuaranteeParent}>
                     <div className={styles.moneyBackGuarantee}>
