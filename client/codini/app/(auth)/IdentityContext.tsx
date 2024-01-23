@@ -8,6 +8,7 @@ interface IdentityState {
     password: string;
     role: string | null;
     token: string | null;
+    image: string;
   } | null;
 }
 
@@ -17,6 +18,7 @@ interface IdentityContextType {
     role: string | null;
     email: string;
     password: string;
+    image: string;
   } | null;
   setUser: (
     user: {
@@ -24,6 +26,7 @@ interface IdentityContextType {
       role: string | null;
       email: string;
       password: string;
+      image: string;
     } | null
   ) => void;
   clearUser: () => void;
@@ -70,9 +73,10 @@ const IdentityProvider: React.FC<IdentityProviderProps> = ({ children }) => {
     email: string;
     password: string;
     token: string;
+    image: string;
   }) => {
     console.log("hu");
-    
+
     dispatch({
       type: "SET_USER",
       payload: user ? user : { id: -1, role: null, token: null },
