@@ -1,7 +1,20 @@
 // import type { NextPage } from "next";
 import styles from "./CheckoutPage.module.css";
 
-const CheckoutPage = () => {
+interface CreateProps {
+  searchParams?: {
+    idcourse: number;
+    teachers_idteachers: number;
+    desc: string;
+    price: string;
+    rate: string;
+    languages_idlanguages: number;
+    image: string;
+    // Add other fields if present in your API response
+  };
+}
+
+const CheckoutPage: React.FC<CreateProps> = ({ searchParams }) => {
   return (
     <div className={styles.checkoutPage}>
       <img className={styles.rectangleIcon} alt="" src="/rectangle@2x.png" />
@@ -22,10 +35,8 @@ const CheckoutPage = () => {
         src="/confidentteacherexplaininglessonpupils-1@2x.png"
       />
       <img className={styles.playButtonIcon} alt="" src="/playbutton@2x.png" />
-      <div className={styles.adipisingElitSed}>
-        adipising elit, sed do eiusmod tempor
-      </div>
-      <div className={styles.div1}>$24.69</div>
+      <div className={styles.adipisingElitSed}>{searchParams?.desc}</div>
+      <div className={styles.div1}>${searchParams?.price}</div>
       <div className={styles.subtotal}>Subtotal</div>
       <div className={styles.div2}>$51.38</div>
       <div className={styles.loremIpsumDollar}>Lorem ipsum dollar...</div>
@@ -38,7 +49,7 @@ const CheckoutPage = () => {
       <div className={styles.div4}>5</div>
       <div className={styles.total}>Total</div>
       <div className={styles.div5}>$56.38</div>
-      <img className={styles.lineIcon} alt="" src="/line-26@2x.png" />
+      <img className={styles.lineIcon} alt="" src={searchParams?.image} />
     </div>
   );
 };

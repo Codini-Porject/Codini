@@ -11,16 +11,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-
     <IdentityProvider>
       <html lang="en">
         <body>
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </body>
       </html>
     </IdentityProvider>
-
   );
 }

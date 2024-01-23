@@ -11,6 +11,7 @@ const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [selectedRole, setSelectedRole] = useState("");
+  const [image, setImage] = useState("");
   const [userRole, setUserRole] = useState("");
   const { setUser } = useIdentity();
   const router = useRouter();
@@ -21,31 +22,33 @@ const Login = () => {
         setErrorMessage("Please select a role");
         return;
       }
-      
+
       const response = await axios.post("http://localhost:8000/auth/login", {
         email: userEmail,
         password: userPassword,
         role: selectedRole,
       });
-      console.log("res",response.data);
-      
-      const { token, userId, role } = response.data;
-      
+      console.log("res", response.data);
+
+      const { token, userId, role, image } = response.data;
+      console.log("image in login", image);
+
       if (token && userId && role) {
-       console.log("hhhhhhhh",userId);
-       
+        console.log("hhhhhhhh", userId);
+
         setUser({
           id: userId,
           role: role,
           email: userEmail,
           password: userPassword,
+          image: response.data.image,
         });
-        
+
         Cookies.set("authToken", token, { expires: 60 * 60 * 24 });
         if (role === "teacher") {
           router.push(`teacher/${userId}`);
         } else {
-        router.push("/home")
+          router.push(`/home`);
         }
       } else {
         setErrorMessage("Login failed. Please check your credentials.");
@@ -125,8 +128,12 @@ const Login = () => {
             </select>
           </div>
           <div className={styles.rectangleParent2}>
-            
-            <button className="button" style={{backgroundColor:"transparent",marginLeft:"45px"}} type="submit" onClick={handleSubmit} >
+            <button
+              className="button"
+              style={{ backgroundColor: "transparent", marginLeft: "45px" }}
+              type="submit"
+              onClick={handleSubmit}
+            >
               Login
             </button>
             {errorMessage && (

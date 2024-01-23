@@ -383,10 +383,11 @@
 .buyNow {
   position: absolute;
   top: 22.87px;
-  left: 159.77px;
+  left: 990.77px;
   display: inline-block;
-  width: 81.24px;
+  width: 150.24px;
   height: 40.36px;
+  background-color: #49bbbd;
 }
 .rectangleParent14 {
   position: absolute;

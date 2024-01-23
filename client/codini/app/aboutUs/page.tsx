@@ -1,16 +1,11 @@
-
 "use client";
 import styles from "../styles/aboutUs.module.css";
 
-
-import  Link  from 'next/link';
+import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
 
-
-import styles from "../styles/aboutUs.module.css";
 import "./about.css";
 const AboutUs = () => {
-
   return (
     <div className={styles.aboutUs}>
       <div className={styles.aboutUsInner}>
@@ -22,21 +17,25 @@ const AboutUs = () => {
               animate={{ rotate: "0deg" }}
               className={styles.sectionImgIcon}
               alt=""
-              src="/codini3C.jpg" 
+              src="/codini3C.jpg"
             />
             <div className={styles.sectionData}>
-              <b className={styles.features}>Learn Coding with the best & modern way</b>
+              <b className={styles.features}>
+                Learn Coding with the best & modern way
+              </b>
               <div className={styles.weAreAlways}>
-              CODINI provides you with the best teachers and courses, catering to both beginners and advanced learners..     
-                    </div>
+                CODINI provides you with the best teachers and courses, catering
+                to both beginners and advanced learners..
+              </div>
               <div className={styles.sectionContent}>
                 <div className={styles.atWeekenduxThe}>
-                our primary goal is to empower students by helping them clarify their objectives,
-                 fostering consistency in their ambitions, and instilling
-                  confidence in their journey over time. We are committed to providing a 
-                  supportive environment that encourages personal and professional growth,
-                   ensuring our students are well-prepared for the challenges they
-                    may encounter along their educational path.  
+                  our primary goal is to empower students by helping them
+                  clarify their objectives, fostering consistency in their
+                  ambitions, and instilling confidence in their journey over
+                  time. We are committed to providing a supportive environment
+                  that encourages personal and professional growth, ensuring our
+                  students are well-prepared for the challenges they may
+                  encounter along their educational path.
                 </div>
                 {/* <div className={styles.youWillFindContainer}>
                   <p className={styles.youWillFind}>
@@ -63,7 +62,8 @@ const AboutUs = () => {
               By Joining CODINI Platform, One Can Avail a Lot Of Benefits.
             </div>
             <div className={styles.installOurTopRated}>
-              create an account by your phone or your laptop to can access to the courses & become a developer from your home..
+              create an account by your phone or your laptop to can access to
+              the courses & become a developer from your home..
             </div>
             <div className={styles.benefitCard}>
               <div className={styles.featureCardContent}>
@@ -73,7 +73,9 @@ const AboutUs = () => {
                     <div className={styles.div}>01</div>
                   </div>
                 </div>
-                <div className={styles.standardization}>Free starting courses</div>
+                <div className={styles.standardization}>
+                  Free starting courses
+                </div>
                 <div className={styles.whenWorkingInContainer}>
                   <span>{`By creating your account, CODINI provides you with some free courses to start..`}</span>
                 </div>
@@ -103,7 +105,9 @@ const AboutUs = () => {
                     <div className={styles.div}>02</div>
                   </div>
                 </div>
-                <div className={styles.standardization}>Contemporary mentors</div>
+                <div className={styles.standardization}>
+                  Contemporary mentors
+                </div>
                 <div className={styles.whenWorkingInContainer}>
                   <span>{`Explore coding with our platform's contemporary mentors, guiding you through the latest in technology and programming..`}</span>
                 </div>
@@ -162,20 +166,13 @@ const AboutUs = () => {
           <div className={styles.rectangleGroup} />
 
           <div className={styles.frameParent}>
-            <div className={styles.frameGroup}>
-            </div>
-
+            <div className={styles.frameGroup}></div>
           </div>
-
         </div>
       </div>
       <div className={styles.aboutUsSection}>
         <div className={styles.aboutUsSectionChild} />
-        <img
-          className={styles.aboutUsSectionItem}
-          alt=""
-          src="/codini2C.jpg"
-        />
+        <img className={styles.aboutUsSectionItem} alt="" src="/codini2C.jpg" />
         <img
           className={styles.aboutUsSectionInner}
           alt=""
@@ -192,14 +189,14 @@ const AboutUs = () => {
           </div>
           <div className={styles.sectionContent1}>
             <div className={styles.atWeekenduxThe}>
-            Codini offers unparalleled opportunities for students worldwide to excel in the field of coding.
-             Our online coding school is dedicated to providing top-notch education, 
-             empowering learners to thrive in a global tech landscape. 
-             With a comprehensive curriculum and expert instructors, 
-             Codini ensures that students receive the best resources 
-             and support to sharpen their coding skills. 
-             Join us as we pave the way for your success, 
-             turning coding aspirations into thriving careers on a global scale
+              Codini offers unparalleled opportunities for students worldwide to
+              excel in the field of coding. Our online coding school is
+              dedicated to providing top-notch education, empowering learners to
+              thrive in a global tech landscape. With a comprehensive curriculum
+              and expert instructors, Codini ensures that students receive the
+              best resources and support to sharpen their coding skills. Join us
+              as we pave the way for your success, turning coding aspirations
+              into thriving careers on a global scale
             </div>
           </div>
           {/* <div className={styles.button3}>
@@ -213,7 +210,6 @@ const AboutUs = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 

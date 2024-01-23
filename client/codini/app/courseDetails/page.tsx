@@ -7,9 +7,7 @@ import axios from "axios";
 import YouTube from "react-youtube";
 import Link from "next/link";
 import router from "next/router";
-
-
-
+import { Button } from "@nextui-org/react";
 interface Course {
   idcourse: number;
   teachers_idteachers: number;
@@ -17,6 +15,7 @@ interface Course {
   price: string;
   rate: string;
   languages_idlanguages: number;
+  image: string;
   // Add other fields if present in your API response
 }
 // interface courses{
@@ -147,8 +146,9 @@ const CourseDetail: NextPage = () => {
               <div className={styles.courseInfo}>
                 <div className={styles.certification}>{cour.desc}</div>
                 <div className={styles.description}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor
+                  A language, be it spoken or programming, is a dynamic system
+                  of communication or instruction. It serves as a medium for
+                  expressing thoughts, ideas, and emotions
                 </div>
                 <div className={styles.priceContainer}>
                   <i className={styles.currency}>$</i>
@@ -184,22 +184,44 @@ const CourseDetail: NextPage = () => {
                 <div className={styles.groupParent11}>
                   <div className={styles.groupParent11}>
                     <div className={styles.groupChild27} />
+                    <img
+                      className={styles.whatsappIcon}
+                      alt=""
+                      src="/whatsapp.png"
+                    />
+                    <img
+                      className={styles.telegramIcon}
+                      alt=""
+                      src="/telegram.png"
+                    />
                     <div className={styles.rectangleParent13}>
                       <img
                         className={styles.groupChild28}
                         alt=""
-                        src="/rectangle-32@2x.png"
+                        src="https://i.ytimg.com/vi/o1IaduQICO0/maxresdefault.jpg"
                       />
+
                       <div className={styles.groupChild29} />
                     </div>
                     <div className={styles.rectangleParent14}>
                       <div />
-                      <Link href="/CheckoutPage">
-                        <button>Buy Now</button>
-                      </Link>
                     </div>
                     <div className={styles.rectangleParent15}>
                       <div className={styles.groupChild31} />
+                      <Link
+                        href={{
+                          pathname: "/Check",
+                          query: {
+                            imagestu: course?.image,
+                            price: course?.price,
+                            desc: course?.desc,
+                            rate: course?.rate,
+                          },
+                        }}
+                      >
+                        <button className={styles.buyNow}>Buy Now</button>
+                      </Link>
+
                       <b className={styles.overview}>Overview</b>
                     </div>
                     <div className={styles.rectangleParent16}>
@@ -214,6 +236,26 @@ const CourseDetail: NextPage = () => {
                         <b className={styles.overview}>Overview</b>
                       </div>
                     </div>
+                    <img
+                      className={styles.twitterIcon}
+                      alt=""
+                      src="/twitter.png"
+                    />
+                    <img
+                      className={styles.youtubeIcon}
+                      alt=""
+                      src="/youtube.jpg"
+                    />
+                    <img
+                      className={styles.facebookIcon}
+                      alt=""
+                      src="/facebook.png"
+                    />
+                    <img
+                      className={styles.instagramIcon}
+                      alt=""
+                      src="/instagram.png"
+                    />
                   </div>
                   <div className={styles.parent}>
                     <div className={styles.div4}>{course?.price}$</div>
@@ -247,19 +289,19 @@ const CourseDetail: NextPage = () => {
                 <div className={styles.groupParent12}>
                   <div className={styles.modulsParent}>
                     <div className={styles.moduls}>32 Moduls</div>
-            
+                    <div className={styles.div6}></div>
                   </div>
                   <div className={styles.certificationOfCompletionParent}>
                     <div className={styles.certificationOfCompletion}>
                       Certification of completion
                     </div>
-                  
+                    <div className={styles.div7}></div>
                   </div>
                   <div className={styles.accessOnAllDevicesParent}>
                     <div className={styles.accessOnAll}>
                       Access on all devices
                     </div>
-               
+                    <div className={styles.div6}></div>
                   </div>
                   <div className={styles.moneyBackGuaranteeParent}>
                     <div className={styles.moneyBackGuarantee}>
