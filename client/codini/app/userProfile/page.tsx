@@ -1,4 +1,5 @@
 "use client";
+import type { NextPage } from "next";
 import React, { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -36,6 +37,7 @@ const UserProfile = () => {
     setIsFollowing((prev) => !prev);
   };
   return (
+
     <div className="container">
       <div className="main-body">
         <nav aria-label="breadcrumb" className="main-breadcrumb">
@@ -361,11 +363,15 @@ const UserProfile = () => {
                     </div>
                   </div>
                 </div>
+
+    
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
   );
 };
