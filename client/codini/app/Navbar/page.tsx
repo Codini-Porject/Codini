@@ -10,6 +10,7 @@ const Navbar=()=>{
       <nav className="Navbar">
        <img style={{marginLeft:"3cm"}} alt="" src="https://cdn.discordapp.com/attachments/1161195165503995984/1198935168589779005/codinilogo5.jpg?ex=65c0b663&is=65ae4163&hm=91bcc05644c8567e3060768dd6114aba830a787cc2ab00d4608b84a6ddd76d25&" />
        <div className="ab">
+
        <Link href="/"><button><div className="home">Home</div></button></Link>
        <Link href="/"><button><div className="careers">Careers</div></button></Link>
        <Link href="/courses"><button><div className="courses">Courses</div></button></Link>
@@ -23,6 +24,7 @@ const Navbar=()=>{
 
       </div> */}
     </nav>
+
   );
   };
 export default Navbar;

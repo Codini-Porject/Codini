@@ -21,10 +21,15 @@
     "gasp": "^0.0.2",
     "js-cookie": "^3.0.5",
     "next": "14.0.4",
-    "react": "^18",
+    "react": "^18.2.0",
     "react-chat-engine": "^1.11.28",
     "react-chat-engine-pretty": "^0.1.8",
-    "react-dom": "^18"
+
+    "react-dom": "^18.2.0",
+    "react-scroll-trigger": "^0.6.14",
+    "react-youtube": "^10.1.0",
+    "scrollmagic": "^2.0.8"
+
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
