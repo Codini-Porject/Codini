@@ -24,6 +24,20 @@ const getCourseById = async (req, res) => {
     res.status(500).json({ error: "Server Error" });
   }
 };
+const getCourseByteacher = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const course = await Course.findAll({where :{teachers_idteachers:id}});
+    if (!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+    res.json(course);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
+
 
 const updateCourse = async (req, res) => {
   const { id } = req.params;
@@ -87,4 +101,5 @@ module.exports = {
   updateCourse,
   deleteCourse,
   addCourse,
+  getCourseByteacher
 };

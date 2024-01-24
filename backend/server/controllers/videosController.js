@@ -1,13 +1,12 @@
 const Videos = require("../models/videos.js");
 const Course = require("../models/courses.js");
 const Language = require("../models/languages.js");
-// const { where } = require("sequelize");
 
 const getAllVideosForCourse = async (req, res) => {
-  // const courseId = req.params.courseId;
+  const courseId = req.params.courseId;
   try {
     const videos = await Videos.findAll({
-      where: { languages_idlanguages: req.params.idl },
+      where: { courses_idcourse: courseId },
     });
     res.json(videos);
   } catch (error) {

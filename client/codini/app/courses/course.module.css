@@ -1,10 +1,10 @@
 .gridcontainer {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  gap: 20px;
+  grid-template-columns: 28% 28% 28%;
+  gap: 2cm;
   padding: 2cm;
   border: 2px solid black; 
-  margin-left: 1cm;
+  margin-left: 0.5cm;
   margin-right: 1cm;
 }
 

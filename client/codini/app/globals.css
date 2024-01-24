@@ -5,6 +5,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
+.quiz-question-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  text-align: center; /* Center the content */
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answers input {
+  margin-bottom: 10px;
+  padding: 10px; /* Increase padding for larger inputs */
+  width: 80%; /* Adjust width as needed */
+  box-sizing: border-box; /* Include padding in the total width */
+}
+
+
+/* YourStyle.module.css or your regular CSS file */
+/* .course-item {
+  margin-bottom: 20px; 
+  height: 10cm;
+  border: 2px black;
+} */
+
+
+
+.course-details {
+  margin-left: 10px; /* Adjust the margin as needed */
+  /* Add any other styling you want for the course details container */
+}
+
+.course-desc {
+  font-size: 16px; /* Set the desired font size for the course description */
+  /* Add any other styling you want for the course description */
+}
+
+.course-price {
+ 
+  font-weight: bold; /* Make the price bold or adjust as needed */
+  /* Add any other styling you want for the course price */
+}
+
+.locked-icon {
+  /* Add any styling you want for the locked icon */
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: 33% 33% 33% 33%;
+  gap: 16px; /* Adjust the gap according to your design */
+}
+
+.course-item {
+  border: 3px solid black; /* Add border or any other styling for each item */
+  padding: 10px;
+}
+
 
 .checkbox-button {
   appearance: none;
@@ -672,7 +733,6 @@ body {
 }
 .groupParent {
   position: absolute;
-  top: 74px;
   left: 766px;
   width: 388px;
   height: 83px;
