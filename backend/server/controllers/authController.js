@@ -35,6 +35,7 @@ const loginUser = async (req, res) => {
       const role = user instanceof Teacher ? "teacher" : "student";
 
       const token = generateToken(user.id, user.name, role);
+
       // console.log("user in cont", student.dataValues.image);
       res.json({
         token,

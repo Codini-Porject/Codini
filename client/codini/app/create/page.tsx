@@ -13,7 +13,7 @@ interface Course {
   desc: string;
   price: number;
   rate: number;
-  image:string
+  image: string;
 }
 
 interface Video {
@@ -44,7 +44,7 @@ const Create: React.FC = () => {
           desc: desc,
           price: price,
           rate: rate,
-          image:image,
+          image: image,
           teachers_idteachers: idTeacher,
           languages_idlanguages: select,
         }
@@ -62,12 +62,12 @@ const Create: React.FC = () => {
 
   const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-  
+
     if (file) {
       try {
         const formData = new FormData();
         formData.append("file", file);
-  console.log("hhheeee",formData);
+        console.log("hhheeee", formData);
         const response = await axios.post(
           `https://api.cloudinary.com/v1_1/doytchn8h/image/upload?upload_preset=marketplace&cloud_name=doytchn8h`,
           formData,
@@ -77,8 +77,9 @@ const Create: React.FC = () => {
             },
           }
         );
-  
+
         setImage(response.data.secure_url);
+        console.log("image", response.data.secure_url);
       } catch (error) {
         console.error("Error uploading image:", error);
       }
@@ -114,7 +115,9 @@ const Create: React.FC = () => {
       <Box
         component="form"
         sx={{
+
           '& > :not(style)': { m: 1, width: '30ch' },
+
         }}
         noValidate
         autoComplete="off"
@@ -129,7 +132,9 @@ const Create: React.FC = () => {
       <Box
         component="form"
         sx={{
+
           '& > :not(style)': { m: 1, width: '30ch' },
+
         }}
         noValidate
         autoComplete="off"
@@ -141,6 +146,7 @@ const Create: React.FC = () => {
           onChange={(e) => setRate(parseFloat(e.target.value))}
         />
       </Box>
+
       
       <label className="file-input-label2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
   <input
@@ -169,6 +175,7 @@ const Create: React.FC = () => {
     <polyline points="16 16 12 12 8 16"></polyline>
   </svg>
 </label>
+
 
       <div
         style={{
