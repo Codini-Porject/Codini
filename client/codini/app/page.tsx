@@ -56,10 +56,40 @@ const Home = () => {
                   <div className={styles.frameParent}></div>
                 </div>
               </div>
-              <div className={styles.maskGroup}>
-                <div className={styles.frameChild} />
-                <div className={styles.placeholder} />
-                <div className={styles.placeholder1} />
+
+              <div className={styles.buttonParent}>
+              <Link href="/register"><button className='button'><div className={styles.button2} >
+        <div className={styles.buttonBase2}>
+        <div className={styles.text3}>Get Started</div>
+        </div>
+        </div></button></Link>
+        <div className="cha9fa">
+  <div className="left-side">
+  <Link href="/register"><div className={styles.button3} >
+          
+          <div className={styles.buttonBase3}>
+          <div className={styles.text3}>subscribe</div>
+          </div>
+          </div></Link>
+    <div className="karta">
+      <div className="card-line"></div>
+      <div className="buttons"></div>
+    </div>
+    <div className="post">
+      <div className="post-line"></div>
+      <div className="screen">
+        <div className="dollar">$</div>
+      </div>
+      <div className="numbers"></div>
+      <div className="numbers-line2"></div>
+    </div>
+  </div>
+  <div className="right-side">
+    <div className="new"></div>
+  </div>
+</div>
+        
+
               </div>
               <div className={styles.ellipseDiv} />
               <div className={styles.div}>
@@ -862,9 +892,17 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+
     </div>
+            </div>
+             </div>
+        </div>
+ </div>
+    </div>
+   
+
+    </div>
+
   );
 };
 

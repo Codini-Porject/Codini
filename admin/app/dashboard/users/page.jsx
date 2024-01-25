@@ -7,12 +7,11 @@ import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
-// import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
 const UsersPage = async ({ searchParams }) => {
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [deleteUserId, setDeleteUserId] = useState(null);
+
 
   const handleDelete = (userId) => {
     setDeleteUserId(userId);
@@ -30,6 +29,7 @@ const UsersPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   const { count, users } = await fetchUsers(q, page);
+
 
   return (
     <div className={styles.container}>
@@ -151,12 +151,14 @@ const UsersPage = async ({ searchParams }) => {
                       View
                     </button>
                   </Link>
+
                   <button
                     onClick={() => handleDelete(user.id)}
                     className={`${styles.button} ${styles.delete}`}
                   >
                     Delete
                   </button>
+
                 </div>
               </td>
             </tr>
