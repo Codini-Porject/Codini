@@ -72,9 +72,7 @@ const [question,setQuestion]=useState("")
   const updateKey = (g,e) => {
    
     setquestionObj((prevObj) => (
-   
       {
-      
       ...prevObj,
       [g]: e.target.value,
     }));
@@ -82,7 +80,7 @@ const [question,setQuestion]=useState("")
 
   console.log(questionObj,question)
   return (
-   <div className='container'>
+   <div className='container3'>
  {  courseIndex && <div className="quiz-question-container" style={{top:"10cm" ,left:"16cm" , backgroundColor:'grey' , position:"absolute"}}>
       <div className="question">Write Your Question here</div>
       <input type="text" placeholder="Option 1" style={{width:'8cm'}} 

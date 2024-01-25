@@ -35,16 +35,12 @@ const loginUser = async (req, res) => {
       const role = user instanceof Teacher ? "teacher" : "student";
 
       const token = generateToken(user.id, user.name, role);
-
-      const student = await Student.findOne({
-        where: { idstudents: user.idstudents },
-      });
       // console.log("user in cont", student.dataValues.image);
       res.json({
         token,
         userId: user.idstudents ? user.idstudents : user.idteachers,
         role,
-        image: student.dataValues.image,
+        image: user.dataValues.image ? user.dataValues.image : "",
       });
     } else {
       res.status(401).json({ message: "Invalid Password" });

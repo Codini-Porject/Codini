@@ -138,9 +138,7 @@ const fetchDetail: React.FC = () => {
           </div>
         ))}
       </div >
-      <div style={{marginTop:"5px"}}>
-      <Footer />
-      </div>
+ 
     </div>
   );
 };
