@@ -599,7 +599,7 @@ const Home = () => {
         <div className={styles.quoteSectionParent}>
           <div className={styles.quoteSection}>
              
-                <div className="card">
+                <div className="card1">
                 <div className={styles.quoteAndAttribution}>
                   <img
                     className={styles.image2Icon}

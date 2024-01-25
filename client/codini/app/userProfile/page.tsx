@@ -4,21 +4,22 @@ import React, { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-
-interface Course {
-  idcourse: number;
-  teachers_idteachers: number;
-  desc: string;
-  price: string;
-  rate: string;
-  languages_idlanguages: number;
-  // Add other fields if present in your API response
+import Link from "next/link";
+import { useIdentity } from "../(auth)/IdentityContext";
+interface Student {
+  idstudent: number;
+  name: String;
+  image: string;
+  email: String;
+  Phrases: String;
+  level: number;
 }
-const PeakUserSettings = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
-  const [course, setCourse] = useState<Course | null>(null);
 
+const UserProfile = () => {
+  const [student, setStudent] = useState<Student | null>(null);
+  const [isFollowing, setIsFollowing] = useState(false);
+  const id = useIdentity()?.user?.id;
+  console.log(id);
   useEffect(() => {
     axios
       .get<Student>(`http://127.0.0.7:8000/student/getone/${id}`)
