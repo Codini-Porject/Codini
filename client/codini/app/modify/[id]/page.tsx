@@ -86,6 +86,7 @@ const route = useRouter()
             className="img-account-profile rounded-circle mb-2"
             src="http://bootdey.com/img/Content/avatar/avatar1.png"
             alt=""
+            style={{marginLeft:"4.5cm"}}
           />
         )}
           <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
@@ -95,7 +96,7 @@ const route = useRouter()
               name="image"
               type="file"
               accept="image/*"
-              style={{ display: 'none' }} // Hide the input element
+              style={{ display: 'none' }} 
             />
          
             <svg
@@ -148,15 +149,15 @@ const route = useRouter()
       </Box>
         </div>
       </div>
+      <form>
+      <button className="btn btn-primary"  onClick={handleSubmit}>
+        Save changes
+</button>
+      </form>
     </div>
     <div className="col-xl-8">
     <div className="card mb-4">
   <div className="card-body">
-      <form>
-      <button className="btn btn-primary" onClick={handleSubmit}>
-        Save changes
-</button>
-      </form>
   </div>
 </div>
   </div>

@@ -79,8 +79,14 @@ function page() {
     }));
   };
 
-  const updateKey = (g, e) => {
-    setquestionObj((prevObj) => ({
+
+
+
+  const updateKey = (g,e) => {
+   
+    setquestionObj((prevObj) => (
+      {
+
       ...prevObj,
       [g]: e.target.value,
     }));
@@ -88,82 +94,25 @@ function page() {
 
   console.log(questionObj, question);
   return (
-    <div className="container">
-      {courseIndex && (
-        <div
-          className="quiz-question-container"
-          style={{
-            top: "10cm",
-            left: "16cm",
-            backgroundColor: "grey",
-            position: "absolute",
-          }}
-        >
-          <div className="question">Write Your Question here</div>
-          <input
-            type="text"
-            placeholder="Option 1"
-            style={{ width: "8cm" }}
-            onChange={(e) => {
-              setQuestion(e.target.value);
-            }}
-          />
-          <h3>Write the Options here</h3>
-          <div className="answers">
-            {arr.map((question, i) => (
-              <input
-                type="text"
-                key={i}
-                placeholder={`option ${i}`}
-                width={"87px"}
-                onChange={(e) => {
-                  updateKey(i + 1, e);
-                }}
-              />
-            ))}
-            <div
-              onClick={() => {
-                addNewKey(numberOfQuestions + 1, "");
-                setNumberOfQuestions(numberOfQuestions + 1);
-              }}
-            >
-              add question
-            </div>
-          </div>
-          <button
-            onClick={() => {
-              handleAll();
-            }}
-          >
-            Add Quiz
-          </button>
-        </div>
-      )}
 
-      <div
-        className="course-container"
-        style={{ backgroundColor: "grey", position: "absolute" }}
-      >
-        <div className="message">pick a course </div>
-        <h3> here:</h3>
-        <ul className="cursor-pointer">
-          {courses.map((course, i) => (
-            <li
-              onClick={() => {
-                setCourseIndex(course.idcourse);
-              }}
-              className="one-course"
-              key={i}
-            >
-              <p className="w-[200px]">{course?.desc}</p>
-              <img
-                src={course?.image}
-                alt=""
-                className="object-contain h-48 w-96"
-              />
-            </li>
-          ))}
-        </ul>
+   <div className='container3'>
+ {  courseIndex && <div className="quiz-question-container" style={{top:"10cm" ,left:"16cm" , backgroundColor:'grey' , position:"absolute"}}>
+      <div className="question">Write Your Question here</div>
+      <input type="text" placeholder="Option 1" style={{width:'8cm'}} 
+       onChange={(e)=> {setQuestion(e.target.value)}}
+      />
+      <h3>Write the Options here</h3>
+      <div className="answers">
+       
+       {arr.map((question,i)=>(<input type="text" key={i} placeholder= {`option ${i}`} width={'87px'} 
+        onChange={(e)=> { updateKey(i+1,e)}}
+       />))}
+       <div onClick={()=> {addNewKey(numberOfQuestions+1 ,"");setNumberOfQuestions(numberOfQuestions+1)}}>add question</div>
+     
+        
+
+       
+
       </div>
     </div>
   );
