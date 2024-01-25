@@ -92,7 +92,7 @@ body {
   overflow: hidden;
   font-size: 15px;
   cursor: pointer;
-  color: black;
+  color: rgb(255, 255, 255);
   z-index: 1;
 }
 
@@ -600,62 +600,7 @@ body {
   --br-41xl: 60px;
 }
 
-.careers,
-.home {
-  position: absolute;
-  letter-spacing: 0.02em;
-  top: 70px;
-}
-.home {
-  top: 70px;
-  left: 700px;
-  font-size: var(--font-size-3xl);
-}
-.search {
-  position: absolute;
-  letter-spacing: 0.02em;
-  top: 70px;
-}
-.search {
-  top: 70px;
-  left: 1450px;
-  font-size: var(--font-size-3xl);
-}
-.careers {
-  left: 900px;
-  top: 70px;
-}
-.careers,
-.courses {
-  top: 70px;
-  font-size: var(--font-size-3xl);
-}
-.courses {
-  position: absolute;
-  left: 1100px;
-  letter-spacing: 0.02em;
-  top: 70px;
-}
 
-.aboutUs,
-.lina {
-  position: absolute;
-  letter-spacing: 0.02em;
-  /* top:40px; */
-}
-.aboutUs {
-  top: 68px;
-  left: 1250px;
-  font-size: var(--font-size-3xl);
-  font-family: var(--font-poppins);
-}
-.lina {
-  top: 70px;
-  left: 1700px;
-  font-weight: 500;
-  font-size: 20px;
-  color: var(--color-black);
-}
 .groupChild {
   top: 0;
   left: 0;
@@ -687,14 +632,14 @@ body {
   font-family: var(--font-font-awesome-5-free);
   color: var(--color-black);
 }
-.footerChild {
+/* .footerChild {
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--color-gray);
   width: 1920px;
   height: 593px;
-}
+} */
 .classTechnologiesInc,
 .subscribeToGet {
   position: absolute;
@@ -1272,14 +1217,11 @@ body {
 .Navbar {
   position: relative;
   background-color: var(--color-white);
-  width: 110%;
-  height: 180px;
+  width: 100%;
+  height: 140px;
   overflow: hidden;
-  text-align: left;
-  font-size: var(--font-size-lg);
-  color: var(--color-dimgray);
-  font-family: var(--font-poppins);
-  right: 100px;
+  text-align: center; /* Center the text horizontally */
+  font-family: 'New Font', sans-serif;
 }
 .ab {
   left: 100px;
@@ -1291,8 +1233,63 @@ body {
   width: 2900px; /* Adjust the width as needed, in this case, it's set to 50% of the container width */
   background-color: var(--color-dimgray); /* You can adjust the line color */
   margin-top: 140px; /* Adjust the margin as needed */
-  margin-left: auto;
-  margin-right: auto;
+
+}
+.careers,
+.home {
+  position: absolute;
+  letter-spacing: 0.02em;
+  top: 70px;
+}
+.home {
+  top: 70px;
+  left: 700px;
+  font-size: var(--font-size-3xl);
+}
+.search {
+  position: absolute;
+  letter-spacing: 0.02em;
+  top: 70px;
+}
+.search {
+  top: 70px;
+  left: 1450px;
+  font-size: var(--font-size-3xl);
+}
+.careers {
+  left: 900px;
+  top: 70px;
+}
+.careers,
+.courses {
+  top: 70px;
+  font-size: var(--font-size-3xl);
+}
+.courses {
+  position: absolute;
+  left: 1100px;
+  letter-spacing: 0.02em;
+  top: 70px;
+}
+
+.aboutUs,
+.lina {
+  position: absolute;
+  letter-spacing: 0.02em;
+  /* top:40px; */
+}
+.aboutUs {
+  top: 72px;
+  left: 1254px;
+  font-family: 'New Font', sans-serif;
+  font-size: 20px;
+}
+.lina {
+  top: 70px;
+  left: 1700px;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--color-black);
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
@@ -1388,3 +1385,146 @@ body {
   background-color: #05c390;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+.founders{
+  margin-left: 300px;
+}
+.explore{
+  margin-left: 300px;
+}
+.explore2{
+  margin-left: 300px;
+}
+.ourpacks{
+  margin-left: 300px;
+}
+.coni{
+  margin-left: 300px;
+}
+.notification {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  width: 100rem;
+  height: 61rem;
+  background: #c2c2c4;
+  border-radius: 2rem;
+  overflow: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  --gradient: linear-gradient(to bottom, #01563f, #049f75, #02bd8b,#03efb0);
+  --color: #32a6ff
+}
+
+.notification:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #262626;
+  z-index: 4
+}
+
+.notification:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--gradient);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+
+.notification:hover:after {
+  transform: translateX(1.15rem)
+}
+
+.notititle {
+  color:#049f75 ;
+  padding: 0.65rem 0.25rem 3.4rem 1.25rem;
+  font-weight: 500;
+  font-size: 80px;
+  margin-left: 500px;
+  transition: transform 900ms ease;
+  z-index: 5;
+}
+
+.notification:hover .notititle {
+  transform: translateX(1.15rem)
+}
+
+.notibody {
+  color: #ffffff;
+  padding: 0 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+  font-size: 40px;
+}
+
+.notification:hover .notibody {
+  transform: translateX(1.75rem);
+  color: #57c9ae;
+
+}
+
+.notiglow,
+.notiborderglow {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side at center, white, transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.notiglow {
+  z-index: 3;
+}
+
+.notiborderglow {
+  z-index: 1;
+}
+
+.notification:hover .notiglow {
+  opacity: 0.1
+}
+
+.notification:hover .notiborderglow {
+  opacity: 0.1
+}
+.ktiba{
+  color: white;
+}
+.note {
+  color: var(--color);
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.9rem;
+  width: 75%;
+}
+.sic{
+  margin-left: 400px;
+  font-size: 70px;
+  color: #049f75;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.aboutus{
+  margin-left: 200px;
+}
+.debut{
+  margin-left: 00px;
+
+}
+.card {
+  width: 1090px;
+  height: 425px;
+  background: linear-gradient(135deg, #2ae2c3 0%, #5c6d6a 100%);
+  border-radius: 17px;
+  box-shadow: 20px 20px 60px #a1a0a0, -20px -20px 60px #ffffff;
+ }

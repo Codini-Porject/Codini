@@ -9,7 +9,7 @@ const AboutUs = () => {
   return (
     <div className={styles.aboutUs}>
       <div className={styles.aboutUsInner}>
-        <div className={styles.featuresSectionParent}>
+        <div className="aboutus">
           <div className={styles.featuresSection}>
             <div className={styles.imageBg} />
             <motion.img
@@ -208,8 +208,12 @@ const AboutUs = () => {
             />
           </div> */}
         </div>
+        <div></div>
       </div>
-    </div>
+
+
+
+      </div>
   );
 };
 
