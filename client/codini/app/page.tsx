@@ -23,7 +23,11 @@ const Home = () => {
     description: string;
     image: string;
 }
-
+const courses: Course[] = [
+  // { title: "JavaScript Fundamentals", instructor: "Jane Cooper", price: 57.84, ... },
+  // { title: "Python for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
+  // { title: "PHP for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
+];
 
   return (
     <div className='box'>

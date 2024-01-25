@@ -1,28 +1,29 @@
-/* Reset some default styles */
-body, h1, h2, h3, p, ul {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  /* font-family: 'Arial', sans-serif; */
-  background-color: #f4f4f4;
-  color: #333;
-  font-family: var(--font-poppins);
-  font-size: 21px;
-}
-
 .footer {
-  background-color: #232323;
-  padding: 20px 0;
+  background-color: #2d2d2d;
+  padding: 40px 0;
   text-align: center;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
+  color: #f1ecec;
+  font-family: sans-serif;
+  margin-top: 20px;
 }
-
 .footer-section {
   padding: 30px 0;
-  background-color: #101828;
+  color: #fff;
+  background: linear-gradient(to right, #049f75, #29d8aa, #049f75, #29d8aa, #049f75, #29d8aa, #049f75);
+  background-size: 1400% 100%;
+  animation: rainbowEffect 7s linear infinite;
+}
+
+@keyframes rainbowEffect {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+body>footer>div.container>div>div:nth-child(2)>ul {
   color: #fff;
 }
 
@@ -31,8 +32,12 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+margin-left: 50px;
 }
-
+.cont{
+  margin-right: -100px;
+  color: #fff;
+}
 .footer-content {
   max-width: 1100px;
   margin: 0 auto;
@@ -42,25 +47,19 @@ body {
 }
 
 .footer-column {
-  flex-basis: 20%; /* Adjust this value to control the width of the columns */
+  flex-basis: 30%;
   text-align: center;
   line-height: 1.5;
   list-style: none;
-}
 
-/* Add specific styles for the col-md-4 */
-/* .col-md-4 {
-  flex-basis: 40%; 
 }
-
-.col-md-3{
-  flex-basis: 20%; 
-} */
 
 .footer-column h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 42px;
+  margin-bottom: 17px;
   color: #0a8d70;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .footer-column ul {
@@ -69,13 +68,12 @@ body {
 }
 
 .footer-column li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .footer-column a {
-  color: #ccc;
+  color: #e0dddd;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .footer-column a:hover {
@@ -88,8 +86,8 @@ body {
 }
 
 .social-links img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   filter: grayscale(60%);
   transition: filter 0.6s ease-in-out;
@@ -100,13 +98,14 @@ body {
 }
 
 .footer-bottom {
-  border-top: 1px solid #555;
+  border-top: 1px solid #ccc;
   padding-top: 20px;
   margin-top: 20px;
 }
 
 .Copyright {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
@@ -120,20 +119,9 @@ body {
     margin-bottom: 20px;
   }
 }
-
-.polygon-parent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.group-item {
-  width: 150px; 
-  height: auto; 
-  margin-bottom: 10px; 
-}
-
-.totc {
-  font-size: 16px; 
-  color: #fff; 
+.taswira img.group-item {
+  width: 35%; /* Set the width to 100% of the parent container */
+  height: auto;
+  margin-left: 590px; /* Maintain the aspect ratio and adjust the height accordingly */
+  /* You can also set a specific width and height values if needed */
 }

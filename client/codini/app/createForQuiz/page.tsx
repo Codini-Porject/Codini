@@ -16,7 +16,7 @@ const [question,setQuestion]=useState("")
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const coursesResponse = await fetch(`http://localhost:8000/courses/getAll/3`);
+        const coursesResponse = await fetch(`http://localhost:8000/courses`);
        
         const fetchedCourses = await coursesResponse.json();
    
@@ -103,7 +103,7 @@ const [question,setQuestion]=useState("")
       <button onClick={() =>{handleAll()}} >Add Quiz</button>
     </div>}
 
-<div className="course-container" style={{ backgroundColor:'grey' , position:"absolute"}}>
+<div className="course-container" style={{ backgroundColor:'grey' }}>
 <div className="message">pick a course </div>
 <h3> here:</h3>
 <ul className="cursor-pointer">
