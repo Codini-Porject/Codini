@@ -19,7 +19,8 @@ const ChatsPage: FC<ChatsPageProps> = ({ user }) => {
       <PrettyChatWindow
         projectId={
           process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID ||
-          `ef2eab1d-2c81-4699-bb60-9bfac5601021`
+          `
+          ae8c21fc-e8a1-404b-9bca-01906fbceb77`
         }
         username={user?.username}
         secret={user?.secret}

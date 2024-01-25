@@ -13,6 +13,7 @@ interface Course {
   desc: string;
   price: number;
   rate: number;
+  image:string
 }
 
 interface Video {
@@ -30,6 +31,7 @@ const Create: React.FC = () => {
   const [rate, setRate] = useState<number>(0);
   const [price, setPrice] = useState<number>(0);
   const [desc, setDescription] = useState<string>("");
+  const [image, setImage] = useState<string>("");
   const [select, setSelect] = useState<number>(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,6 +44,7 @@ const Create: React.FC = () => {
           desc: desc,
           price: price,
           rate: rate,
+          image:image,
           teachers_idteachers: idTeacher,
           languages_idlanguages: select,
         }
@@ -54,6 +57,31 @@ const Create: React.FC = () => {
       console.log("Course response:", courseResponse.data);
     } catch (error) {
       console.error("Error creating course or video:", error);
+    }
+  };
+
+  const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+  
+    if (file) {
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
+  console.log("hhheeee",formData);
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/doytchn8h/image/upload?upload_preset=marketplace&cloud_name=doytchn8h`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+  
+        setImage(response.data.secure_url);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
     }
   };
 
@@ -86,7 +114,7 @@ const Create: React.FC = () => {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "55ch" },
+          '& > :not(style)': { m: 1, width: '40ch' },
         }}
         noValidate
         autoComplete="off"
@@ -101,7 +129,7 @@ const Create: React.FC = () => {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "55ch" },
+          '& > :not(style)': { m: 1, width: '40ch' },
         }}
         noValidate
         autoComplete="off"

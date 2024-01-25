@@ -17,7 +17,7 @@
 
 .form-input input,
 .forminput select {
-  width: 100%;
+  width: 80%;
   padding: 12px; /* Increase padding for larger inputs */
   box-sizing: border-box;
   border: 2px solid #ccc; /* Increase border width for larger inputs */

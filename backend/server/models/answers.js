@@ -11,10 +11,6 @@ const Answer = sequelize.define(
       autoIncrement: true,
       allowNull: false,
     },
-    answers: {
-      type: DataTypes.TINYINT,
-      allowNull: false,
-    },
     option: {
       type: DataTypes.STRING(455),
       allowNull: false,

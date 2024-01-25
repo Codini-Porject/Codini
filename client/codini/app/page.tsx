@@ -23,11 +23,7 @@ const Home = () => {
     description: string;
     image: string;
 }
-const courses: Course[] = [
-  // { title: "JavaScript Fundamentals", instructor: "Jane Cooper", price: 57.84, ... },
-  // { title: "Python for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
-  // { title: "PHP for Beginners", instructor: "Jenny Wilson", price: 48.99, ... },
-];
+
 
   return (
     <div className='box'>
@@ -113,12 +109,32 @@ const courses: Course[] = [
         <div className={styles.text3}>Get Started</div>
         </div>
         </div></button></Link>
-        <Link href="/register"><button className='button'><div className={styles.button3} >
+        <div className="cha9fa">
+  <div className="left-side">
+  <Link href="/register"><div className={styles.button3} >
           
           <div className={styles.buttonBase3}>
-          <div className={styles.text3}>Get free trial</div>
+          <div className={styles.text3}>subscribe</div>
           </div>
-          </div></button></Link>
+          </div></Link>
+    <div className="karta">
+      <div className="card-line"></div>
+      <div className="buttons"></div>
+    </div>
+    <div className="post">
+      <div className="post-line"></div>
+      <div className="screen">
+        <div className="dollar">$</div>
+      </div>
+      <div className="numbers"></div>
+      <div className="numbers-line2"></div>
+    </div>
+  </div>
+  <div className="right-side">
+    <div className="new"></div>
+  </div>
+</div>
+        
               </div>
             </div>
             <div className={styles.frameParent1}>
@@ -583,7 +599,7 @@ const courses: Course[] = [
         <div className={styles.quoteSectionParent}>
           <div className={styles.quoteSection}>
              
-                <div className="card">
+                <div className="card1">
                 <div className={styles.quoteAndAttribution}>
                   <img
                     className={styles.image2Icon}
@@ -772,44 +788,14 @@ const courses: Course[] = [
           </div>
     </div>
             </div>
-
-
-
-
-
-
-      
-
-
-
-          
+             </div>
         </div>
-        </div>
-
-
-
-
-
-      </div>
+ </div>
     </div>
+   
+
     </div>
   );
 };
 
 export default Home ;
-// {
-//   const { scrollYProgress } = useScroll();
-
-//   return (
-//     <>
-//       <motion.div
-//         className="progress-bar"
-//         style={{ scaleX: scrollYProgress }}
-//       />
-//       <h1>
-//         <code>useScroll</code> demo
-//       </h1>
-//       <LoremIpsum />
-//     </>
-//   );
-// }  

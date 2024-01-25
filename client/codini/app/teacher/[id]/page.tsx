@@ -1,14 +1,11 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import styles from '../index.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { useParams } from 'next/navigation';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
-import YouTube from 'react-youtube';
 import Footer from '@/app/footer/page';
 
 interface OneTeacher {
@@ -26,15 +23,25 @@ interface Video {
   teachers_idteachers: number;
 }
 
+interface Course {
+  idcourses: number;
+  desc:string;
+  image:string
+}
+
 const fetchDetail: React.FC = () => {
 
   const route = useRouter()
   const [clickedVideo, setClickedVideo] = useState<number | null>(null);
   const [teacher, setTeacher] = useState<OneTeacher | null>(null);
   const [vid, setVid] = useState<Video[]>([]);
+  const [Course, setCourse] = useState<Course[]>([]);
   const { id } = useParams();
   const [refresh,setRefresh]=useState<boolean>(false)
   console.log('hhh', id);
+
+
+
   const handleDeleteClick = async (idvideos: number) => {
     try {
       await fetch(`http://localhost:8000/videos/courses/${idvideos}`, {
@@ -52,11 +59,15 @@ const fetchDetail: React.FC = () => {
       try {
         const fetchTeacher = await fetch(`http://localhost:8000/teacher/getOne/${id}`);
         const fetchVideo = await fetch(`http://localhost:8000/videos/courses/getAll/${id}`);
+        const fetchCourse = await fetch (`http://localhost:8000/courses/getAll/${id}`);
         const teacher = await fetchTeacher.json();
         const videos = await fetchVideo.json();
+        const course = await fetchCourse.json()
         console.log('hello', videos);
-
+       console.log("course teacher" , course);
+       
         setTeacher(teacher);
+        setCourse(course)
         setVid(videos);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -93,12 +104,20 @@ const fetchDetail: React.FC = () => {
             <div className={styles.johnAnderson}>{teacher?.name}</div>
             <button onClick={() => route.push(`/modify/${id}`)} className={styles.btn}> Edit Profile</button>
             <button onClick={() => route.push(`/create`)} className={styles.btn}>Add courses</button>
-            <button onClick={() => route.push(`/createQuiz`)} className={styles.btn}>Add Quiz</button>
+            <button onClick={() => route.push(`/createForQuiz`)} className={styles.btn}>Add Quiz</button>
           </div>
         </div>
       </div>
     </div>
 
+   <div style={{ marginTop: '2cm', marginLeft:"1cm", border: '2px solid black', padding: '10px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '30px' }}>
+  {Course.map((ele, i) => (
+    <div key={i} className="course-item">
+    <img style={{marginLeft:"15%"}} src={ele.image} width={200} height={100} alt={`Course ${i}`} />
+    <p>{ele.desc}</p>
+  </div>
+  ))}
+</div>
        {/* YouTube Video Container */}
        <div style={{ marginTop: '2cm', marginLeft:"1cm", border: '2px solid black', padding: '10px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '30px' }}>
         {vid.map((el, i) => (
@@ -110,7 +129,7 @@ const fetchDetail: React.FC = () => {
             <div>
               <Stack direction="row" spacing={1}>
                 <Chip
-                  onDelete={() => handleDeleteClick(el.idvideos)} // Pass the correct video ID
+                  onDelete={() => handleDeleteClick(el.idvideos)}
                   deleteIcon={<DeleteIcon />}
                   variant="outlined"
                 />
@@ -127,4 +146,3 @@ const fetchDetail: React.FC = () => {
 };
 
       export default fetchDetail;
-      // <button onClick={() => handleDeleteClick(el.idvideos)}></button>

@@ -6,10 +6,11 @@ import style from "./course.module.css"
  
 
 interface Course {
-  id: number;
+  idcourse: number;
   desc: string;
   price: number;
   rate: number;
+  image:string
 }
 
 interface Video {
@@ -71,20 +72,44 @@ const  _onReady=(event:any)=> {
 
   return (
     <div className={style.gridcontainer}>
-    {videos.map((video, i) => (
+ {courses.map((el, i) => (
+ <div style={{width: '104%', height: '120%', background: 'white', boxShadow: '2px 2px 10px 2px rgba(0, 0, 0, 0.25)'}}>
+    <img src={el.image} alt={`Course ${i + 1}`}  style={{width: '50%', height: '50%' ,marginLeft:"2.5cm"}}/>
+    <div className="course-details">
+      <p className="course-desc">{el.desc}</p>
+      <span className="course-price" style={{marginLeft:"5cm"}}>Price:{el.price}</span>
+      {videos[i]?.islocked === 0 && (
+        <img
+          style={{ marginLeft: "10cm",marginTop:"1.5cm" }}
+          src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg"
+          width={"50px"}
+          height={"50px"}
+          alt="Locked"
+          onClick={() => route.push(`/courseDetails/${courses[i].idcourse}`)}
+          className="locked-icon"
+        />
+      )}
+    </div>
+  </div>
+      ))}
+    </div>
+  );
+};
+
+export default fetchAllCourses;
+
+
+ {/* {videos.map((video, i) => (
       <div className={style.videoCourseContainer} key={i}>
         <div className={style.videocontainer}>
-          {/* Displaying YouTube video */}
-          {/* <YouTube videoId={getVideoUrl(video.idvideos)} opts={opts} onReady={_onReady} /> */}
+        
         </div>
         <div className={style.videocontainer}>
-          {/* Displaying uploaded video */}
           <video width="320" height="240" controls>
             <source src={video.videos} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
   
-          {/* Conditionally render the image based on the value of videos.isLocked */}
         
         </div>
         {courses[i] && (
@@ -94,15 +119,9 @@ const  _onReady=(event:any)=> {
             <br />
             <span>Rate: {courses[i].rate}</span>
             {video?.islocked === 0 && (
-             <img style={{marginLeft:"4cm"}} src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg"  width={"50px"} height={"50px"}  alt="Locked" onClick={()=>route.push("/courseDetails/")} />
+             <img style={{marginLeft:"4cm"}} src="https://i.pinimg.com/736x/6f/df/35/6fdf3511fd3fbdc1a5977e518207b930.jpg"  width={"50px"} height={"50px"}  alt="Locked" onClick={()=>route.push(`/courseDetails/${courses[i].idcourse}`)} />
             )}
           </div>
         )}
       </div>
-    ))}
-  </div>
-  )
-}
-
-
-export default fetchAllCourses;
+    ))} */}
