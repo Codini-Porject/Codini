@@ -1,0 +1,76 @@
+/*-------------------------------*/
+/*GLOBALS*/
+/*-------------------------------*/
+:root {
+  font-size: 18px;
+
+  @media (max-width: 838px) {
+    font-size: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: $font-family--primary;
+  color: $color--black;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+textarea,
+input {
+  border: none;
+  resize: none;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.wrapper {
+  max-width: 1118px;
+  margin: 0 auto;
+  padding: 0 space(2);
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: space(5);
+}
+
+h2 {
+  font-size: space(4);
+}
+
+h6 {
+  font-size: space(2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family--secondary;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}

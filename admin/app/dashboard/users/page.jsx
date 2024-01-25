@@ -5,11 +5,36 @@ import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const UsersPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   const { count, users } = await fetchUsers(q, page);
+
+  const handleDelete = async (userId) => {
+    try {
+      // Show confirmation popup
+      const confirmDelete = window.confirm(
+        "Are you sure you want to delete this user?"
+      );
+      if (!confirmDelete) {
+        return;
+      }
+
+      // Perform delete action
+      await deleteUser(userId);
+
+      // Notify success
+      toast.success("User deleted successfully!");
+
+      // Refresh user list (you may want to fetch users again)
+    } catch (error) {
+      // Handle error, notify failure
+      toast.error("Failed to delete user.");
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -57,8 +82,11 @@ const UsersPage = async ({ searchParams }) => {
                     </button>
                   </Link>
                   <form action={deleteUser}>
-                    <input type="hidden" name="id" value={(user.id)} />
-                    <button className={`${styles.button} ${styles.delete}`}>
+                    <input type="hidden" name="id" value={user.id} />
+                    <button
+                      className={`${styles.button} ${styles.delete}`}
+                      onClick={handleDelete}
+                    >
                       Delete
                     </button>
                   </form>
