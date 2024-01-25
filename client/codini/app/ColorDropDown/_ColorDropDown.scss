@@ -1,0 +1,53 @@
+.ColorDropDown {
+  position: relative;
+  width: space(15);
+  height: rem(40px);
+  background-color: $color--algo-light-gray;
+  border-radius: $border-radius--small;
+  cursor: pointer;
+
+  &-current {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: rem(40px);
+    padding: space(1) space(2);
+    border-radius: $border-radius--small;
+    @include neu-button($color--algo-light-gray);
+  }
+
+  &-triangleOpen {
+    transform: rotate(180deg);
+    transition: 0.3s ease-in-out;
+  }
+
+  &-triangleClosed {
+    transform: rotate(0);
+    transition: 0.3s ease-in-out;
+  }
+
+  &-list {
+    position: absolute;
+    top: rem(40px);
+    left: 0;
+    background-color: $color--algo-light-gray;
+  }
+
+  &-color {
+    display: flex;
+    align-items: center;
+    width: space(15);
+    height: rem(40px);
+    background-color: $color--algo-light-gray;
+    padding: space(1) space(2);
+    &:hover {
+      @include neu-button($color--algo-light-gray);
+    }
+  }
+
+  &-colorBox {
+    height: space(2);
+    width: 50%;
+    border-radius: 1px;
+  }
+}

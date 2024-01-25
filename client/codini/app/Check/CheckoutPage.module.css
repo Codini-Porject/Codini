@@ -247,19 +247,25 @@
   width: 1920px;
   height: 593px;
   text-align: center;
+
   font-size: var(--font-size-3xl);
   color: var(--color-lightsteelblue);
 }
 .rectangleIcon {
   position: absolute;
-  top: 394.5px;
-  left: 472px;
-  border-radius: var(--br-xl);
-  width: 662px;
-  height: 636px;
-  object-fit: cover;
-  opacity: 0.2;
-  mix-blend-mode: normal;
+  margin-left: 400px;
+  margin-top: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 820px;
+  height: 980px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.95rem;
+  background-color: rgb(43, 44, 48);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1.5rem;
 }
 .checkout,
 .summary {
@@ -268,46 +274,53 @@
   display: inline-block;
 }
 .checkout {
-  top: 216px;
-  left: 707px;
-  font-size: 36px;
+  top: 246px;
+  left: 682px;
+  font-size: 56px;
   font-weight: 600;
   width: 199px;
+  color: azure;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 .summary {
   top: 346px;
-  left: 745px;
+  left: 755px;
   font-size: var(--font-size-5xl);
   width: 124px;
+  color: azure;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.checkoutPageChild {
-  position: absolute;
-  top: 927px;
-  left: 170px;
-  border-radius: 4px;
-  background-color: transparent;
-  border: 1px solid var(--color-gainsboro-100);
-  box-sizing: border-box;
-  width: 14px;
-  height: 14px;
+
+.confirmPayment{
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 220px;
+  margin-right: 250px;
 }
-.groupChild4 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 12px;
-  background-color: var(--color-lightseagreen);
-  width: 669px;
-  height: 63px;
+
+.confirmPayment::before {
+  margin-left: auto;
 }
-.confirmPayment {
-  position: absolute;
-  top: 3px;
-  left: 194px;
-  display: inline-block;
-  width: 313px;
-  height: 38px;
+
+.confirmPayment::after, .confirmPayment::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #00ab6d;
+  display: block;
+  transition: 0.9s;
 }
+
+.confirmPayment:hover::after, .confirmPayment:hover::before {
+  width: 100%;
+}
+
 .groupDiv {
   position: absolute;
   top: 968px;
@@ -343,6 +356,8 @@
   letter-spacing: 0.02em;
   line-height: 180%;
   color: var(--color-black);
+  color: rgb(255, 255, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .div1 {
   top: 510px;
@@ -352,13 +367,19 @@
   top: 665px;
   left: 502px;
   font-weight: 600;
+  color: azure;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .div2,
-.loremIpsumDollar,
+.loremIpsumDollar{
+  color: azure;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .subtotal {
   position: absolute;
   letter-spacing: 0.02em;
   line-height: 180%;
+
 }
 .div2 {
   top: 593px;
@@ -392,7 +413,8 @@
   letter-spacing: 0.02em;
   line-height: 180%;
   font-weight: 600;
-}
+  color: azure;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 .div3 {
   top: 665px;
   left: 1023px;
@@ -416,17 +438,21 @@
   letter-spacing: 0.02em;
   line-height: 180%;
   font-weight: 600;
+  color: azure;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .div4,
 .div5,
 .total {
   left: 1034px;
+  
 }
 .div5,
 .total {
   top: 848px;
   left: 502px;
-  color: var(--color-black);
+  color: azure;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .div5 {
   top: 841px;

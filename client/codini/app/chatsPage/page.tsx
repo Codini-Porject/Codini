@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import { PrettyChatWindow } from "react-chat-engine-pretty";
 
@@ -21,8 +22,8 @@ const ChatsPage: FC<ChatsPageProps> = ({ user }) => {
           `
           ae8c21fc-e8a1-404b-9bca-01906fbceb77`
         }
-        username={user.username}
-        secret={user.secret}
+        username={user?.username}
+        secret={user?.secret}
         style={{ height: "100%" }}
       />
     </div>

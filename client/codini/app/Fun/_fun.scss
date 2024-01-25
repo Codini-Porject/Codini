@@ -1,0 +1,14 @@
+.SingleLinkList {
+  background-color: $color--algo-gray;
+  min-height: 100vh;
+
+  &-header {
+    color: $color--algo-xtra-light-gray;
+    padding: 0 0 space(4) 0;
+  }
+
+  &-nodeContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, rem(135px));
+  }
+}

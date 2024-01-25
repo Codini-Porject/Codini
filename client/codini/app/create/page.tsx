@@ -1,14 +1,13 @@
 "use client";
 import axios from "axios";
 import React, { ChangeEvent, useState } from "react";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import NativeSelect from "@mui/material/NativeSelect";
 import { useIdentity } from "../(auth)/IdentityContext";
-import { useRouter } from 'next/navigation';
-
+import { useRouter } from "next/navigation";
 
 interface Course {
   desc: string;
@@ -18,12 +17,12 @@ interface Course {
 }
 
 interface Video {
-  idteachers_idteachers:number
+  idteachers_idteachers: number;
   Videos: string;
 }
 
 const Create: React.FC = () => {
-  const route=useRouter()
+  const route = useRouter();
 
   const { user } = useIdentity();
   const idTeacher = user?.id;
@@ -51,8 +50,9 @@ const Create: React.FC = () => {
         }
       );
       console.log(courseResponse);
-      route.push(`http://localhost:3000/create/${courseResponse.data.idcourse}`)
- 
+      route.push(
+        `http://localhost:3000/create/${courseResponse.data.idcourse}`
+      );
 
       console.log("Course response:", courseResponse.data);
     } catch (error) {
@@ -86,16 +86,30 @@ const Create: React.FC = () => {
   };
 
   return (
-    <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '10px', width: '440px', margin: 'auto', marginTop: '20px' }}>
+    <div
+      style={{
+        border: "1px solid #ccc",
+        padding: "20px",
+        borderRadius: "10px",
+        width: "440px",
+        margin: "auto",
+        marginTop: "20px",
+      }}
+    >
       <Box
         component="form"
         sx={{
-          '& > :not(style)': { m: 1, width: '40ch' },
+          "& > :not(style)": { m: 1, width: "55ch" },
         }}
         noValidate
         autoComplete="off"
       >
-        <TextField id="standard-basic" label="Description" variant="standard" onChange={(e) => setDescription(e.target.value)} />
+        <TextField
+          id="standard-basic"
+          label="Description"
+          variant="standard"
+          onChange={(e) => setDescription(e.target.value)}
+        />
       </Box>
       <Box
         component="form"
@@ -105,7 +119,12 @@ const Create: React.FC = () => {
         noValidate
         autoComplete="off"
       >
-        <TextField id="standard-basic" label="Price" variant="standard" onChange={(e) => setPrice(parseFloat(e.target.value))} />
+        <TextField
+          id="standard-basic"
+          label="Price"
+          variant="standard"
+          onChange={(e) => setPrice(parseFloat(e.target.value))}
+        />
       </Box>
       <Box
         component="form"
@@ -115,75 +134,56 @@ const Create: React.FC = () => {
         noValidate
         autoComplete="off"
       >
-        <TextField id="standard-basic" label="Rate" variant="standard" onChange={(e) => setRate(parseFloat(e.target.value))} />
+        <TextField
+          id="standard-basic"
+          label="Rate"
+          variant="standard"
+          onChange={(e) => setRate(parseFloat(e.target.value))}
+        />
       </Box>
-  
-      <label className="file-input-label">
-            <input
-              onChange={handleImageUpload}
-              name="image"
-              type="file"
-              accept="image/*"
-              style={{ display: 'none' }} 
-            />
-         
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              fill="none"
-              stroke="currentColor"
-              className="icon"
-            >
-              <polyline points="16 16 12 12 8 16"></polyline>
-              <line y2="21" x2="12" y1="12" x1="12"></line>
-              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
-              <polyline points="16 16 12 12 8 16"></polyline>
-            </svg>
-          </label>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
 
-      <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Language
-        </InputLabel>
-        <NativeSelect
-          defaultValue={30}
-          inputProps={{
-            name: 'Language',
-            id: 'uncontrolled-native',
-          }}
-          style={{ color: "black" }}
-            value={select}
-            onChange={(e) => setSelect(parseInt(e.target.value))}
-            required
-        >
-        <option value={0}>Select a language</option>
-            <option value={1}>JavaScript</option>
-            <option value={2}>PHP</option>
-            <option value={6}>Next.js</option>
-            <option value={7}>Node</option>
-            <option value={3}>CSS</option>
-            <option value={4}>HTML</option>
-            <option value={5}>jQuery</option>
-            <option value={8}>TypeScript</option>
-        </NativeSelect>
-      </FormControl>
-    </Box>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "20px",
+        }}
+      >
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel variant="standard" htmlFor="uncontrolled-native">
+              Language
+            </InputLabel>
+            <NativeSelect
+              defaultValue={30}
+              inputProps={{
+                name: "Language",
+                id: "uncontrolled-native",
+              }}
+              style={{ color: "black" }}
+              value={select}
+              onChange={(e) => setSelect(parseInt(e.target.value))}
+              required
+            >
+              <option value={0}>Select a language</option>
+              <option value={1}>JavaScript</option>
+              <option value={2}>PHP</option>
+              <option value={6}>Next.js</option>
+              <option value={7}>Node</option>
+              <option value={3}>CSS</option>
+              <option value={4}>HTML</option>
+              <option value={5}>jQuery</option>
+              <option value={8}>TypeScript</option>
+            </NativeSelect>
+          </FormControl>
+        </Box>
         <button type="submit" className="cta" onClick={handleSubmit}>
           <span>Submit</span>
         </button>
       </div>
-      
     </div>
   );
-      }
-      export default Create;
-  
-
-  
+};
+export default Create;
