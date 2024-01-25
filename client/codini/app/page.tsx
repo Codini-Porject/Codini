@@ -792,25 +792,9 @@ const courses: Course[] = [
           </div>
     </div>
             </div>
-
-
-
-
-
-
-      
-
-
-
-          
+             </div>
         </div>
-        </div>
-
-
-
-
-
-      </div>
+ </div>
     </div>
    
 
