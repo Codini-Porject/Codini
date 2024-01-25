@@ -1,0 +1,48 @@
+.Node {
+  display: flex;
+  width: 100%;
+  margin-bottom: space(4);
+
+  &-content {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-index,
+  &-value,
+  &-next {
+    color: $color--algo-xtra-light-gray;
+    font-size: rem(12px);
+    text-align: center;
+  }
+
+  &-index {
+    text-align: center;
+    padding-bottom: space(1);
+  }
+
+  &-circle {
+    height: rem(75px);
+    width: rem(75px);
+    border-radius: 100px;
+    margin-bottom: space(1);
+  }
+
+  &-value {
+    padding-bottom: space(1);
+  }
+
+  &-arrow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+    transform: translateY(-17px);
+  }
+
+  &:last-child &-arrow {
+    visibility: hidden;
+  }
+}
