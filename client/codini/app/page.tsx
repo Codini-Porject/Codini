@@ -113,12 +113,32 @@ const courses: Course[] = [
         <div className={styles.text3}>Get Started</div>
         </div>
         </div></button></Link>
-        <Link href="/register"><button className='button'><div className={styles.button3} >
+        <div className="cha9fa">
+  <div className="left-side">
+  <Link href="/register"><div className={styles.button3} >
           
           <div className={styles.buttonBase3}>
-          <div className={styles.text3}>Get free trial</div>
+          <div className={styles.text3}>subscribe</div>
           </div>
-          </div></button></Link>
+          </div></Link>
+    <div className="karta">
+      <div className="card-line"></div>
+      <div className="buttons"></div>
+    </div>
+    <div className="post">
+      <div className="post-line"></div>
+      <div className="screen">
+        <div className="dollar">$</div>
+      </div>
+      <div className="numbers"></div>
+      <div className="numbers-line2"></div>
+    </div>
+  </div>
+  <div className="right-side">
+    <div className="new"></div>
+  </div>
+</div>
+        
               </div>
             </div>
             <div className={styles.frameParent1}>
@@ -792,6 +812,8 @@ const courses: Course[] = [
 
       </div>
     </div>
+   
+
     </div>
   );
 };
