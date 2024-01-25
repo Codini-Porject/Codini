@@ -32,6 +32,10 @@ const Course = sequelize.define(
       type: DataTypes.STRING(45),
       allowNull: false,
     },
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     languages_idlanguages: {
       type: DataTypes.INTEGER,
       allowNull: false,
