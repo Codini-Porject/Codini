@@ -21,6 +21,8 @@ const stripe = require("./server/routes/stripe.js");
 const QuesRoute = require("./server/routes/questions.js");
 const reviews = require("./server/routes/reviews.js");
 
+const Anwser = require("./server/routes/answers.js");
+
 app.use(express.json());
 
 app.use(cors());
@@ -39,6 +41,8 @@ app.use("/ques", QuesRoute);
 app.use("/quiz", Quiz);
 //
 app.use("/Reviews", reviews);
+//
+app.use("/Ans", Anwser);
 
 //all routes below this middelware are secure
 // app.use(authenticateUser);

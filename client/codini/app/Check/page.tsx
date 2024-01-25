@@ -16,7 +16,7 @@ interface OneCourse {
 const CheckoutPage = () => {
   const search = useSearchParams()
  const params= new URLSearchParams(search.toString())
-// console.log("search ",params.get("price"));
+// console.log("search ",params.get("id"));
 const priceM= parseInt(params.get("price"))
 const discount =priceM*(10/100) 
 const all = priceM-discount

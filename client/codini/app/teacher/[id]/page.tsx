@@ -104,7 +104,7 @@ const fetchDetail: React.FC = () => {
             <div className={styles.johnAnderson}>{teacher?.name}</div>
             <button onClick={() => route.push(`/modify/${id}`)} className={styles.btn}> Edit Profile</button>
             <button onClick={() => route.push(`/create`)} className={styles.btn}>Add courses</button>
-            <button onClick={() => route.push(`/createQuiz`)} className={styles.btn}>Add Quiz</button>
+            <button onClick={() => route.push(`/createForQuiz`)} className={styles.btn}>Add Quiz</button>
           </div>
         </div>
       </div>
