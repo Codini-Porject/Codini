@@ -1,0 +1,47 @@
+.ListToolBar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(space(7.5), space(15)));
+  gap: space(2);
+  padding: space(10) 0 space(20) 0;
+
+  &-label {
+    display: block;
+    padding-bottom: space(1);
+    color: $color--algo-white;
+  }
+
+  &-valueInput,
+  &-indexInput {
+    height: rem(40px);
+    padding: space(1) space(2);
+    border-radius: $border-radius--small;
+    color: $color--algo-gray;
+    background-color: $color--algo-xtra-light-gray;
+  }
+
+  &-valueInput {
+    width: space(15);
+  }
+
+  &-indexInput {
+    width: space(15);
+  }
+
+  &-valid {
+    color: red;
+  }
+
+  &-submit {
+    width: space(15);
+    height: rem(40px);
+    border-radius: $border-radius--small;
+    background-color: $color--algo-light-gray;
+    color: $color--algo-xtra-light-gray;
+    @include neu-button($color--algo-light-gray);
+  }
+
+  &-submitContainer {
+    align-self: end;
+    border-radius: $border-radius--small;
+  }
+}

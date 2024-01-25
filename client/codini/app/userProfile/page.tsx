@@ -43,7 +43,7 @@ const UserProfile = () => {
         <nav aria-label="breadcrumb" className="main-breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <a href="index.html">Home</a>
+              <a >Home</a>
             </li>
             <li className="breadcrumb-item">
               <a href="">User</a>
