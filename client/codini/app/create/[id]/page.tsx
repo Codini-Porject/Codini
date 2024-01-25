@@ -1,10 +1,10 @@
 "use client";
-import React, { ChangeEvent, useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { ChangeEvent, useState, useEffect } from "react";
+import axios from "axios";
 import { useIdentity } from "../../(auth)/IdentityContext";
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
-import { useRouter } from 'next/navigation';
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import { useRouter } from "next/navigation";
 
 function Page() {
   const route = useRouter();
@@ -13,18 +13,17 @@ function Page() {
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
-
   const { user } = useIdentity();
   const idTeacher = user?.id;
 
   useEffect(() => {
-    const arr = window.location.href.split('/');
+    const arr = window.location.href.split("/");
     setCoureseId(arr[arr.length - 1]);
   }, []);
 
   const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files;
-  
+
     if (e.target.files) {
       try {
         setLoading(true);
@@ -41,13 +40,11 @@ function Page() {
             }
           );
           setVideo(response.data.secure_url);
-          await axios.post(
-            `http://localhost:8000/videos/courses/${courseId}`,
-            {
-              videos: response.data.secure_url,
-              teachers_idteachers: idTeacher,
-            }
-          );
+
+          await axios.post(`http://localhost:8000/videos/courses/${courseId}`, {
+            videos: response.data.secure_url,
+            teachers_idteachers: idTeacher,
+          });
         }
 
         setUploadSuccess(true);
@@ -65,19 +62,40 @@ function Page() {
         <div className="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
           <div className="mt-10 mb-10 text-center">
             <h2 className="text-2xl font-semibold mb-2">Upload your files</h2>
-            <p className="text-xs text-gray-500">File should be of format .mp4, .avi, .mov or .mkv</p>
+            <p className="text-xs text-gray-500">
+              File should be of format .mp4, .avi, .mov or .mkv
+            </p>
           </div>
-          <form action="#" className="relative w-4/5 h-32 max-w-xs mb-10 bg-white bg-gray-100 rounded-lg shadow-inner">
-            <input type="file" id="file-upload" className="hidden" onChange={(e) => handleImageUpload(e)} multiple />
-            <label htmlFor="file-upload" className="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
-              <p className="z-10 text-xs font-light text-center text-gray-500">Drag & Drop your files here</p>
-              <svg className="z-10 w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <form
+            action="#"
+            className="relative w-4/5 h-32 max-w-xs mb-10 bg-white bg-gray-100 rounded-lg shadow-inner"
+          >
+            <input
+              type="file"
+              id="file-upload"
+              className="hidden"
+              onChange={(e) => handleImageUpload(e)}
+              multiple
+            />
+            <label
+              htmlFor="file-upload"
+              className="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer"
+            >
+              <p className="z-10 text-xs font-light text-center text-gray-500">
+                Drag & Drop your files here
+              </p>
+              <svg
+                className="z-10 w-8 h-8 text-indigo-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
               </svg>
             </label>
           </form>
           {loading && (
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: "flex" }}>
               <CircularProgress />
             </Box>
           )}
@@ -89,7 +107,7 @@ function Page() {
           </button>
         </div>
       </div>
-  </div>
+    </div>
   );
 }
 
