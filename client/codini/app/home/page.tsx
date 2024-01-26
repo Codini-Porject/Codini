@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useIdentity } from "../(auth)/IdentityContext";
 import Footer from "../footer/page";
-import Modal from "react-modal";
 
 const HomePage: React.FC = () => {
   interface Teachers {
@@ -34,7 +33,6 @@ const HomePage: React.FC = () => {
   const [langua, setLangua] = useState<Languages[]>([]);
   const [teachers, setteachers] = useState<Teachers[]>([]);
   // const [course,setCourses] = useState<Video[]>([])
-
   const con = useIdentity();
   console.log("identity", con);
 
