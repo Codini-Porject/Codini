@@ -43,6 +43,7 @@ const Search: NextPage = () =>{
   }, []);
 
   useEffect(() => {
+   
     const filteredResults = teacherData.filter(item =>
       item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
