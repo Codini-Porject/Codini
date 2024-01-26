@@ -27,10 +27,14 @@ const route = useRouter()
       {/* <button style={{marginLeft:'43%', backgroundColor :"green"}} >Go Back</button> */}
     <div style={{ display: 'grid', gridTemplateColumns: '20% 20% 20% 20%', gap: '20px' }}>
       {data?.map((el, i) => (
+      <div>
+       <button onClick={()=>route.push(`/Quize`)}>Quiz</button>
         <video key={i} width="320" height="240" controls>
           <source src={el.videos} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        
+      </div>
       ))}
     </div>
   </div>

@@ -183,7 +183,7 @@
 }
 .groupParent {
   position: absolute;
-  top: 3cm;
+  top: 4.6cm;
   left: 889px;
   width: 454px;
   height: 674px;
@@ -191,9 +191,11 @@
 }
 .lovelyTeenageGirlWithCurlyIcon {
   position: absolute;
-  margin-top: 4.56cm;
+
+  margin-top:4.56cm;
   top: -3px;
   left: 179px;
+
   width: 544px;
   height: 892px;
   object-fit: cover;

@@ -11,19 +11,19 @@ const getAllQuestions = async (req, res) => {
   }
 };
 
-// const getCourseById = async (req, res) => {
-//   const { id } = req.params;
-//   try {
-//     const course = await Course.findByPk(id);
-//     if (!course) {
-//       return res.status(404).json({ message: "Course not found" });
-//     }
-//     res.json(course);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Server Error" });
-//   }
-// };
+const getOneQuestion = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const question = await Question.findByPk(id);
+    if (!question) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+    res.json(course);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
 
 // const updateQuestion = async (req, res) => {
 //   const { id } = req.params;
@@ -57,15 +57,14 @@ const getAllQuestions = async (req, res) => {
 // };
 
 const addQuestion = async (req, res) => {
-  const { teachers_idteachers, question, quizz_idquizz } =
+  const {  question, quizz_idquizz ,rightOption } =
     req.body;
 
   try {
     const newQuestion = await Question.create({
-      teachers_idteachers,
       question,
       quizz_idquizz,
-      
+      rightOption
     });
     res.status(201).json(newQuestion);
   } catch (error) {
@@ -76,6 +75,7 @@ const addQuestion = async (req, res) => {
 
 module.exports = {
   getAllQuestions,
+  getOneQuestion,
 //   updateQuestion,
 //   deleteCourse,
 addQuestion,
