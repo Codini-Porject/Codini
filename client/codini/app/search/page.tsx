@@ -1,63 +1,6 @@
-"use client"
 import type { NextPage } from "next";
-import React , {useEffect,useState}from 'react'
-interface TeacherItem {
-  id: number;
-  name: string;
-  description: string;
-  image:string,
-}
 
-interface LanguageItem {
-  id: number;
-  name: string;
-  description: string;
-  image:string;
-}
-
-
-const Search: NextPage = () =>{
-
-
-  const [teacherData, setTeacherData] = useState<TeacherItem[]>([]);
-  const [languageData, setLanguageData] = useState<LanguageItem[]>([]);
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [filteredTeacherData, setFilteredTeacherData] = useState<TeacherItem[]>([]);
-  const [filteredLanguageData, setFilteredLanguageData] = useState<LanguageItem[]>([]);
-  const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
-
-  useEffect(() => {
-    
-    fetch('http://127.0.0.7:8000/teacher/getAll')
-      .then(response => response.json())
-      .then(data => setTeacherData(data))
-      .catch(error => console.error('Error fetching teacher data:', error));
-  }, []);
-
-  useEffect(() => {
-   
-    fetch('http://127.0.0.7:8000/languages/')
-      .then(response => response.json())
-      .then(data => setLanguageData(data))
-      .catch(error => console.error('Error fetching language data:', error));
-  }, []);
-
-  useEffect(() => {
-   
-    const filteredResults = teacherData.filter(item =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setFilteredTeacherData(filteredResults);
-  }, [searchQuery, teacherData]);
-
-  useEffect(() => {
-   
-    const filteredResults = languageData.filter(item =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setFilteredLanguageData(filteredResults);
-  }, [searchQuery, languageData]);
-
+const Search: NextPage = () => {
   return (
     <div className="w-[80%] top-[800px] bg-white h-[5200px] overflow-hidden  text-3xl text-black font-poppins  right-[20px]">
       <div className=" top-[0px] left-[122px] bg-white w-[1967px] h-[6000px] overflow-hidden">
@@ -76,81 +19,67 @@ const Search: NextPage = () =>{
                   Search
                 </b>
               </div>
-
-              <div className="relative">
-      <input
-        type="text"
-        placeholder="Search your favourite course"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        onFocus={() => setIsInputFocused(true)}
-        onBlur={() => setIsInputFocused(false)}
-        className="text-xl tracking-[0.04em] text-lightslategray-200 text-center inline-block w-[345.11px]"
-        style={{ position: 'absolute', top: '21px', left: '34.62px' }}
-      />
-      {isInputFocused && (
-        <div>
-            <ul className="bg-white border border-white text-black w-[1300px]" style={{ position: 'absolute', top: '74px', left: '0', zIndex: 1 }}>
-  {filteredTeacherData.map(item => (
-    <React.Fragment key={item.id}>
-      <li className="text-black hover:bg-gray-200 cursor-pointer">{item.name}</li>
-    </React.Fragment>
-  ))}
-</ul>
-          <ul className="bg-white border border-white text-black w-[1300px]" style={{ position: 'absolute', top: '74px', left: '0', zIndex: 1 }}>
-            {filteredLanguageData.map(item => (
-              <li key={item.id} className="text-black hover:bg-gray-200 cursor-pointer">{item.name}</li>
-              
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-
+              <input
+                type="long-text"
+                placeholder="Search your favourite course"
+                className="absolute top-[21px] left-[34.62px] text-xl tracking-[0.04em] text-lightslategray-200 text-center inline-block w-[345.11px]"
+              />
             </div>
             <div className="absolute top-[93px] left-[0px] w-[170px] h-[73px]">
               <div className="absolute top-[0px] left-[0px] rounded-3xs bg-white w-[170px] h-[73px]" />
-          
+              <div className="absolute top-[22px] left-[137px] leading-[32px] inline-block w-[15px] h-8">
+                
+              </div>
               <div className="absolute top-[18px] left-[18px] tracking-[0.04em] font-medium font-poppins text-center inline-block w-[109px]">
-               
-Javascript              </div>
+                Subject
+              </div>
             </div>
             <div className="absolute top-[93px] left-[190px] w-[170px] h-[73px]">
               <div className="absolute top-[0px] left-[0px] rounded-3xs bg-white w-[170px] h-[73px]" />
-          
+              <div className="absolute top-[22px] left-[137px] leading-[32px] inline-block w-[15px] h-8">
+                
+              </div>
               <div className="absolute top-[18px] left-[18px] tracking-[0.04em] font-medium font-poppins text-center inline-block w-[109px]">
-                Python
+                Partner
               </div>
             </div>
             <div className="absolute top-[93px] left-[380px] w-48 h-[73px]">
               <div className="absolute top-[0px] left-[0px] rounded-3xs bg-white w-48 h-[73px]" />
               <div className="absolute top-[16px] left-[18.28px] w-[156.99px] h-9">
-              
+                <div className="absolute top-[4px] left-[140.05px] leading-[32px] inline-block w-[16.94px] h-8">
+                  
+                </div>
                 <div className="absolute top-[0px] left-[0px] tracking-[0.04em] font-medium font-poppins text-center inline-block w-[128.75px]">
-                  React
+                  Program
                 </div>
               </div>
             </div>
             <div className="absolute top-[93px] left-[592px] w-[209px] h-[73px]">
               <div className="absolute top-[0px] left-[0px] rounded-3xs bg-white w-[209px] h-[73px]" />
               <div className="absolute top-[18px] left-[18.99px] w-[176.76px] h-9">
-               
+                <div className="absolute top-[4px] left-[156.75px] leading-[32px] inline-block w-[20.01px] h-8">
+                  
+                </div>
                 <div className="absolute top-[0px] left-[0px] tracking-[0.04em] font-medium font-poppins text-center inline-block w-[143.41px]">
-                  Java
+                  Language
                 </div>
               </div>
             </div>
             <div className="absolute top-[93px] left-[821px] w-[216px] h-[73px]">
               <div className="absolute top-[0px] left-[0px] rounded-3xs bg-white w-[216px] h-[73px]" />
-             
+              <div className="absolute top-[22px] left-[183px] leading-[32px] inline-block w-[18px] h-8">
+                
+              </div>
               <div className="absolute top-[18px] left-[18px] tracking-[0.04em] font-medium font-poppins text-center inline-block w-[153px]">
-                Next js
+                Abaliability
               </div>
             </div>
             <div className="absolute top-[93px] left-[1057px] w-[267px] h-[73px]">
               <div className="absolute top-[0px] left-[0px] rounded-3xs bg-white w-[267px] h-[73px]" />
               <div className="absolute top-[18px] left-[18.91px] w-[235.08px] h-9">
-               
+                <div className="absolute top-[4px] left-[211.88px] leading-[32px] inline-block w-[23.2px] h-8">
+                  
+                </div>
                 <div className="absolute top-[0px] left-[0px] tracking-[0.04em] font-medium font-poppins text-center inline-block w-[197.16px]">
                   Learning Type
                 </div>

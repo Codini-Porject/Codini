@@ -9,7 +9,7 @@ const addAnswer = async (req, res) => {
     res.status(201).json(newAnswer);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Server Error" });bulkCreate
+    res.status(500).json({ error: "Server Error" });
   }
 };
 

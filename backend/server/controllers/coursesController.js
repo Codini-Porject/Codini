@@ -27,7 +27,7 @@ const getCourseById = async (req, res) => {
 const getCourseByteacher = async (req, res) => {
   const { id } = req.params;
   try {
-    const course = await Course.findAll({where :{teachers_idteachers:id}});
+    const course = await Course.findAll({ where: { teachers_idteachers: id } });
     if (!course) {
       return res.status(404).json({ message: "Course not found" });
     }
@@ -38,16 +38,15 @@ const getCourseByteacher = async (req, res) => {
   }
 };
 
-
 const updateCourse = async (req, res) => {
   const { id } = req.params;
-  const { desc, price, rate } = req.body;
+  const { desc, price, rate, image } = req.body;
   try {
     const course = await Course.findByPk(id);
     if (!course) {
       return res.status(404).json({ message: "Course not found" });
     }
-    await course.update({ desc, price, rate });
+    await course.update({ desc, price, rate, image });
     res.json({ message: "Course updated successfully" });
   } catch (error) {
     console.error(error);
@@ -71,15 +70,20 @@ const deleteCourse = async (req, res) => {
 };
 
 const addCourse = async (req, res) => {
-  const { teachers_idteachers, desc, price, rate,image, languages_idlanguages } =
-  req.body;
+  const {
+    teachers_idteachers,
+    desc,
+    price,
+    rate,
+    image,
+    languages_idlanguages,
+  } = req.body;
 
   console.log(req.body);
 
   // const { role } = req.user;
 
   try {
-
     const newCourse = await Course.create({
       teachers_idteachers,
       desc,
@@ -101,5 +105,5 @@ module.exports = {
   updateCourse,
   deleteCourse,
   addCourse,
-  getCourseByteacher
+  getCourseByteacher,
 };

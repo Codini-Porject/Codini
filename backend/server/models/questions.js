@@ -15,6 +15,10 @@ const Question = sequelize.define(
       type: DataTypes.STRING(445),
       allowNull: false,
     },
+    rightOption :{
+    type:DataTypes.STRING,
+    allowNull:false
+    },
     quizz_idquizz: {
       type: DataTypes.INTEGER,
       allowNull: false,
