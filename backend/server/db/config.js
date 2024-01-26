@@ -1,6 +1,8 @@
 const Sequelize = require("sequelize");
 
+
 const sequelize = new Sequelize("codini", "root", "root", {
+
   dialect: "mysql",
   host: "localhost",
 });

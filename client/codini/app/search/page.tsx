@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 
 const Search: NextPage = () => {
   return (
-    <div className="w-[80%] top-[800px] bg-white h-[5563px] overflow-hidden  text-3xl text-black font-poppins  right-[20px]">
-      <div className=" top-[0px] left-[122px] bg-white w-[1967px] h-[7039px] overflow-hidden">
+    <div className="w-[80%] top-[800px] bg-white h-[5200px] overflow-hidden  text-3xl text-black font-poppins  right-[20px]">
+      <div className=" top-[0px] left-[122px] bg-white w-[1967px] h-[6000px] overflow-hidden">
         <div className=" top-[42px] left-[0px] w-[1220px] h-[326px] text-5xl text-gray-100 font-font-awesome-5-free">
           <img
             className="absolute top-[185px] left-[0px] w-[1920px] h-[326px] object-cover"

@@ -21,7 +21,7 @@ interface Course {
 }
 
 interface Video {
-  desc: ReactNode;
+  desc: String;
   idvideos: number;
   videos: string;
   courses_idcourse: number;
@@ -48,7 +48,17 @@ const CourseDetail: NextPage = () => {
     fetchData();
   }, []);
 
-
+  useEffect(() => {
+    axios
+      .get<Review[]>("http://127.0.0.7:8000/Reviews/getAllR")
+      .then((response) => {
+        setAllreviews(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching course data:", error);
+      });
+  }, []);
+  
   const fetchData = async () => {
     try {
       const courseResponse = await axios.get<Course[]>(

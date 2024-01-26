@@ -17,8 +17,9 @@ const loginUser = async (req, res) => {
   console.log(req.body);
   try {
     let user = await Teacher.findOne({ where: { email: email } });
-    console.log(user);
-    if (!user) {
+    // console.log("test",user);
+    if (!user) {  
+      console.log('hi');
       user = await Student.findOne({ where: { email: email } });
       if (!user) {
         return res.status(401).json({ message: "Invalid credentials" });
@@ -36,12 +37,15 @@ const loginUser = async (req, res) => {
 
       const token = generateToken(user.id, user.name, role);
 
+
       // console.log("user in cont", student.dataValues.image);
       res.json({
         token,
         userId: user.idstudents ? user.idstudents : user.idteachers,
         role,
+
         image: user.dataValues.image ? user.dataValues.image : "",
+
       });
     } else {
       res.status(401).json({ message: "Invalid Password" });

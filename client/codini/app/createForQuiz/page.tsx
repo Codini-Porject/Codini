@@ -20,7 +20,9 @@ const [refId,setRefId] = useState(-1)
   useEffect(() => {
     const fetchData = async () => {
       try {
+
         const coursesResponse = await fetch(`http://localhost:8000/courses/getAll/3`);
+
         const fetchedCourses = await coursesResponse.json();
         setCourses(fetchedCourses);
         console.log("here123",fetchedCourses);           
@@ -76,7 +78,9 @@ const [refId,setRefId] = useState(-1)
     }));
   };
 
+
   console.log((rightOption),'alalalala')
+
 
 
   return (
