@@ -19,7 +19,7 @@ const Home = () => {
     price: number;
     description: string;
     image: string;
-  }
+}
 
   return (
     <div className="box">
@@ -905,5 +905,5 @@ const Home = () => {
 
   );
 };
+export default Home ;
 
-export default Home;

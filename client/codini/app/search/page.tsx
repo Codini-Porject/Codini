@@ -1,9 +1,65 @@
 import type { NextPage } from "next";
+import React , {useEffect,useState}from 'react'
+interface TeacherItem {
+  id: number;
+  name: string;
+  description: string;
+  image:string,
+}
+
+interface LanguageItem {
+  id: number;
+  name: string;
+  description: string;
+  image:string;
+}
+
+
+const Search: NextPage = () =>{
+
+
+  const [teacherData, setTeacherData] = useState<TeacherItem[]>([]);
+  const [languageData, setLanguageData] = useState<LanguageItem[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [filteredTeacherData, setFilteredTeacherData] = useState<TeacherItem[]>([]);
+  const [filteredLanguageData, setFilteredLanguageData] = useState<LanguageItem[]>([]);
+  const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
+
+  useEffect(() => {
+    
+    fetch('http://127.0.0.7:8000/teacher/getAll')
+      .then(response => response.json())
+      .then(data => setTeacherData(data))
+      .catch(error => console.error('Error fetching teacher data:', error));
+  }, []);
+
+  useEffect(() => {
+   
+    fetch('http://127.0.0.7:8000/languages/')
+      .then(response => response.json())
+      .then(data => setLanguageData(data))
+      .catch(error => console.error('Error fetching language data:', error));
+  }, []);
+
+  useEffect(() => {
+    const filteredResults = teacherData.filter(item =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredTeacherData(filteredResults);
+  }, [searchQuery, teacherData]);
+
+  useEffect(() => {
+   
+    const filteredResults = languageData.filter(item =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredLanguageData(filteredResults);
+  }, [searchQuery, languageData]);
 
 const Search: NextPage = () => {
   return (
-    <div className="w-[80%] top-[800px] bg-white h-[5563px] overflow-hidden  text-3xl text-black font-poppins  right-[20px]">
-      <div className=" top-[0px] left-[122px] bg-white w-[1967px] h-[7039px] overflow-hidden">
+    <div className="w-[80%] top-[800px] bg-white h-[5200px] overflow-hidden  text-3xl text-black font-poppins  right-[20px]">
+      <div className=" top-[0px] left-[122px] bg-white w-[1967px] h-[6000px] overflow-hidden">
         <div className=" top-[42px] left-[0px] w-[1220px] h-[326px] text-5xl text-gray-100 font-font-awesome-5-free">
           <img
             className="absolute top-[185px] left-[0px] w-[1920px] h-[326px] object-cover"

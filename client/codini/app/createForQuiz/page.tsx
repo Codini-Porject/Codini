@@ -114,6 +114,25 @@ function page() {
        
 
       </div>
+      <button onClick={() =>{handleAll()}} >Add Quiz</button>
+    </div>}
+
+<div className="course-container" style={{ backgroundColor:'grey' }}>
+<div className="message">pick a course </div>
+<h3> here:</h3>
+<ul className="cursor-pointer">
+  {courses.map((course,i)=> (
+     <li onClick={()=>{setCourseIndex(course.idcourse)}} className='one-course' key={i}>
+     <p className='w-[200px]'>{course?.desc}</p>
+    <img src={course?.image} alt=""  className='object-contain h-48 w-96'/>
+     </li>
+  ))}
+
+
+</ul>
+</div>  
+</div>
+=======
     </div>
   );
 }
