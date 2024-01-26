@@ -30,8 +30,6 @@ body {
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-
-
 .checkbox-button {
   appearance: none;
   border: 1px solid #ccc;
@@ -592,7 +590,6 @@ body {
   --br-3xs: 10px;
   --br-41xl: 60px;
 }
-
 
 .groupChild {
   top: 0;
@@ -1213,7 +1210,7 @@ body {
   height: 180px;
   overflow: hidden;
   text-align: center; /* Center the text horizontally */
-  font-family: 'New Font', sans-serif;
+  font-family: "New Font", sans-serif;
 }
 .ab {
   left: 100px;
@@ -1225,7 +1222,6 @@ body {
   width: 2900px; /* Adjust the width as needed, in this case, it's set to 50% of the container width */
   background-color: var(--color-dimgray); /* You can adjust the line color */
   margin-top: 140px; /* Adjust the margin as needed */
-
 }
 .careers,
 .home {
@@ -1273,7 +1269,7 @@ body {
 .aboutUs {
   top: 72px;
   left: 1254px;
-  font-family: 'New Font', sans-serif;
+  font-family: "New Font", sans-serif;
   font-size: 20px;
 }
 .lina {
@@ -1378,19 +1374,19 @@ body {
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
-.founders{
+.founders {
   margin-left: 300px;
 }
-.explore{
+.explore {
   margin-left: 300px;
 }
-.explore2{
+.explore2 {
   margin-left: 300px;
 }
-.ourpacks{
+.ourpacks {
   margin-left: 300px;
 }
-.coni{
+.coni {
   margin-left: 300px;
 }
 .notification {
@@ -1403,10 +1399,10 @@ body {
   background: #c2c2c4;
   border-radius: 2rem;
   overflow: hidden;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 16px;
-  --gradient: linear-gradient(to bottom, #01563f, #049f75, #02bd8b,#03efb0);
-  --color: #32a6ff
+  --gradient: linear-gradient(to bottom, #01563f, #049f75, #02bd8b, #03efb0);
+  --color: #32a6ff;
 }
 
 .notification:before {
@@ -1415,7 +1411,7 @@ body {
   inset: 0.0625rem;
   border-radius: 0.9375rem;
   background: #262626;
-  z-index: 4
+  z-index: 4;
 }
 
 .notification:after {
@@ -1430,11 +1426,11 @@ body {
 }
 
 .notification:hover:after {
-  transform: translateX(1.15rem)
+  transform: translateX(1.15rem);
 }
 
 .notititle {
-  color:#049f75 ;
+  color: #049f75;
   padding: 0.65rem 0.25rem 3.4rem 1.25rem;
   font-weight: 500;
   font-size: 80px;
@@ -1444,7 +1440,7 @@ body {
 }
 
 .notification:hover .notititle {
-  transform: translateX(1.15rem)
+  transform: translateX(1.15rem);
 }
 
 .notibody {
@@ -1458,7 +1454,6 @@ body {
 .notification:hover .notibody {
   transform: translateX(1.75rem);
   color: #57c9ae;
-
 }
 
 .notiglow,
@@ -1467,7 +1462,11 @@ body {
   width: 20rem;
   height: 20rem;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle closest-side at center, white, transparent);
+  background: radial-gradient(
+    circle closest-side at center,
+    white,
+    transparent
+  );
   opacity: 0;
   transition: opacity 300ms ease;
 }
@@ -1481,13 +1480,13 @@ body {
 }
 
 .notification:hover .notiglow {
-  opacity: 0.1
+  opacity: 0.1;
 }
 
 .notification:hover .notiborderglow {
-  opacity: 0.1
+  opacity: 0.1;
 }
-.ktiba{
+.ktiba {
   color: white;
 }
 .note {
@@ -1500,19 +1499,18 @@ body {
   font-size: 0.9rem;
   width: 75%;
 }
-.sic{
+.sic {
   margin-left: 400px;
   font-size: 70px;
   color: #049f75;
   margin-top: 100px;
   margin-bottom: 100px;
 }
-.aboutus{
+.aboutus {
   margin-left: 200px;
 }
-.debut{
+.debut {
   margin-left: 00px;
-
 }
 .card1 {
   width: 1090px;
@@ -1520,9 +1518,251 @@ body {
   background: linear-gradient(135deg, #2ae2c3 0%, #5c6d6a 100%);
   border-radius: 17px;
   box-shadow: 20px 20px 60px #a1a0a0, -20px -20px 60px #ffffff;
- }
+}
 
 .dropdown-item:hover {
   background-color: #f0f0f0; /* Change the color as per your preference */
 }
+.cha9fa {
+  background-color: #ffffff;
+  display: flex;
+  width: 300px;
+  height: 90px;
+  position: relative;
+  border-radius: 6px;
+  transition: 0.7s ease-in-out;
+}
 
+.cha9fa:hover {
+  transform: scale(1);
+}
+
+.cha9fa:hover .left-side {
+  width: 40%;
+}
+
+.left-side {
+  background-color: #049f7600;
+  width: 160px;
+  height: 90px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.9s;
+}
+
+.right-side:hover {
+  background-color: #f9f7f9;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.new {
+  font-size: 23px;
+  font-family: "Lexend Deca", sans-serif;
+  margin-left: 20px;
+}
+
+.karta {
+  width: 70px;
+  height: 46px;
+  background-color: #c7ffbc;
+  border-radius: 6px;
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  -webkit-box-shadow: 9px 9px 9px -2px rgba(77, 200, 143, 0.72);
+  -moz-box-shadow: 9px 9px 9px -2px rgba(77, 200, 143, 0.72);
+  -webkit-box-shadow: 9px 9px 9px -2px rgba(77, 200, 143, 0.72);
+}
+
+.karta-line {
+  width: 65px;
+  height: 13px;
+  background-color: #80ea69;
+  border-radius: 2px;
+  margin-top: 7px;
+}
+
+@media only screen and (max-width: 480px) {
+  .cha9fa {
+    transform: scale(0.7);
+  }
+
+  .cha9fa:hover {
+    transform: scale(0.74);
+  }
+
+  .new {
+    font-size: 18px;
+  }
+}
+
+.buttons {
+  width: 8px;
+  height: 8px;
+  background-color: #379e1f;
+  box-shadow: 0 -10px 0 0 #26850e, 0 10px 0 0 #56be3e;
+  border-radius: 50%;
+  margin-top: 5px;
+  transform: rotate(90deg);
+  margin: 10px 0 0 -30px;
+}
+
+.cha9fa:hover .karta {
+  animation: slide-top 1.2s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+}
+
+.cha9fa:hover .post {
+  animation: slide-post 1s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-70px) rotate(90deg);
+    transform: translateY(-70px) rotate(90deg);
+  }
+
+  60% {
+    -webkit-transform: translateY(-70px) rotate(90deg);
+    transform: translateY(-70px) rotate(90deg);
+  }
+
+  100% {
+    -webkit-transform: translateY(-8px) rotate(90deg);
+    transform: translateY(-8px) rotate(90deg);
+  }
+}
+.post {
+  width: 63px;
+  height: 75px;
+  background-color: #dddde0;
+  position: absolute;
+  z-index: 11;
+  bottom: 10px;
+  top: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.post-line {
+  width: 47px;
+  height: 9px;
+  background-color: #545354;
+  position: absolute;
+  border-radius: 0px 0px 3px 3px;
+  right: 8px;
+  top: 8px;
+}
+
+.post-line:before {
+  content: "";
+  position: absolute;
+  width: 47px;
+  height: 9px;
+  background-color: #757375;
+  top: -8px;
+}
+
+.screen {
+  width: 47px;
+  height: 23px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 22px;
+  right: 8px;
+  border-radius: 3px;
+}
+
+.numbers {
+  width: 12px;
+  height: 12px;
+  background-color: #838183;
+  box-shadow: 0 -18px 0 0 #838183, 0 18px 0 0 #838183;
+  border-radius: 2px;
+  position: absolute;
+  transform: rotate(90deg);
+  left: 25px;
+  top: 52px;
+}
+
+.numbers-line2 {
+  width: 12px;
+  height: 12px;
+  background-color: #aaa9ab;
+  box-shadow: 0 -18px 0 0 #aaa9ab, 0 18px 0 0 #aaa9ab;
+  border-radius: 2px;
+  position: absolute;
+  transform: rotate(90deg);
+  left: 25px;
+  top: 68px;
+}
+
+@keyframes slide-post {
+  50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-70px);
+    transform: translateY(-70px);
+  }
+}
+
+.dollar {
+  position: absolute;
+  font-size: 16px;
+  font-family: "Lexend Deca", sans-serif;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: #4b953b;
+  text-align: center;
+}
+
+.cha9fa:hover .dollar {
+  animation: fade-in-fwd 0.3s 1s backwards;
+}
+
+@keyframes fade-in-fwd {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Change the color as per your preference */
+}
