@@ -34,10 +34,10 @@ console.log(all);
       <div className={styles.groupDiv}>
         <div className={styles.groupChild4} />
 
-       
 
-       
-  
+
+
+
 <div className={styles.confirmPayment}>
           <a href="https://buy.stripe.com/test_eVafZUdhyavM63u6oo">
             Confirm Payment{" "}

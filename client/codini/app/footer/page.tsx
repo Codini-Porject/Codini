@@ -1,3 +1,4 @@
+
 import  Link  from 'next/link';
 import "./Footer.css";
 
@@ -53,7 +54,6 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-
   );
 };
 
